@@ -3,13 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO Core Meta Tags -->
     <title>Vạn Phú Khánh GPS | Thiết Bị Giám Sát Hành Trình & Camera Chuẩn QCVN06:2024/BCA</title>
-    
+    <meta name="description" content="Vạn Phú Khánh GPS cung cấp thiết bị giám sát hành trình 4G hợp chuẩn QCVN06:2024/BCA, tích hợp Camera lái xe & hành khách. Truyền dữ liệu chuẩn xác về Cục CSGT - Bộ Công An. Lắp đặt tận nơi tại Khánh Hòa. Hotline 0585.114.114.">
+    <meta name="keywords" content="thiết bị giám sát hành trình, hộp đen 4G, QCVN06:2024, BCA, Cục CSGT, camera hành trình, định vị xe tải, Vạn Phú Khánh GPS, Nha Trang, Khánh Hòa">
+    <meta name="author" content="Vạn Phú Khánh GPS">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://www.vanphukhanh.com/">
+
+    <!-- Geo Tags (Local SEO) -->
+    <meta name="geo.region" content="VN-34">
+    <meta name="geo.placename" content="Nha Trang, Khánh Hòa">
+    <meta name="geo.position" content="12.2388;109.1967">
+    <meta name="ICBM" content="12.2388, 109.1967">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:url" content="https://www.vanphukhanh.com/">
+    <meta property="og:title" content="Vạn Phú Khánh GPS - Thiết Bị Giám Sát Hành Trình Đạt Chuẩn BCA QCVN06:2024">
+    <meta property="og:description" content="Giải pháp hộp đen 4G tích hợp Camera giám sát lái xe & hành khách. Đạt chuẩn QCVN06:2024/BCA. Truyền dữ liệu về Cục CSGT - Bộ Công An. Lắp đặt tận nơi, bảo hành trọn đời.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
+    <meta property="og:site_name" content="Vạn Phú Khánh GPS">
+
+    <!-- Theme & Icons -->
+    <meta name="theme-color" content="#0082c9">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "LocalBusiness",
+                "@id": "https://www.vanphukhanh.com/#business",
+                "name": "Vạn Phú Khánh GPS",
+                "url": "https://www.vanphukhanh.com",
+                "telephone": "+84-585-114-114",
+                "email": "ctyvanphukhanh@gmail.com",
+                "priceRange": "$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Thôn Tân Mỹ, xã Tân Định",
+                    "addressLocality": "Ninh Hòa",
+                    "addressRegion": "Khánh Hòa",
+                    "addressCountry": "VN"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 12.2388,
+                    "longitude": 109.1967
+                }
+            },
+            {
+                "@type": "Product",
+                "name": "Thiết bị giám sát hành trình Viview DV4G / VV4G-02",
+                "description": "Thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA, tích hợp Camera giám sát lái xe và hành khách, truyền dữ liệu về Cục CSGT - Bộ Công An",
+                "brand": {
+                    "@type": "Brand",
+                    "name": "Viview"
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "priceCurrency": "VND",
+                    "price": "0",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://www.vanphukhanh.com"
+                }
+            }
+        ]
+    }
+    </script>
 
     <style>
         :root {
@@ -739,6 +812,7 @@
             height: 100%;
         }
 
+        /* Chấm sóng vệ tinh nhấp nháy định vị */
         .sat-ping-node {
             position: absolute;
             display: flex;
@@ -805,7 +879,7 @@
             100% { transform: scale(1.4); opacity: 0; }
         }
 
-        /* AI Driver Monitoring - Lái xe ngồi ghế & Đeo dây an toàn */
+        /* AI Driver Monitoring - Nửa thân trên tài xế, Ghế lái & Dây đeo an toàn */
         .camera-grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -827,7 +901,6 @@
             justify-content: center;
         }
 
-        /* Khung hiển thị Nửa thân trên tài xế + Ghế lái + Dây đai an toàn */
         .driver-seatbelt-wrap {
             position: relative;
             width: 270px;
@@ -1351,7 +1424,7 @@
                     <div class="hud-title">TÍN HIỆU VỆ TINH GNSS</div>
                     <div class="hud-val" style="color: var(--cyan);">
                         <i class="fa-solid fa-satellite"></i>
-                        <span id="gnssCount" style="font-family: var(--font-mono); font-size: 17px;">18</span>
+                        <span id="gnssCount" style="font-family: var(--font-mono); font-size: 17px;" aria-live="polite">18</span>
                         <span style="font-size: 11.5px; font-weight: 600; color: #a5f3fc;">Vệ Tinh</span>
                     </div>
                 </div>
@@ -1699,17 +1772,16 @@
             <div class="camera-screen-mockup">
                 <div class="laser-scan-bar"></div>
                 
-                <!-- Mô phỏng Nửa thân trên người lái ngồi ghế và thắt dây an toàn -->
                 <div class="driver-seatbelt-wrap">
                     <svg class="driver-seatbelt-svg" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- 1. Tựa đầu ghế lái (Headrest) -->
+                        <!-- Tựa đầu ghế lái -->
                         <rect x="75" y="10" width="90" height="42" rx="14" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 136, 255, 0.08)"/>
                         <path d="M95 52 L95 65 M145 52 L145 65" stroke="#00d4ff" stroke-width="2"/>
                         
-                        <!-- 2. Lưng ghế lái xe (Driver Car Seat Outline) -->
+                        <!-- Lưng ghế lái xe -->
                         <path d="M45 65 C45 65 30 110 30 180 C30 240 40 270 40 270 L200 270 C200 270 210 240 210 180 C210 110 195 65 195 65 Z" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="4 3" fill="rgba(6, 15, 28, 0.8)"/>
                         
-                        <!-- 3. Đầu & Khuôn mặt tài xế (Head & Facial Mesh) -->
+                        <!-- Đầu & Khuôn mặt tài xế -->
                         <path d="M120 40 C144 40 160 58 160 85 C160 115 142 135 120 138 C98 135 80 115 80 85 C80 58 96 40 120 40 Z" stroke="#00f0a8" stroke-width="1.8" fill="rgba(0, 240, 168, 0.06)"/>
                         
                         <!-- Chi tiết mắt & Mũi nhận diện AI DMS -->
@@ -1718,21 +1790,19 @@
                         <path d="M120 80 L120 98 L114 103 L126 103" stroke="#00d4ff" stroke-width="1.4"/>
                         <path d="M108 118 Q120 124 132 118" stroke="#00f0a8" stroke-width="1.5"/>
 
-                        <!-- 4. Cổ & Nửa thân trên tài xế (Shoulders & Torso) -->
+                        <!-- Cổ & Nửa thân trên tài xế -->
                         <path d="M106 137 L106 150 M134 137 L134 150" stroke="#00f0a8" stroke-width="1.6"/>
-                        <!-- Cầu vai và lồng ngực -->
                         <path d="M106 150 C80 155 52 170 48 215 L46 270 L194 270 L192 215 C188 170 160 155 134 150 Z" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 212, 255, 0.08)"/>
                         
-                        <!-- 5. Dây đai an toàn ô tô (Seatbelt bắt chéo vai chuẩn) -->
+                        <!-- Dây đai an toàn ô tô bắt chéo vai -->
                         <polygon points="176,146 192,154 78,270 62,270" stroke="#ffb703" stroke-width="2" fill="rgba(255, 183, 3, 0.28)"/>
-                        <!-- Khóa chốt an toàn (Seatbelt Buckle Indicator) -->
                         <rect x="68" y="248" width="16" height="20" rx="3" stroke="#ffb703" stroke-width="1.6" fill="rgba(255, 183, 3, 0.5)"/>
                         <path d="M72 258 L80 258" stroke="#040811" stroke-width="2"/>
 
-                        <!-- Vô lăng góc nhìn dưới (Steering wheel curve) -->
+                        <!-- Vô lăng góc nhìn dưới -->
                         <path d="M60 265 Q120 235 180 265" stroke="rgba(0, 212, 255, 0.6)" stroke-width="3"/>
 
-                        <!-- Các điểm mốc cảm biến AI (DMS Sensor Points) -->
+                        <!-- Các điểm mốc cảm biến AI -->
                         <circle cx="104" cy="82" r="2.5" class="dms-target-point"/>
                         <circle cx="136" cy="82" r="2.5" class="dms-target-point"/>
                         <circle cx="120" cy="103" r="2.5" class="dms-target-point" style="fill: #00d4ff;"/>
@@ -1956,19 +2026,19 @@
 
     <!-- Script Counter, Navbar Scroll & Random GNSS Satellite Stream -->
     <script>
-        // Hiệu ứng số vệ tinh GNSS nhảy ngẫu nhiên (12 đến 24 vệ tinh)
+        // Hiệu ứng số vệ tinh GNSS nhảy ngẫu nhiên từ 12 đến 24 vệ tinh
         const gnssElement = document.getElementById('gnssCount');
         if (gnssElement) {
             function updateGNSS() {
                 const count = Math.floor(Math.random() * (24 - 12 + 1)) + 12;
-                gnssElement.innerText = count;
+                gnssElement.innerText = Math.max(12, Math.min(24, count));
                 const nextInterval = Math.floor(Math.random() * 2500) + 2500;
                 setTimeout(updateGNSS, nextInterval);
             }
             updateGNSS();
         }
 
-        // Number Counters
+        // Counter chạy số chuẩn xác theo từng loại chỉ số
         const counters = document.querySelectorAll('.counter');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -1983,7 +2053,13 @@
                         current = target;
                         clearInterval(timer);
                     }
-                    counter.innerText = current.toLocaleString('vi-VN') + (target === 99 ? '%' : '+');
+                    if (target === 99) {
+                        counter.innerText = current + '%';
+                    } else if (target === 24) {
+                        counter.innerText = current + '/7';
+                    } else {
+                        counter.innerText = current.toLocaleString('vi-VN') + '+';
+                    }
                 }, 25);
                 observer.unobserve(counter);
             });
@@ -1991,7 +2067,7 @@
 
         counters.forEach(counter => observer.observe(counter));
 
-        // Navbar blur change on scroll
+        // Navbar đổi nền kính mờ khi cuộn trang
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.navbar');
             if (window.scrollY > 50) {
