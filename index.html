@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO Core Meta Tags -->
@@ -29,7 +29,7 @@
     <meta property="og:site_name" content="Vạn Phú Khánh GPS">
 
     <!-- Theme & Icons -->
-    <meta name="theme-color" content="#0082c9">
+    <meta name="theme-color" content="#040811">
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
 
     <!-- Fonts & Icons -->
@@ -108,7 +108,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 90px;
         }
 
         body {
@@ -124,7 +124,7 @@
             text-decoration: none;
         }
 
-        /* Ambient Background Grid & Glows */
+        /* Background Grid */
         body::before {
             content: "";
             position: fixed;
@@ -165,66 +165,55 @@
             pointer-events: none;
         }
 
-        /* Glass Navbar */
+        /* Glass Navbar (Responsive Logo Only) */
         .navbar {
             position: fixed;
-            top: 20px;
+            top: max(16px, env(safe-area-inset-top));
             left: 50%;
             transform: translateX(-50%);
-            width: min(1200px, calc(100% - 32px));
-            padding: 10px 24px;
+            width: min(1200px, calc(100% - 28px));
+            padding: 8px 18px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(8, 16, 29, 0.75);
+            background: rgba(8, 16, 29, 0.82);
             border: 1px solid var(--border-glass);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 20px;
+            border-radius: 18px;
             z-index: 1000;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-weight: 900;
         }
 
         .logo-img-wrapper {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(0, 212, 255, 0.3);
-            box-shadow: 0 0 15px rgba(0, 170, 255, 0.35);
+            box-shadow: 0 0 16px rgba(0, 170, 255, 0.35);
+            transition: transform 0.25s ease;
+        }
+
+        .logo:hover .logo-img-wrapper {
+            transform: scale(1.06);
+            border-color: var(--cyan);
         }
 
         .logo-img-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-        }
-
-        .logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            line-height: 1.15;
-            letter-spacing: -0.5px;
-        }
-
-        .logo-text small {
-            display: block;
-            color: var(--cyan);
-            font-size: 9px;
-            letter-spacing: 2px;
-            font-weight: 800;
         }
 
         .nav-links {
@@ -254,7 +243,7 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 11px 20px;
+            padding: 10px 18px;
             border-radius: 12px;
             font-weight: 700;
             font-size: 13.5px;
@@ -298,7 +287,7 @@
             color: #fff;
         }
 
-        /* Container & Grid Scaffolding */
+        /* Container */
         .container {
             max-width: 1240px;
             margin: 0 auto;
@@ -328,10 +317,10 @@
         }
 
         .section-title {
-            font-size: clamp(32px, 4.5vw, 54px);
+            font-size: clamp(30px, 4.2vw, 52px);
             font-weight: 900;
-            line-height: 1.25;
-            letter-spacing: -1.5px;
+            line-height: 1.22;
+            letter-spacing: -1.2px;
         }
 
         .section-desc {
@@ -350,7 +339,7 @@
         /* Hero Section */
         .hero {
             min-height: 100vh;
-            padding: 160px 0 90px;
+            padding: 140px 0 80px;
             display: flex;
             align-items: center;
         }
@@ -358,7 +347,7 @@
         .hero-grid {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
             width: 100%;
         }
@@ -374,7 +363,7 @@
             color: var(--emerald);
             font-size: 12px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
         }
 
         .dot-pulse {
@@ -387,10 +376,10 @@
         }
 
         .hero h1 {
-            font-size: clamp(38px, 5.2vw, 68px);
+            font-size: clamp(34px, 4.8vw, 64px);
             font-weight: 900;
-            line-height: 1.28;
-            letter-spacing: -1.5px;
+            line-height: 1.3;
+            letter-spacing: -1px;
             margin-bottom: 24px;
         }
 
@@ -401,10 +390,10 @@
 
         .hero-lead {
             color: var(--text-muted);
-            font-size: 17px;
+            font-size: 16.5px;
             line-height: 1.75;
             max-width: 580px;
-            margin-bottom: 35px;
+            margin-bottom: 32px;
         }
 
         .hero-actions {
@@ -416,7 +405,7 @@
         /* Telemetry Stage */
         .telemetry-stage {
             position: relative;
-            height: 520px;
+            height: 480px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -424,8 +413,8 @@
 
         .trong-dong-container {
             position: absolute;
-            width: 440px;
-            height: 440px;
+            width: 420px;
+            height: 420px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -444,8 +433,8 @@
 
         .neon-radar-circle {
             position: absolute;
-            width: 460px;
-            height: 460px;
+            width: 440px;
+            height: 440px;
             border-radius: 50%;
             border: 1px dashed rgba(0, 212, 255, 0.25);
             box-shadow: inset 0 0 35px rgba(0, 136, 255, 0.12), 0 0 25px rgba(0, 212, 255, 0.12);
@@ -462,17 +451,17 @@
 
         .center-device-pod {
             position: relative;
-            width: 200px;
-            height: 200px;
-            border-radius: 28px;
-            background: linear-gradient(145deg, rgba(12, 24, 42, 0.92), rgba(6, 13, 23, 0.95));
+            width: 185px;
+            height: 185px;
+            border-radius: 26px;
+            background: linear-gradient(145deg, rgba(12, 24, 42, 0.94), rgba(6, 13, 23, 0.96));
             border: 2px solid rgba(0, 212, 255, 0.5);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             box-shadow:
-                0 0 50px rgba(0, 136, 255, 0.4),
+                0 0 45px rgba(0, 136, 255, 0.4),
                 inset 0 0 25px rgba(0, 212, 255, 0.15);
             animation: float-telemetry 4s ease-in-out infinite;
             backdrop-filter: blur(12px);
@@ -480,15 +469,15 @@
         }
 
         .center-device-pod i {
-            font-size: 58px;
+            font-size: 52px;
             color: var(--cyan);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
         }
 
         .device-model-label {
             font-family: var(--font-mono);
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 700;
             letter-spacing: 1px;
             color: #fff;
@@ -508,24 +497,24 @@
         /* 4 HUD Cards */
         .hud-card {
             position: absolute;
-            padding: 12px 16px;
+            padding: 11px 15px;
             background: rgba(9, 18, 33, 0.88);
             border: 1px solid var(--border-glow);
-            border-radius: 16px;
+            border-radius: 14px;
             backdrop-filter: blur(16px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
             z-index: 4;
             animation: float-hud 5s ease-in-out infinite;
         }
 
         .hud-card.hud-top-right {
             top: 15px;
-            right: -10px;
+            right: -8px;
         }
 
         .hud-card.hud-bottom-left {
             bottom: 25px;
-            left: -15px;
+            left: -12px;
             animation-delay: 1.5s;
         }
 
@@ -537,12 +526,12 @@
 
         .hud-card.hud-top-left {
             top: 15px;
-            left: -10px;
+            left: -8px;
             animation-delay: 3.5s;
         }
 
         .hud-title {
-            font-size: 9.5px;
+            font-size: 9px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: var(--text-muted);
@@ -550,7 +539,7 @@
         }
 
         .hud-val {
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 800;
             margin-top: 3px;
             display: flex;
@@ -558,7 +547,7 @@
             gap: 8px;
         }
 
-        /* Vạch sóng 4G */
+        /* Signal Bars */
         .signal-bars-4g {
             display: inline-flex;
             align-items: flex-end;
@@ -631,7 +620,7 @@
             line-height: 1.7;
         }
 
-        /* Solutions Ecosystem Grid */
+        /* Solutions Grid */
         .solution-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -710,7 +699,7 @@
             font-size: 12px;
         }
 
-        /* Live Fleet Control Simulation */
+        /* Dashboard Container */
         .dashboard-container {
             border: 1px solid var(--border-glow);
             border-radius: 24px;
@@ -791,7 +780,7 @@
             font-family: var(--font-mono);
         }
 
-        /* Earth Map Stage */
+        /* Live Map Stage */
         .live-map-stage {
             position: relative;
             background:
@@ -812,7 +801,6 @@
             height: 100%;
         }
 
-        /* Chấm sóng vệ tinh nhấp nháy định vị */
         .sat-ping-node {
             position: absolute;
             display: flex;
@@ -879,7 +867,7 @@
             100% { transform: scale(1.4); opacity: 0; }
         }
 
-        /* AI Driver Monitoring - Nửa thân trên tài xế, Ghế lái & Dây đeo an toàn */
+        /* Camera Screen Mockup */
         .camera-grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -961,7 +949,7 @@
             50% { opacity: 1; r: 3.5px; }
         }
 
-        /* Tech Specs & Legal Compliance */
+        /* Tech Specs */
         .specs-grid-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1053,7 +1041,7 @@
             line-height: 1.5;
         }
 
-        /* Stats Counter */
+        /* Stats Grid */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -1091,7 +1079,7 @@
             font-weight: 600;
         }
 
-        /* High-Impact CTA */
+        /* CTA */
         .cta-box {
             text-align: center;
             padding: 100px 30px;
@@ -1234,8 +1222,8 @@
         /* Floating Quick Buttons */
         .float-ctas {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: max(20px, env(safe-area-inset-bottom));
+            right: 20px;
             display: flex;
             flex-direction: column;
             gap: 12px;
@@ -1243,13 +1231,13 @@
         }
 
         .float-btn {
-            width: 54px;
-            height: 54px;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: grid;
             place-items: center;
             color: #fff;
-            font-size: 22px;
+            font-size: 21px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: all 0.3s ease;
         }
@@ -1300,7 +1288,7 @@
             100% { top: 100%; opacity: 0.2; }
         }
 
-        /* Responsive */
+        /* Responsive Mobile Layout (iPhone 15 Optimized) */
         @media (max-width: 992px) {
             .hero-grid, .camera-grid-layout, .specs-grid-layout, .footer-grid {
                 grid-template-columns: 1fr;
@@ -1312,14 +1300,60 @@
                 grid-template-columns: 1fr;
             }
             .fleet-sidebar {
-                display: none;
+                max-height: 280px;
             }
             .nav-links {
                 display: none;
             }
+            .hero {
+                padding-top: max(110px, calc(env(safe-area-inset-top) + 80px));
+            }
+            .telemetry-stage {
+                height: 380px;
+            }
             .trong-dong-container, .neon-radar-circle {
-                width: 340px;
-                height: 340px;
+                width: 310px;
+                height: 310px;
+            }
+            .center-device-pod {
+                width: 145px;
+                height: 145px;
+            }
+            .center-device-pod i {
+                font-size: 42px;
+            }
+            .hud-card {
+                padding: 8px 12px;
+                border-radius: 12px;
+            }
+            .hud-title {
+                font-size: 8px;
+            }
+            .hud-val {
+                font-size: 12px;
+            }
+            .hud-card.hud-top-right {
+                top: 0;
+                right: 0;
+            }
+            .hud-card.hud-top-left {
+                top: 0;
+                left: 0;
+            }
+            .hud-card.hud-bottom-left {
+                bottom: 5px;
+                left: 0;
+            }
+            .hud-card.hud-bottom-right {
+                bottom: 5px;
+                right: 0;
+            }
+            .camera-screen-mockup {
+                height: 360px;
+            }
+            .driver-seatbelt-wrap {
+                width: 220px;
+                height: 260px;
             }
         }
     </style>
@@ -1329,15 +1363,11 @@
     <div class="ambient-glow-1"></div>
     <div class="ambient-glow-2"></div>
 
-    <!-- Glass Floating Navbar -->
+    <!-- Glass Floating Navbar (Logo Only) -->
     <nav class="navbar">
-        <a href="#" class="logo">
+        <a href="#" class="logo" aria-label="Vạn Phú Khánh GPS">
             <div class="logo-img-wrapper">
                 <img src="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png" alt="Logo Vạn Phú Khánh GPS">
-            </div>
-            <div class="logo-text">
-                VẠN PHÚ KHÁNH
-                <small>GPS TECHNOLOGY</small>
             </div>
         </a>
 
@@ -1375,7 +1405,7 @@
                 </h1>
 
                 <p class="hero-lead">
-                    Giải pháp hộp đen giám sát hành trình 4G thế hệ mới tích hợp Camera người lái & khoang hành khách theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong> và <strong>Luật TTATGT đường bộ 2024</strong>.
+                    Giải pháp hộp đen giám sát hành trình 4G thế hệ mới tích hợp Camera người lái & khoang hành khách theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong> và <strong>Luật TTATGT đường bộ 2024</strong>[cite: 1, 2, 3].
                 </p>
 
                 <div class="hero-actions">
@@ -1463,7 +1493,7 @@
                         <i class="fa-solid fa-triangle-exclamation"></i>
                     </div>
                     <h3>Quy Chuẩn BCA Mới?</h3>
-                    <p>Phương tiện kinh doanh vận tải bắt buộc trang bị thiết bị giám sát hành trình và camera đạt chuẩn QCVN06:2024/BCA để kiểm định thông suốt.</p>
+                    <p>Phương tiện kinh doanh vận tải bắt buộc trang bị thiết bị giám sát hành trình và camera đạt chuẩn QCVN06:2024/BCA để kiểm định thông suốt[cite: 1, 2, 3].</p>
                 </div>
 
                 <div class="problem-card">
@@ -1499,11 +1529,11 @@
                     <div class="solution-number">01 / HARDWARE</div>
                     <i class="fa-solid fa-satellite solution-icon-float"></i>
                     <h3>Hộp Đen Viview DV4G</h3>
-                    <p>Thiết bị giám sát hành trình 4G tốc độ 150Mbps, thiết kế cắm giắc tiện dụng, đáp ứng hoàn toàn chuẩn QCVN06:2024/BCA.</p>
+                    <p>Thiết bị giám sát hành trình 4G tốc độ 150Mbps, thiết kế cắm giắc tiện dụng, đáp ứng hoàn toàn chuẩn QCVN06:2024/BCA[cite: 1, 2, 3].</p>
                     <ul class="solution-features">
                         <li><i class="fa-solid fa-check"></i> Vỏ công nghiệp tản nhiệt bền bỉ</li>
-                        <li><i class="fa-solid fa-check"></i> Điện áp tự thích ứng 12V - 24V</li>
-                        <li><i class="fa-solid fa-check"></i> Đầu đọc thẻ lái xe RFID tích hợp</li>
+                        <li><i class="fa-solid fa-check"></i> Điện áp tự thích ứng 12V - 24V[cite: 1, 2, 3]</li>
+                        <li><i class="fa-solid fa-check"></i> Đầu đọc thẻ lái xe RFID tích hợp[cite: 1, 2, 3]</li>
                     </ul>
                 </div>
 
@@ -1511,9 +1541,9 @@
                     <div class="solution-number">02 / CAMERA AI</div>
                     <i class="fa-solid fa-video solution-icon-float"></i>
                     <h3>Camera Nghị Định & DMS</h3>
-                    <p>Tích hợp camera giám sát người lái nhận diện hành vi buồn ngủ, mất tập trung và camera bao quát khoang hành khách.</p>
+                    <p>Tích hợp camera giám sát người lái nhận diện hành vi buồn ngủ, mất tập trung và camera bao quát khoang hành khách[cite: 1, 2, 3].</p>
                     <ul class="solution-features">
-                        <li><i class="fa-solid fa-check"></i> Tự động chụp 1 phút/ảnh gửi máy chủ</li>
+                        <li><i class="fa-solid fa-check"></i> Tự động chụp 1 phút/ảnh gửi máy chủ[cite: 1, 2, 3]</li>
                         <li><i class="fa-solid fa-check"></i> Ghi hình rõ nét cả trong bóng tối hồng ngoại</li>
                         <li><i class="fa-solid fa-check"></i> Cảnh báo vi phạm âm thanh tức thì</li>
                     </ul>
@@ -1823,7 +1853,7 @@
                 <span class="section-tag">AI SMART SURVEILLANCE</span>
                 <h2 class="section-title">GPS biết xe ở đâu.<br><span class="gradient-text">Camera thấu hiểu</span> người lái & an toàn.</h2>
                 <p class="section-desc">
-                    Sự kết hợp giữa định vị vệ tinh và thị giác nhân tạo thông minh giúp giám sát trạng thái tài xế ngồi ghế lái, kiểm soát việc thắt dây an toàn, phát hiện sớm nguy cơ ngủ gật, sử dụng điện thoại hay mất tập trung theo đúng chuẩn Thông tư 71/2024/TT-BCA.
+                    Sự kết hợp giữa định vị vệ tinh và thị giác nhân tạo thông minh giúp giám sát trạng thái tài xế ngồi ghế lái, kiểm soát việc thắt dây an toàn, phát hiện sớm nguy cơ ngủ gật, sử dụng điện thoại hay mất tập trung theo đúng chuẩn Thông tư 71/2024/TT-BCA[cite: 1, 2, 3].
                 </p>
 
                 <div style="margin-top: 30px;">
@@ -1848,14 +1878,14 @@
                 <div class="spec-glass-box">
                     <h3><i class="fa-solid fa-sliders"></i> Phần Cứng Viview DV4G</h3>
                     <table class="spec-table-dark">
-                        <tr><th>Nhà sản xuất</th><td>Viview (Công nghệ Việt)</td></tr>
-                        <tr><th>Nhà phân phối</th><td>Vạn Phú Khánh GPS</td></tr>
-                        <tr><th>Mã Model</th><td>DV4G / VV4G-02</td></tr>
-                        <tr><th>Hợp chuẩn quy chuẩn</th><td><strong>QCVN06:2024/BCA</strong></td></tr>
-                        <tr><th>Mạng truyền thông</th><td>4G LTE tốc độ cao</td></tr>
-                        <tr><th>Nguồn điện vận hành</th><td>12V – 24V DC</td></tr>
-                        <tr><th>Nhiệt độ hoạt động</th><td>0°C đến 70°C</td></tr>
-                        <tr><th>Phụ kiện kèm theo</th><td>Máy DV4G, Ăng-ten GPS, Thẻ RFID, SIM 4G</td></tr>
+                        <tr><th>Nhà sản xuất</th><td>Viview (Công nghệ Việt)[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Nhà phân phối</th><td>Vạn Phú Khánh GPS[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Mã Model</th><td>DV4G / VV4G-02[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Hợp chuẩn quy chuẩn</th><td><strong>QCVN06:2024/BCA</strong>[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Mạng truyền thông</th><td>4G LTE tốc độ cao[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Nguồn điện vận hành</th><td>12V – 24V DC[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Nhiệt độ hoạt động</th><td>0°C đến 70°C[cite: 1, 2, 3]</td></tr>
+                        <tr><th>Phụ kiện kèm theo</th><td>Máy DV4G, Ăng-ten GPS, Thẻ RFID, SIM 4G[cite: 1, 2, 3]</td></tr>
                     </table>
                 </div>
 
@@ -1866,7 +1896,7 @@
                         <div class="law-item-icon"><i class="fa-solid fa-gavel"></i></div>
                         <div class="law-item-info">
                             <h5>Luật TTATGT Đường Bộ 2024</h5>
-                            <p>Quy định bắt buộc đối với phương tiện kinh doanh vận tải về thiết bị giám sát hành trình và truyền dữ liệu liên tục.</p>
+                            <p>Quy định bắt buộc đối với phương tiện kinh doanh vận tải về thiết bị giám sát hành trình và truyền dữ liệu liên tục[cite: 1, 2, 3].</p>
                         </div>
                     </div>
 
@@ -1874,7 +1904,7 @@
                         <div class="law-item-icon"><i class="fa-solid fa-file-contract"></i></div>
                         <div class="law-item-info">
                             <h5>Nghị Định 151/2024/NĐ-CP</h5>
-                            <p>Quy định chi tiết về chuyển đổi hạ tầng giám sát và chế tài an toàn kỹ thuật phương tiện cơ giới.</p>
+                            <p>Quy định chi tiết về chuyển đổi hạ tầng giám sát và chế tài an toàn kỹ thuật phương tiện cơ giới[cite: 1, 2, 3].</p>
                         </div>
                     </div>
 
@@ -1882,7 +1912,7 @@
                         <div class="law-item-icon"><i class="fa-solid fa-stamp"></i></div>
                         <div class="law-item-info">
                             <h5>Thông Tư 71/2024/TT-BCA</h5>
-                            <p>Quy chuẩn Quốc gia chính thức từ Bộ Công An áp dụng cho hộp đen và camera giám sát tài xế / hành khách.</p>
+                            <p>Quy chuẩn Quốc gia chính thức từ Bộ Công An áp dụng cho hộp đen và camera giám sát tài xế / hành khách[cite: 1, 2, 3].</p>
                         </div>
                     </div>
                 </div>
@@ -1922,7 +1952,7 @@
         <div class="container">
             <div class="cta-box">
                 <h2>SẴN SÀNG QUẢN LÝ<br><span class="gradient-text">ĐỘI XE CHUẨN BCA?</span></h2>
-                <p>Nâng cấp ngay hôm nay để nhận trọn gói ưu đãi chuyển đổi 4G miễn phí 100% và bảo hành trọn đời VPK Care.</p>
+                <p>Nâng cấp ngay hôm nay để nhận trọn gói ưu đãi chuyển đổi 4G miễn phí 100% và bảo hành trọn đời VPK Care[cite: 1, 2, 3].</p>
                 <div class="cta-buttons">
                     <a href="tel:0585114114" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;">
                         <i class="fa-solid fa-phone"></i> GỌI HOTLINE: 0585.114.114
@@ -1941,7 +1971,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <h4>VẠN PHÚ KHÁNH GPS</h4>
-                    <p>Thương nhân triển khai chương trình nâng cấp thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA miễn phí 100% tại Khánh Hòa và khu vực lân cận. Đồng hành tin cậy của mọi đội xe.</p>
+                    <p>Thương nhân triển khai chương trình nâng cấp thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA miễn phí 100% tại Khánh Hòa và khu vực lân cận[cite: 1, 2, 3]. Đồng hành tin cậy của mọi đội xe.</p>
                     
                     <!-- Google Rating Badge -->
                     <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="google-rating-card" title="Xem đánh giá trên Google Maps">
@@ -1985,7 +2015,7 @@
                 </div>
 
                 <div class="footer-col">
-                    <h5>Kênh Liên Hệ 24/7</h5>
+                    <h5>Kênh Hỗ Trợ 24/7</h5>
                     <ul class="footer-list">
                         <li>
                             <i class="fa-solid fa-phone"></i>
