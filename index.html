@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -10,33 +10,23 @@
     <meta name="description" content="Vạn Phú Khánh GPS cung cấp thiết bị giám sát hành trình 4G hợp chuẩn QCVN06:2024/BCA, tích hợp Camera lái xe & hành khách. Truyền dữ liệu chuẩn xác về Cục CSGT - Bộ Công An. Lắp đặt tận nơi tại Khánh Hòa. Hotline 0585.114.114.">
     <meta name="keywords" content="thiết bị giám sát hành trình, hộp đen 4G, QCVN06:2024, BCA, Cục CSGT, camera hành trình, định vị xe tải, Vạn Phú Khánh GPS, Nha Trang, Khánh Hòa">
     <meta name="author" content="Vạn Phú Khánh GPS">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <link rel="canonical" href="https://www.vanphukhanh.com/">
 
-    <!-- Geo Tags (Local SEO) -->
-    <meta name="geo.region" content="VN-34">
-    <meta name="geo.placename" content="Nha Trang, Khánh Hòa">
-    <meta name="geo.position" content="12.2388;109.1967">
-    <meta name="ICBM" content="12.2388, 109.1967">
-
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="vi_VN">
     <meta property="og:url" content="https://www.vanphukhanh.com/">
     <meta property="og:title" content="Vạn Phú Khánh GPS - Thiết Bị Giám Sát Hành Trình Đạt Chuẩn BCA QCVN06:2024">
     <meta property="og:description" content="Giải pháp hộp đen 4G tích hợp Camera giám sát lái xe & hành khách. Đạt chuẩn QCVN06:2024/BCA. Truyền dữ liệu về Cục CSGT - Bộ Công An. Lắp đặt tận nơi, bảo hành trọn đời.">
     <meta property="og:image" content="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
-    <meta property="og:site_name" content="Vạn Phú Khánh GPS">
 
-    <!-- Theme & Icons -->
-    <meta name="theme-color" content="#040811">
+    <!-- Favicon & Fonts -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
-
-    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -50,2026 +40,886 @@
                 "url": "https://www.vanphukhanh.com",
                 "telephone": "+84-585-114-114",
                 "email": "ctyvanphukhanh@gmail.com",
-                "priceRange": "$$",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Thôn Tân Mỹ, xã Tân Định",
                     "addressLocality": "Ninh Hòa",
                     "addressRegion": "Khánh Hòa",
                     "addressCountry": "VN"
-                },
-                "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 12.2388,
-                    "longitude": 109.1967
-                }
-            },
-            {
-                "@type": "Product",
-                "name": "Thiết bị giám sát hành trình Viview DV4G / VV4G-02",
-                "description": "Thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA, tích hợp Camera giám sát lái xe và hành khách, truyền dữ liệu về Cục CSGT - Bộ Công An",
-                "brand": {
-                    "@type": "Brand",
-                    "name": "Viview"
-                },
-                "offers": {
-                    "@type": "Offer",
-                    "priceCurrency": "VND",
-                    "price": "0",
-                    "availability": "https://schema.org/InStock",
-                    "url": "https://www.vanphukhanh.com"
                 }
             }
         ]
     }
     </script>
 
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            base: '#040811',
+                            surface: '#09121f',
+                            card: 'rgba(13, 25, 44, 0.7)',
+                            cyan: '#00d4ff',
+                            primary: '#0088ff',
+                            emerald: '#00f0a8',
+                            amber: '#ffb703'
+                        }
+                    },
+                    animation: {
+                        'radar-sweep': 'radar 6s linear infinite',
+                        'float-hud': 'floatHud 5s ease-in-out infinite',
+                        'pulse-dot': 'pulseDot 2s infinite',
+                        'laser-scan': 'laserScan 3.2s linear infinite',
+                        'spin-slow': 'spin 36s linear infinite'
+                    },
+                    keyframes: {
+                        radar: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
+                        floatHud: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
+                        pulseDot: { '0%, 100%': { opacity: '1', transform: 'scale(1)' }, '50%': { opacity: '0.4', transform: 'scale(0.85)' } },
+                        laserScan: { '0%': { top: '0', opacity: '0.2' }, '50%': { opacity: '1' }, '100%': { top: '100%', opacity: '0.2' } }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --bg-base: #040811;
-            --bg-surface: #09121f;
-            --bg-card: rgba(13, 25, 44, 0.7);
-            --border-glass: rgba(255, 255, 255, 0.08);
-            --border-glow: rgba(0, 200, 255, 0.25);
-            --primary: #0088ff;
-            --cyan: #00d4ff;
-            --emerald: #00f0a8;
-            --amber: #ffb703;
-            --text-main: #f1f5f9;
-            --text-muted: #8b9bb4;
-            --font-mono: 'JetBrains Mono', monospace;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--bg-base);
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Background Grid */
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background:
-                linear-gradient(rgba(0, 150, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 150, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 90%);
-            -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black 40%, transparent 90%);
-            z-index: -2;
-            pointer-events: none;
-        }
-
-        .ambient-glow-1 {
-            position: fixed;
-            width: 700px;
-            height: 700px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.15), transparent 70%);
-            top: -200px;
-            right: -200px;
-            filter: blur(120px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .ambient-glow-2 {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent 70%);
-            bottom: 10%;
-            left: -200px;
-            filter: blur(140px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Glass Navbar (Responsive Logo Only) */
-        .navbar {
-            position: fixed;
-            top: max(16px, env(safe-area-inset-top));
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(1200px, calc(100% - 28px));
-            padding: 8px 18px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: rgba(8, 16, 29, 0.82);
-            border: 1px solid var(--border-glass);
+        .glass-panel {
+            background: rgba(9, 18, 33, 0.82);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 18px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .logo {
-            display: flex;
-            align-items: center;
+        .glass-panel:hover {
+            border-color: rgba(0, 212, 255, 0.35);
+            box-shadow: 0 0 35px rgba(0, 136, 255, 0.15);
         }
-
-        .logo-img-wrapper {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            box-shadow: 0 0 16px rgba(0, 170, 255, 0.35);
-            transition: transform 0.25s ease;
-        }
-
-        .logo:hover .logo-img-wrapper {
-            transform: scale(1.06);
-            border-color: var(--cyan);
-        }
-
-        .logo-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            color: var(--text-muted);
-            font-size: 13.5px;
-            font-weight: 600;
-        }
-
-        .nav-links a {
-            transition: color 0.25s;
-        }
-
-        .nav-links a:hover {
-            color: var(--cyan);
-        }
-
-        .nav-ctas {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 13.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #00c3ff, #0066ff);
-            color: #fff;
-            box-shadow: 0 6px 25px rgba(0, 130, 255, 0.35);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 35px rgba(0, 160, 255, 0.5);
-        }
-
-        .btn-zalo {
-            background: rgba(0, 104, 255, 0.15);
-            border: 1px solid rgba(0, 104, 255, 0.4);
-            color: #70b4ff;
-        }
-
-        .btn-zalo:hover {
-            background: #0068ff;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-glass);
-            color: #cbd5e1;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        section {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .section-header {
-            max-width: 800px;
-            margin-bottom: 60px;
-        }
-
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--cyan);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: clamp(30px, 4.2vw, 52px);
-            font-weight: 900;
-            line-height: 1.22;
-            letter-spacing: -1.2px;
-        }
-
-        .section-desc {
-            margin-top: 18px;
-            color: var(--text-muted);
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
         .gradient-text {
             background: linear-gradient(90deg, #ffffff, #67e8f9, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            padding: 140px 0 80px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
-            gap: 40px;
-            align-items: center;
-            width: 100%;
-        }
-
-        .badge-live {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 14px;
-            border: 1px solid rgba(0, 240, 168, 0.3);
-            background: rgba(0, 240, 168, 0.06);
-            border-radius: 50px;
-            color: var(--emerald);
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 22px;
-        }
-
-        .dot-pulse {
-            width: 8px;
-            height: 8px;
-            background: var(--emerald);
-            border-radius: 50%;
-            box-shadow: 0 0 12px var(--emerald);
-            animation: pulse-dot 2s infinite;
-        }
-
-        .hero h1 {
-            font-size: clamp(34px, 4.8vw, 64px);
-            font-weight: 900;
-            line-height: 1.3;
-            letter-spacing: -1px;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 .heading-line {
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .hero-lead {
-            color: var(--text-muted);
-            font-size: 16.5px;
-            line-height: 1.75;
-            max-width: 580px;
-            margin-bottom: 32px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        /* Telemetry Stage */
-        .telemetry-stage {
-            position: relative;
-            height: 480px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .trong-dong-container {
-            position: absolute;
-            width: 420px;
-            height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
-
-        .trong-dong-img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            opacity: 0.38;
-            filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.45));
-            animation: rotate-trong-dong-reverse 36s linear infinite;
-        }
-
-        .neon-radar-circle {
-            position: absolute;
-            width: 440px;
-            height: 440px;
-            border-radius: 50%;
-            border: 1px dashed rgba(0, 212, 255, 0.25);
-            box-shadow: inset 0 0 35px rgba(0, 136, 255, 0.12), 0 0 25px rgba(0, 212, 255, 0.12);
-        }
-
-        .neon-radar-sweep {
-            position: absolute;
-            inset: -5px;
-            border-radius: 50%;
-            background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 212, 255, 0.28) 45deg, transparent 90deg);
-            animation: rotate-radar 7s linear infinite;
-            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
-        }
-
-        .center-device-pod {
-            position: relative;
-            width: 185px;
-            height: 185px;
-            border-radius: 26px;
-            background: linear-gradient(145deg, rgba(12, 24, 42, 0.94), rgba(6, 13, 23, 0.96));
-            border: 2px solid rgba(0, 212, 255, 0.5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow:
-                0 0 45px rgba(0, 136, 255, 0.4),
-                inset 0 0 25px rgba(0, 212, 255, 0.15);
-            animation: float-telemetry 4s ease-in-out infinite;
-            backdrop-filter: blur(12px);
-            z-index: 3;
-        }
-
-        .center-device-pod i {
-            font-size: 52px;
-            color: var(--cyan);
-            margin-bottom: 6px;
-            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
-        }
-
-        .device-model-label {
-            font-family: var(--font-mono);
-            font-size: 12.5px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            color: #fff;
-        }
-
-        .device-status-badge {
-            font-size: 9px;
-            font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 20px;
-            background: rgba(0, 240, 168, 0.15);
-            color: var(--emerald);
-            border: 1px solid rgba(0, 240, 168, 0.3);
-            margin-top: 4px;
-        }
-
-        /* 4 HUD Cards */
-        .hud-card {
-            position: absolute;
-            padding: 11px 15px;
-            background: rgba(9, 18, 33, 0.88);
-            border: 1px solid var(--border-glow);
-            border-radius: 14px;
-            backdrop-filter: blur(16px);
-            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.5);
-            z-index: 4;
-            animation: float-hud 5s ease-in-out infinite;
-        }
-
-        .hud-card.hud-top-right {
-            top: 15px;
-            right: -8px;
-        }
-
-        .hud-card.hud-bottom-left {
-            bottom: 25px;
-            left: -12px;
-            animation-delay: 1.5s;
-        }
-
-        .hud-card.hud-bottom-right {
-            bottom: 15px;
-            right: 0;
-            animation-delay: 2.5s;
-        }
-
-        .hud-card.hud-top-left {
-            top: 15px;
-            left: -8px;
-            animation-delay: 3.5s;
-        }
-
-        .hud-title {
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            font-family: var(--font-mono);
-        }
-
-        .hud-val {
-            font-size: 14.5px;
-            font-weight: 800;
-            margin-top: 3px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Signal Bars */
-        .signal-bars-4g {
-            display: inline-flex;
-            align-items: flex-end;
-            gap: 2.5px;
-            height: 14px;
-            padding-bottom: 1px;
-        }
-
-        .signal-bar {
-            width: 3px;
-            background: var(--emerald);
-            border-radius: 1px;
-            box-shadow: 0 0 6px var(--emerald);
-        }
-
-        .signal-bar:nth-child(1) { height: 4px; animation: signal-glow 1.4s infinite ease-in-out 0.1s; }
-        .signal-bar:nth-child(2) { height: 7px; animation: signal-glow 1.4s infinite ease-in-out 0.3s; }
-        .signal-bar:nth-child(3) { height: 10px; animation: signal-glow 1.4s infinite ease-in-out 0.5s; }
-        .signal-bar:nth-child(4) { height: 14px; animation: signal-glow 1.4s infinite ease-in-out 0.7s; }
-
-        @keyframes signal-glow {
-            0%, 100% { opacity: 0.35; transform: scaleY(0.75); }
-            50% { opacity: 1; transform: scaleY(1); }
-        }
-
-        /* Problems Grid */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .problem-card {
-            padding: 36px 30px;
-            border: 1px solid var(--border-glass);
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 24px;
-            transition: all 0.4s ease;
-        }
-
-        .problem-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--border-glow);
-            background: rgba(0, 140, 255, 0.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .problem-icon-wrapper {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.25);
-            display: grid;
-            place-items: center;
-            color: #f87171;
-            font-size: 22px;
-            margin-bottom: 24px;
-        }
-
-        .problem-card h3 {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .problem-card p {
-            color: var(--text-muted);
-            font-size: 14.5px;
-            line-height: 1.7;
-        }
-
-        /* Solutions Grid */
-        .solution-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .solution-card {
-            position: relative;
-            padding: 40px 32px;
-            border-radius: 26px;
-            background: linear-gradient(160deg, #0a172a, #050d18);
-            border: 1px solid var(--border-glass);
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .solution-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 25px 60px rgba(0, 100, 255, 0.15);
-        }
-
-        .solution-number {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            font-weight: 800;
-            color: var(--cyan);
-            letter-spacing: 2px;
-        }
-
-        .solution-icon-float {
-            position: absolute;
-            right: 20px;
-            top: 30px;
-            font-size: 70px;
-            color: rgba(0, 212, 255, 0.1);
-            transition: all 0.4s ease;
-        }
-
-        .solution-card:hover .solution-icon-float {
-            color: rgba(0, 212, 255, 0.25);
-            transform: scale(1.1) rotate(-5deg);
-        }
-
-        .solution-card h3 {
-            margin-top: 80px;
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .solution-card p {
-            color: var(--text-muted);
-            font-size: 14.5px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .solution-features {
-            list-style: none;
-            border-top: 1px solid var(--border-glass);
-            padding-top: 16px;
-        }
-
-        .solution-features li {
-            font-size: 13.5px;
-            color: #cbd5e1;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .solution-features li i {
-            color: var(--emerald);
-            font-size: 12px;
-        }
-
-        /* Dashboard Container */
-        .dashboard-container {
-            border: 1px solid var(--border-glow);
-            border-radius: 24px;
-            background: #060e1a;
-            overflow: hidden;
-            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
-        }
-
-        .dashboard-topbar {
-            padding: 16px 24px;
-            background: rgba(10, 22, 39, 0.9);
-            border-bottom: 1px solid var(--border-glass);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-mono);
-            font-size: 13px;
-        }
-
-        .dashboard-layout {
-            display: grid;
-            grid-template-columns: 330px 1fr;
-            min-height: 520px;
-        }
-
-        .fleet-sidebar {
-            padding: 16px;
-            border-right: 1px solid var(--border-glass);
-            background: rgba(5, 12, 22, 0.6);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-height: 520px;
-            overflow-y: auto;
-        }
-
-        .fleet-sidebar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .fleet-sidebar::-webkit-scrollbar-thumb {
-            background: rgba(0, 212, 255, 0.3);
-            border-radius: 4px;
-        }
-
-        .vehicle-strip {
-            padding: 12px 14px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border-glass);
-            transition: all 0.25s;
-            cursor: pointer;
-        }
-
-        .vehicle-strip:hover {
-            border-color: rgba(0, 212, 255, 0.4);
-            background: rgba(0, 212, 255, 0.04);
-        }
-
-        .vehicle-strip.active {
-            border-color: var(--cyan);
-            background: rgba(0, 212, 255, 0.08);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
-        }
-
-        .vehicle-strip-head {
-            display: flex;
-            justify-content: space-between;
-            font-weight: 700;
-            font-size: 13px;
-        }
-
-        .vehicle-strip-sub {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: var(--text-muted);
-            margin-top: 4px;
-            font-family: var(--font-mono);
-        }
-
-        /* Live Map Stage */
-        .live-map-stage {
-            position: relative;
-            background:
-                radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.14), transparent 75%),
-                linear-gradient(rgba(0, 136, 255, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 136, 255, 0.06) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .orbit-connection-path {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Chấm sóng vệ tinh nhấp nháy định vị */
-        .sat-ping-node {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .sat-core-dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--cyan);
-            box-shadow: 0 0 15px var(--cyan);
-            z-index: 2;
-        }
-
-        .sat-ping-ring {
-            position: absolute;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: 1.5px solid var(--cyan);
-            animation: sat-wave-expand 2.2s infinite ease-out;
-            pointer-events: none;
-        }
-
-        .sat-ping-ring-2 {
-            position: absolute;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            border: 1px dashed rgba(0, 240, 168, 0.6);
-            animation: sat-wave-expand 2.2s infinite ease-out 0.7s;
-            pointer-events: none;
-        }
-
-        .sat-ping-node.node-1 { top: 28%; left: 22%; }
-        .sat-ping-node.node-2 { top: 52%; left: 45%; }
-        .sat-ping-node.node-3 { top: 22%; left: 66%; }
-        .sat-ping-node.node-4 { top: 64%; left: 74%; }
-        .sat-ping-node.node-5 { top: 78%; left: 34%; }
-        .sat-ping-node.node-6 { top: 38%; left: 84%; }
-        .sat-ping-node.node-7 { top: 72%; left: 56%; }
-
-        .sat-tag {
-            position: absolute;
-            top: -22px;
-            left: 50%;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            font-family: var(--font-mono);
-            font-size: 9.5px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 4px;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid var(--border-glass);
-            color: #7ddcff;
-        }
-
-        @keyframes sat-wave-expand {
-            0% { transform: scale(0.3); opacity: 1; }
-            100% { transform: scale(1.4); opacity: 0; }
-        }
-
-        /* Camera Screen Mockup */
-        .camera-grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .camera-screen-mockup {
-            height: 440px;
-            border-radius: 26px;
-            overflow: hidden;
-            position: relative;
-            background:
-                radial-gradient(circle at 50% 45%, #182e44, #040912 75%);
-            border: 1px solid rgba(0, 212, 255, 0.35);
-            box-shadow: 0 0 50px rgba(0, 180, 255, 0.18);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .driver-seatbelt-wrap {
-            position: relative;
-            width: 270px;
-            height: 310px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .driver-seatbelt-svg {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 0 14px rgba(0, 212, 255, 0.6));
-            animation: pulse-driver 3s ease-in-out infinite;
-        }
-
-        .dms-target-point {
-            fill: #00e0a0;
-            animation: blink-dms 2s infinite ease-in-out;
-        }
-
-        .laser-scan-bar {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--cyan);
-            box-shadow: 0 0 18px var(--cyan), 0 0 35px var(--cyan);
-            animation: laser-scan 3.2s linear infinite;
-        }
-
-        .ai-telemetry-tags {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .ai-telemetry-tags span {
-            background: rgba(0, 0, 0, 0.75);
-            border: 1px solid var(--border-glass);
-            padding: 6px 11px;
-            border-radius: 8px;
-            font-size: 10.5px;
-            font-family: var(--font-mono);
-            color: #a5f3fc;
-        }
-
-        @keyframes pulse-driver {
-            0%, 100% { transform: scale(1); opacity: 0.92; }
-            50% { transform: scale(1.02); opacity: 1; }
-        }
-
-        @keyframes blink-dms {
-            0%, 100% { opacity: 0.35; }
-            50% { opacity: 1; r: 3.5px; }
-        }
-
-        /* Tech Specs */
-        .specs-grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .spec-glass-box {
-            padding: 36px;
-            border-radius: 24px;
-            background: rgba(10, 20, 35, 0.6);
-            border: 1px solid var(--border-glass);
-        }
-
-        .spec-glass-box h3 {
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-        }
-
-        .spec-glass-box h3 i {
-            color: var(--cyan);
-        }
-
-        .spec-table-dark {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .spec-table-dark tr {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .spec-table-dark tr:last-child {
-            border-bottom: none;
-        }
-
-        .spec-table-dark td, .spec-table-dark th {
-            padding: 13px 4px;
-            font-size: 14px;
-            text-align: left;
-        }
-
-        .spec-table-dark th {
-            color: var(--text-muted);
-            font-weight: 600;
-            width: 42%;
-        }
-
-        .spec-table-dark td {
-            color: #e2e8f0;
-            font-weight: 500;
-        }
-
-        .law-item-strip {
-            display: flex;
-            gap: 16px;
-            padding: 16px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-glass);
-            margin-bottom: 14px;
-        }
-
-        .law-item-icon {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: rgba(0, 136, 255, 0.15);
-            color: var(--cyan);
-            display: grid;
-            place-items: center;
-            font-size: 18px;
-            flex-shrink: 0;
-        }
-
-        .law-item-info h5 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .law-item-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .stat-card {
-            padding: 35px 20px;
-            text-align: center;
-            border: 1px solid var(--border-glass);
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 22px;
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--border-glow);
-        }
-
-        .stat-num {
-            font-size: 48px;
-            font-weight: 900;
-            font-family: 'Space Grotesk', sans-serif;
-            background: linear-gradient(90deg, #fff, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            color: var(--text-muted);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* CTA */
-        .cta-box {
-            text-align: center;
-            padding: 100px 30px;
-            border-radius: 32px;
-            background: radial-gradient(circle at 50% 50%, #0d223f, #050b14 75%);
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 0 80px rgba(0, 136, 255, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-box h2 {
-            font-size: clamp(34px, 5.5vw, 68px);
-            font-weight: 900;
-            letter-spacing: -2px;
-            line-height: 1.05;
-        }
-
-        .cta-box p {
-            color: var(--text-muted);
-            font-size: 17px;
-            max-width: 600px;
-            margin: 20px auto 35px;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        /* Footer */
-        footer {
-            padding: 70px 0 30px;
-            border-top: 1px solid var(--border-glass);
-            background: #03060c;
-            color: var(--text-muted);
-            font-size: 13.5px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.4fr 1.2fr 1fr;
-            gap: 40px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid var(--border-glass);
-        }
-
-        .footer-brand h4 {
-            color: #fff;
-            font-size: 20px;
-            font-weight: 800;
-            margin-bottom: 14px;
-        }
-
-        .footer-col h5 {
-            color: #fff;
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .footer-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            line-height: 1.5;
-        }
-
-        .footer-list li i {
-            color: var(--cyan);
-            margin-top: 4px;
-            flex-shrink: 0;
-        }
-
-        /* Google Rating Badge */
-        .google-rating-card {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-glass);
-            padding: 10px 16px;
-            border-radius: 14px;
-            margin-top: 18px;
-            transition: all 0.3s;
-        }
-
-        .google-rating-card:hover {
-            border-color: rgba(255, 183, 3, 0.5);
-            background: rgba(255, 183, 3, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .google-icon {
-            font-size: 24px;
-            color: #ea4335;
-        }
-
-        .stars-group {
-            color: #fbbc04;
-            font-size: 12px;
-            display: flex;
-            gap: 2px;
-        }
-
-        .rating-score {
-            font-weight: 800;
-            color: #fff;
-            font-size: 14px;
-            margin-left: 4px;
-        }
-
-        .rating-count {
-            font-size: 11.5px;
-            color: var(--text-muted);
-            display: block;
-        }
-
-        .footer-bottom {
-            padding-top: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 12.5px;
-        }
-
-        /* Floating Quick Buttons */
-        .float-ctas {
-            position: fixed;
-            bottom: max(20px, env(safe-area-inset-bottom));
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 999;
-        }
-
-        .float-btn {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            color: #fff;
-            font-size: 21px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-        }
-
-        .float-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .float-btn-zalo {
-            background: #0068ff;
-            box-shadow: 0 0 25px rgba(0, 104, 255, 0.5);
-        }
-
-        .float-btn-phone {
-            background: #e53e3e;
-            box-shadow: 0 0 25px rgba(229, 62, 62, 0.5);
-        }
-
-        /* Keyframes */
-        @keyframes rotate-trong-dong-reverse {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
-        }
-
-        @keyframes rotate-radar {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes float-telemetry {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes float-hud {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.4; transform: scale(0.85); }
-        }
-
-        @keyframes laser-scan {
-            0% { top: 0; opacity: 0.2; }
-            50% { opacity: 1; }
-            100% { top: 100%; opacity: 0.2; }
-        }
-
-        /* Responsive Mobile Layout (iPhone 15 Optimized) */
-        @media (max-width: 992px) {
-            .hero-grid, .camera-grid-layout, .specs-grid-layout, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .problem-grid, .solution-grid, .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            .dashboard-layout {
-                grid-template-columns: 1fr;
-            }
-            .fleet-sidebar {
-                max-height: 280px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero {
-                padding-top: max(110px, calc(env(safe-area-inset-top) + 80px));
-            }
-            .telemetry-stage {
-                height: 380px;
-            }
-            .trong-dong-container, .neon-radar-circle {
-                width: 310px;
-                height: 310px;
-            }
-            .center-device-pod {
-                width: 145px;
-                height: 145px;
-            }
-            .center-device-pod i {
-                font-size: 42px;
-            }
-            .hud-card {
-                padding: 8px 12px;
-                border-radius: 12px;
-            }
-            .hud-title {
-                font-size: 8px;
-            }
-            .hud-val {
-                font-size: 12px;
-            }
-            .hud-card.hud-top-right {
-                top: 0;
-                right: 0;
-            }
-            .hud-card.hud-top-left {
-                top: 0;
-                left: 0;
-            }
-            .hud-card.hud-bottom-left {
-                bottom: 5px;
-                left: 0;
-            }
-            .hud-card.hud-bottom-right {
-                bottom: 5px;
-                right: 0;
-            }
-            .camera-screen-mockup {
-                height: 360px;
-            }
-            .driver-seatbelt-wrap {
-                width: 220px;
-                height: 260px;
-            }
-        }
+        .vehicle-active {
+            border-color: #00d4ff !important;
+            background: rgba(0, 212, 255, 0.08) !important;
+            box-shadow: inset 3px 0 0 #00d4ff;
+        }
+        .marker {
+            transition: transform 0.25s ease, filter 0.25s ease;
+        }
+        .marker.active {
+            transform: scale(1.35) !important;
+            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.95));
+            z-index: 30;
+        }
+        .map-road {
+            stroke-dasharray: 8 8;
+            animation: dash 14s linear infinite;
+        }
+        @keyframes dash {
+            to { stroke-dashoffset: -200; }
+        }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #040811; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.3); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
     </style>
 </head>
-<body>
+<body class="bg-brand-base text-slate-100 antialiased font-sans selection:bg-brand-cyan/20 selection:text-brand-cyan relative overflow-x-hidden">
 
-    <div class="ambient-glow-1"></div>
-    <div class="ambient-glow-2"></div>
+    <!-- Interactive Canvas & Glowing Ambient Background -->
+    <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+    <div class="fixed top-[-200px] right-[-200px] w-[700px] h-[700px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none z-[-1]"></div>
+    <div class="fixed bottom-[10%] left-[-200px] w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[140px] pointer-events-none z-[-1]"></div>
 
-    <!-- Glass Floating Navbar (Logo Only) -->
-    <nav class="navbar">
-        <a href="#" class="logo" aria-label="Vạn Phú Khánh GPS">
-            <div class="logo-img-wrapper">
-                <img src="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png" alt="Logo Vạn Phú Khánh GPS">
-            </div>
-        </a>
-
-        <div class="nav-links">
-            <a href="#solutions">Giải pháp 4G</a>
-            <a href="#dashboard">Quản lý đội xe</a>
-            <a href="#camera">Camera BCA</a>
-            <a href="#specs">Thông số & Pháp lý</a>
-            <a href="#about">Chính sách Care</a>
-        </div>
-
-        <div class="nav-ctas">
-            <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="btn btn-zalo">
-                <i class="fa-solid fa-comment-dots"></i> Zalo
+    <!-- Glass Floating Navbar -->
+    <header class="fixed top-4 left-0 right-0 z-50 px-4">
+        <nav class="max-w-6xl mx-auto glass-panel rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/5 border border-brand-cyan/40 flex items-center justify-center p-1 shadow-[0_0_16px_rgba(0,170,255,0.35)] hover:scale-105 transition-transform">
+                    <img src="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png" alt="Logo Vạn Phú Khánh GPS" class="w-full h-full object-contain">
+                </div>
+                <div class="hidden sm:block">
+                    <span class="font-display font-bold text-sm tracking-wider text-white">VẠN PHÚ KHÁNH GPS</span>
+                    <span class="text-[9.5px] block font-mono text-brand-cyan tracking-widest uppercase">QCVN06:2024/BCA TELEMETRY</span>
+                </div>
             </a>
-            <a href="tel:0585114114" class="btn btn-primary">
-                <i class="fa-solid fa-phone"></i> 0585.114.114
-            </a>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="container hero-grid">
-            <div>
-                <div class="badge-live">
-                    <span class="dot-pulse"></span>
-                    HỢP CHUẨN QUY ĐỊNH BỘ CÔNG AN
-                </div>
-
-                <h1>
-                    <span class="heading-line">GIÁM SÁT 4G.</span>
-                    <span class="heading-line gradient-text">CHUẨN BCA.</span>
-                    <span class="heading-line">VỮNG TÂM LÁI.</span>
-                </h1>
-
-                <p class="hero-lead">
-                    Giải pháp hộp đen giám sát hành trình 4G thế hệ mới tích hợp Camera người lái & khoang hành khách theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong> và <strong>Luật TTATGT đường bộ 2024</strong>.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="tel:0585114114" class="btn btn-primary" style="padding: 14px 26px; font-size: 15px;">
-                        <i class="fa-solid fa-phone-volume"></i> GỌI ĐẶT LỊCH: 0585.114.114
-                    </a>
-                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 14px 24px; font-size: 15px;">
-                        <i class="fa-solid fa-bolt" style="color: var(--cyan);"></i> NÂNG CẤP MIỄN PHÍ 100%
-                    </a>
-                </div>
+            <div class="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-300">
+                <a href="#solutions" class="hover:text-brand-cyan transition-colors">Giải pháp 4G</a>
+                <a href="#dashboard" class="hover:text-brand-cyan transition-colors flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
+                    Quản lý đội xe
+                </a>
+                <a href="#camera" class="hover:text-brand-cyan transition-colors">Camera BCA</a>
+                <a href="#specs" class="hover:text-brand-cyan transition-colors">Thông số & Pháp lý</a>
+                <a href="#hau-mai" class="hover:text-brand-cyan transition-colors">Dịch vụ hậu mãi</a>
             </div>
 
-            <!-- Telemetry Stage với Trống Đồng Xoay Ngược & GNSS Random Vệ Tinh -->
-            <div class="telemetry-stage">
-                <div class="trong-dong-container">
-                    <img class="trong-dong-img" src="https://raw.githubusercontent.com/canhntnear/photo/main/trong-dong-o.png" alt="Trống đồng Vạn Phú Khánh GPS">
-                    <div class="neon-radar-circle">
-                        <div class="neon-radar-sweep"></div>
-                    </div>
-                </div>
-
-                <!-- Central Telemetry Box -->
-                <div class="center-device-pod">
-                    <i class="fa-solid fa-microchip"></i>
-                    <span class="device-model-label">DV4G PRO</span>
-                    <span class="device-status-badge">● QCVN06:2024</span>
-                </div>
-
-                <!-- 4 HUD Badges mô phỏng đầy đủ 4 yếu tố -->
-                <!-- 1. Tín hiệu truyền dẫn -->
-                <div class="hud-card hud-top-right">
-                    <div class="hud-title">TÍN HIỆU TRUYỀN DẪN</div>
-                    <div class="hud-val" style="color: var(--emerald);">
-                        <span>4G LTE</span>
-                        <div class="signal-bars-4g">
-                            <span class="signal-bar"></span>
-                            <span class="signal-bar"></span>
-                            <span class="signal-bar"></span>
-                            <span class="signal-bar"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Tín hiệu vệ tinh GNSS -->
-                <div class="hud-card hud-top-left">
-                    <div class="hud-title">TÍN HIỆU VỆ TINH GNSS</div>
-                    <div class="hud-val" style="color: var(--cyan);">
-                        <i class="fa-solid fa-satellite"></i>
-                        <span id="gnssCount" style="font-family: var(--font-mono); font-size: 17px;" aria-live="polite">18</span>
-                        <span style="font-size: 11.5px; font-weight: 600; color: #a5f3fc;">Vệ Tinh</span>
-                    </div>
-                </div>
-
-                <!-- 3. Chuyển tín hiệu về Cục CSGT -->
-                <div class="hud-card hud-bottom-left">
-                    <div class="hud-title">CHUYỂN TÍN HIỆU VỀ CỤC CSGT</div>
-                    <div class="hud-val" style="color: var(--cyan);">
-                        <i class="fa-solid fa-cloud-arrow-up"></i> 100% ĐỒNG BỘ
-                    </div>
-                </div>
-
-                <!-- 4. Khu vực lắp đặt -->
-                <div class="hud-card hud-bottom-right">
-                    <div class="hud-title">KHU VỰC LẮP ĐẶT</div>
-                    <div class="hud-val">
-                        <i class="fa-solid fa-location-dot" style="color: var(--amber);"></i> KHÁNH HÒA
-                    </div>
-                </div>
+            <div class="flex items-center gap-2.5">
+                <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="text-xs font-bold px-3.5 py-2 rounded-xl bg-blue-600/15 border border-blue-500/40 text-blue-400 hover:bg-blue-600 hover:text-white transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-comment-dots"></i> Zalo
+                </a>
+                <a href="tel:0585114114" class="text-xs font-bold px-4 py-2 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-phone"></i> 0585.114.114
+                </a>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Problems Section -->
-    <section>
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">THÁCH THỨC VẬN HÀNH</span>
-                <h2 class="section-title">Bạn có đang kiểm soát trọn vẹn đội xe của mình?</h2>
-                <p class="section-desc">Khi quy định đăng kiểm và an toàn giao thông 2024 siết chặt, quản lý thủ công qua điện thoại không còn bảo đảm an toàn pháp lý.</p>
-            </div>
+    <main class="relative z-10">
 
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-icon-wrapper">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
+        <!-- Hero Section -->
+        <section class="min-h-screen pt-36 pb-20 px-4 flex items-center">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+                <div class="lg:col-span-7">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-emerald/30 bg-brand-emerald/10 text-brand-emerald text-xs font-bold mb-6 backdrop-blur-md">
+                        <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span>
+                        HỢP CHUẨN QUY ĐỊNH BỘ CÔNG AN
                     </div>
-                    <h3>Quy Chuẩn BCA Mới?</h3>
-                    <p>Phương tiện kinh doanh vận tải bắt buộc trang bị thiết bị giám sát hành trình và camera đạt chuẩn QCVN06:2024/BCA để kiểm định thông suốt.</p>
-                </div>
 
-                <div class="problem-card">
-                    <div class="problem-icon-wrapper">
-                        <i class="fa-solid fa-eye-slash"></i>
+                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] mb-6">
+                        GIÁM SÁT 4G. <br>
+                        <span class="gradient-text">CHUẨN BCA.</span> <br>
+                        VỮNG TÂM LÁI.
+                    </h1>
+
+                    <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
+                        Giải pháp hộp đen giám sát hành trình 4G thế hệ mới tích hợp Camera người lái & khoang hành khách theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong> và <strong>Luật TTATGT đường bộ 2024</strong>.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4">
+                        <a href="tel:0585114114" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i> GỌI ĐẶT LỊCH: 0585.114.114
+                        </a>
+                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 text-slate-200 font-bold text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-bolt text-brand-cyan"></i> NÂNG CẤP MIỄN PHÍ 100%
+                        </a>
                     </div>
-                    <h3>Lái Xe Đang Làm Gì?</h3>
-                    <p>Thiếu hệ thống camera AI nhận diện mệt mỏi, mất tập trung khiến chủ xe không kịp thời ngăn ngừa nguy cơ tai nạn trên đường.</p>
                 </div>
 
-                <div class="problem-card">
-                    <div class="problem-icon-wrapper">
-                        <i class="fa-solid fa-chart-line-down"></i>
+                <!-- Telemetry Stage Trống Đồng & 4 HUD Badges -->
+                <div class="lg:col-span-5 relative h-[450px] flex items-center justify-center">
+                    <div class="absolute w-[360px] h-[360px] flex items-center justify-center pointer-events-none">
+                        <img class="absolute w-full h-full object-contain opacity-40 filter drop-shadow-[0_0_18px_rgba(0,212,255,0.45)] animate-spin-slow" src="https://raw.githubusercontent.com/canhntnear/photo/main/trong-dong-o.png" alt="Trống đồng Vạn Phú Khánh GPS">
+                        <div class="absolute inset-0 rounded-full border border-dashed border-brand-cyan/25 shadow-[inset_0_0_35px_rgba(0,136,255,0.12)]"></div>
+                        <div class="absolute -inset-1 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(0,212,255,0.28)_45deg,transparent_90deg)] animate-radar-sweep filter drop-shadow-[0_0_10px_rgba(0,212,255,0.5)]"></div>
                     </div>
-                    <h3>Thất Thoát Nhiên Liệu?</h3>
-                    <p>Không nắm được chính xác km thực chạy, lộ trình gian lận hoặc hao hụt dầu máy khiến chi phí đội xe đội lên 15 - 25% mỗi tháng.</p>
+
+                    <!-- Center Box -->
+                    <div class="relative z-10 w-44 h-44 rounded-3xl bg-slate-950/90 border-2 border-brand-cyan/50 flex flex-col items-center justify-center shadow-[0_0_45px_rgba(0,136,255,0.4)] backdrop-blur-xl animate-float-hud">
+                        <i class="fa-solid fa-microchip text-5xl text-brand-cyan mb-2 drop-shadow-[0_0_15px_rgba(0,212,255,0.6)]"></i>
+                        <span class="font-mono text-xs font-bold text-white tracking-wider">DV4G PRO</span>
+                        <span class="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30 mt-1">● QCVN06:2024</span>
+                    </div>
+
+                    <!-- HUD Badges -->
+                    <div class="absolute -top-2 right-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud">
+                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">TÍN HIỆU TRUYỀN DẪN</div>
+                        <div class="text-xs font-bold text-brand-emerald flex items-center gap-2 mt-1">
+                            <span>4G LTE</span>
+                            <div class="flex items-end gap-0.5 h-3">
+                                <span class="w-1 h-1.5 bg-brand-emerald rounded-sm"></span>
+                                <span class="w-1 h-2.5 bg-brand-emerald rounded-sm"></span>
+                                <span class="w-1 h-3.5 bg-brand-emerald rounded-sm"></span>
+                                <span class="w-1 h-4 bg-brand-emerald rounded-sm"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -top-2 left-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:2s]">
+                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">TÍN HIỆU VỆ TINH GNSS</div>
+                        <div class="text-xs font-bold text-brand-cyan flex items-center gap-1.5 mt-1">
+                            <i class="fa-solid fa-satellite"></i>
+                            <span id="gnssCount" class="font-mono text-sm">18</span>
+                            <span class="text-[10px] text-cyan-200">Vệ Tinh</span>
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-2 left-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:1.5s]">
+                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">CHUYỂN TÍN HIỆU VỀ CỤC CSGT</div>
+                        <div class="text-xs font-bold text-brand-cyan flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> 100% ĐỒNG BỘ
+                        </div>
+                    </div>
+
+                    <div class="absolute -bottom-2 right-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:3s]">
+                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">KHU VỰC LẮP ĐẶT</div>
+                        <div class="text-xs font-bold text-slate-100 flex items-center gap-1 mt-1">
+                            <i class="fa-solid fa-location-dot text-brand-amber"></i> KHÁNH HÒA
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Solutions Ecosystem -->
-    <section id="solutions">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">HỆ SINH THÁI THIẾT BỊ</span>
-                <h2 class="section-title">Một Nền Tảng. Đa Tầng Quản Trị.</h2>
-                <p class="section-desc">Bộ giải pháp chuyên sâu từ phần cứng công nghệ Việt đến hệ thống máy chủ dữ liệu tốc độ cao.</p>
-            </div>
-
-            <div class="solution-grid">
-                <div class="solution-card">
-                    <div class="solution-number">01 / HARDWARE</div>
-                    <i class="fa-solid fa-satellite solution-icon-float"></i>
-                    <h3>Hộp Đen Viview DV4G</h3>
-                    <p>Thiết bị giám sát hành trình 4G tốc độ 150Mbps, thiết kế cắm giắc tiện dụng, đáp ứng hoàn toàn chuẩn QCVN06:2024/BCA.</p>
-                    <ul class="solution-features">
-                        <li><i class="fa-solid fa-check"></i> Vỏ công nghiệp tản nhiệt bền bỉ</li>
-                        <li><i class="fa-solid fa-check"></i> Điện áp tự thích ứng 12V - 24V</li>
-                        <li><i class="fa-solid fa-check"></i> Đầu đọc thẻ lái xe RFID tích hợp</li>
-                    </ul>
+        <!-- Problems Section -->
+        <section class="py-24 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-14">
+                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">THÁCH THỨC VẬN HÀNH</span>
+                    <h2 class="text-3xl sm:text-4xl font-black">Bạn có đang kiểm soát trọn vẹn đội xe của mình?</h2>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Khi quy định đăng kiểm và an toàn giao thông 2024 siết chặt, quản lý thủ công qua điện thoại không còn bảo đảm an toàn pháp lý.</p>
                 </div>
 
-                <div class="solution-card">
-                    <div class="solution-number">02 / CAMERA AI</div>
-                    <i class="fa-solid fa-video solution-icon-float"></i>
-                    <h3>Camera Nghị Định & DMS</h3>
-                    <p>Tích hợp camera giám sát người lái nhận diện hành vi buồn ngủ, mất tập trung và camera bao quát khoang hành khách.</p>
-                    <ul class="solution-features">
-                        <li><i class="fa-solid fa-check"></i> Tự động chụp định kỳ gửi máy chủ</li>
-                        <li><i class="fa-solid fa-check"></i> Ghi hình rõ nét cả trong bóng tối hồng ngoại</li>
-                        <li><i class="fa-solid fa-check"></i> Cảnh báo vi phạm âm thanh tức thì</li>
-                    </ul>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Quy Chuẩn BCA Mới?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Phương tiện kinh doanh vận tải bắt buộc trang bị thiết bị giám sát hành trình và camera đạt chuẩn QCVN06:2024/BCA để kiểm định thông suốt.</p>
+                    </div>
 
-                <div class="solution-card">
-                    <div class="solution-number">03 / FLEET OS</div>
-                    <i class="fa-solid fa-server solution-icon-float"></i>
-                    <h3>Máy Chủ Điều Hành VPK</h3>
-                    <p>Giao diện bản đồ số trực quan, dữ liệu lưu trữ máy chủ trong nước an toàn và kết nối thông suốt với Cục CSGT.</p>
-                    <ul class="solution-features">
-                        <li><i class="fa-solid fa-check"></i> Báo cáo tổng hợp xuất Excel chuẩn đăng kiểm</li>
-                        <li><i class="fa-solid fa-check"></i> Tra cứu lịch sử lộ trình & dừng đỗ 24/7</li>
-                        <li><i class="fa-solid fa-check"></i> Giám sát đồng thời hàng ngàn phương tiện</li>
-                    </ul>
+                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Lái Xe Đang Làm Gì?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Thiếu hệ thống camera AI nhận diện mệt mỏi, mất tập trung khiến chủ xe không kịp thời ngăn ngừa nguy cơ tai nạn trên đường.</p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
+                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-chart-line-down"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Thất Thoát Nhiên Liệu?</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">Không nắm được chính xác km thực chạy, lộ trình gian lận hoặc hao hụt dầu máy khiến chi phí đội xe đội lên 15 - 25% mỗi tháng.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Live Fleet Control Simulation - 13 Phương Tiện Vận Hành Mẫu -->
-    <section id="dashboard">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">FLEET CONTROL CENTER</span>
-                <h2 class="section-title">Một Màn Hình. Toàn Bộ Đội Xe.</h2>
-                <p class="section-desc">Mô phỏng giao diện trung tâm điều hành đội xe thời gian thực của Vạn Phú Khánh GPS.</p>
+        <!-- Solutions Ecosystem -->
+        <section id="solutions" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-14">
+                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">HỆ SINH THÁI THIẾT BỊ</span>
+                    <h2 class="text-3xl sm:text-4xl font-black">Một Nền Tảng. Đa Tầng Quản Trị.</h2>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Bộ giải pháp chuyên sâu từ phần cứng công nghệ Việt đến hệ thống máy chủ dữ liệu tốc độ cao.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">01 / HARDWARE</div>
+                        <i class="fa-solid fa-satellite absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Hộp Đen Viview DV4G</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Thiết bị giám sát hành trình 4G tốc độ 150Mbps, thiết kế cắm giắc tiện dụng, đáp ứng hoàn toàn chuẩn QCVN06:2024/BCA.</p>
+                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Vỏ công nghiệp tản nhiệt bền bỉ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Điện áp tự thích ứng 12V - 24V</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Đầu đọc thẻ lái xe RFID tích hợp</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">02 / CAMERA AI</div>
+                        <i class="fa-solid fa-video absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Camera Nghị Định & DMS</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Tích hợp camera giám sát người lái nhận diện hành vi buồn ngủ, mất tập trung và camera bao quát khoang hành khách.</p>
+                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Tự động chụp định kỳ gửi máy chủ</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Ghi hình rõ nét cả trong bóng tối hồng ngoại</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Cảnh báo vi phạm âm thanh tức thì</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">03 / FLEET OS</div>
+                        <i class="fa-solid fa-server absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
+                        <h3 class="text-2xl font-bold text-white mb-3">Máy Chủ Điều Hành VPK</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Giao diện bản đồ số trực quan, dữ liệu lưu trữ máy chủ trong nước an toàn và kết nối thông suốt với Cục CSGT.</p>
+                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Báo cáo tổng hợp xuất Excel chuẩn đăng kiểm</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Tra cứu lịch sử lộ trình & dừng đỗ 24/7</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Giám sát đồng thời hàng ngàn phương tiện</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="dashboard-container">
-                <div class="dashboard-topbar">
+        <!-- FLEET CONTROL CENTER (Mô phỏng nâng cấp toàn diện) -->
+        <section id="dashboard" class="py-24 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
                     <div>
-                        <strong style="color: #fff;">VAN PHU KHANH FLEET TELEMETRY</strong>
-                        <span style="color: var(--text-muted); margin-left: 10px;">v4.8 BCA-COMPLIANT</span>
+                        <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">FLEET CONTROL CENTER</span>
+                        <h2 class="text-3xl sm:text-4xl font-black">Một Màn Hình. Toàn Bộ Đội Xe.</h2>
+                        <p class="text-slate-400 text-sm mt-2 max-w-2xl">Mô phỏng giao diện trung tâm điều hành đội xe thời gian thực của Vạn Phú Khánh GPS.</p>
                     </div>
-                    <div style="color: var(--emerald); font-weight: 700;">
-                        <span class="dot-pulse" style="display: inline-block; margin-right: 6px;"></span> 13 XE ĐANG GIÁM SÁT
+
+                    <!-- Filter Tabs -->
+                    <div class="flex items-center gap-2 self-start lg:self-auto p-1 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">
+                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl bg-cyan-400/20 text-cyan-300 transition" data-filter="all">Tất cả (<span id="count-all">13</span>)</button>
+                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl text-slate-400 hover:text-white transition" data-filter="running">Đang chạy (<span id="count-running">10</span>)</button>
+                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl text-slate-400 hover:text-white transition" data-filter="parked">Dừng đỗ (<span id="count-parked">3</span>)</button>
                     </div>
                 </div>
 
-                <div class="dashboard-layout">
-                    <!-- Danh sách 13 phương tiện mẫu -->
-                    <div class="fleet-sidebar">
-                        <div class="vehicle-strip active">
-                            <div class="vehicle-strip-head">
-                                <span>🚛 79A-123.45 (Container)</span>
-                                <span style="color: var(--emerald);">68 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Bắc Nha Trang ➔ Cam Ranh</span>
-                                <span>● Đang chạy</span>
-                            </div>
+                <div class="glass-panel rounded-3xl overflow-hidden border border-brand-cyan/30 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
+                    <div class="px-6 py-4 bg-slate-900/90 border-b border-white/10 flex justify-between items-center font-mono text-xs">
+                        <div>
+                            <strong class="text-white">VAN PHU KHANH FLEET TELEMETRY</strong>
+                            <span class="text-slate-400 ml-2 hidden sm:inline">v4.8 BCA-COMPLIANT</span>
                         </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚍 79B-678.90 (Xe khách 45c)</span>
-                                <span style="color: var(--emerald);">54 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>QL1A Khánh Hòa</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚚 79C-246.80 (Tải 15 tấn)</span>
-                                <span style="color: var(--amber);">0 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>KĐT Phước Long</span>
-                                <span>● Đang dừng đỗ</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚛 79D-135.79 (Đầu kéo)</span>
-                                <span style="color: var(--emerald);">62 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Đại lộ Nguyễn Tất Thành</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚍 79B-012.34 (Xe buýt liên tỉnh)</span>
-                                <span style="color: var(--emerald);">48 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Bến xe Phía Bắc ➔ Vạn Giã</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚚 79H-567.89 (Xe đông lạnh)</span>
-                                <span style="color: var(--emerald);">71 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Cảng Cam Ranh ➔ QL1A</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚛 79C-998.81 (Tải ben 4 chân)</span>
-                                <span style="color: var(--emerald);">38 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Mỏ đá Hòn Ngang ➔ Diên Khánh</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚕 79E-112.23 (Taxi hợp đồng)</span>
-                                <span style="color: var(--emerald);">52 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Sân bay Cam Ranh ➔ Trần Phú</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚍 79B-334.45 (Xe du lịch 29c)</span>
-                                <span style="color: var(--amber);">0 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Cảng Du Lịch Nha Trang</span>
-                                <span>● Đang đón khách</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚚 79C-445.56 (Xe bồn xăng dầu)</span>
-                                <span style="color: var(--emerald);">45 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Kho Xăng Dầu Vĩnh Nguyên</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚛 79A-889.90 (Container lạnh)</span>
-                                <span style="color: var(--emerald);">65 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Khu Kinh Tế Vân Phong</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚚 79C-778.89 (Xe chở thư tín)</span>
-                                <span style="color: var(--emerald);">58 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>Bưu cục Nha Trang ➔ Ninh Hòa</span>
-                                <span>● Đang chạy</span>
-                            </div>
-                        </div>
-
-                        <div class="vehicle-strip">
-                            <div class="vehicle-strip-head">
-                                <span>🚛 79D-667.12 (Xe cẩu tự hành)</span>
-                                <span style="color: var(--amber);">0 km/h</span>
-                            </div>
-                            <div class="vehicle-strip-sub">
-                                <span>KCN Suối Dầu, Cam Lâm</span>
-                                <span>● Đang bốc dỡ</span>
-                            </div>
+                        <div class="text-brand-emerald font-bold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span> 13 XE ĐANG GIÁM SÁT
                         </div>
                     </div>
 
-                    <!-- Earth Map Stage với các chấm sóng vệ tinh phát sóng định vị -->
-                    <div class="live-map-stage">
-                        <svg class="orbit-connection-path">
-                            <path d="M 80 140 Q 240 280, 420 120 T 740 280 T 880 180" fill="none" stroke="rgba(0, 212, 255, 0.35)" stroke-width="2" stroke-dasharray="5,5"/>
-                        </svg>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
+                        <!-- Sidebar danh sách 13 xe -->
+                        <div id="vehicleList" class="lg:col-span-4 p-3 border-b lg:border-b-0 lg:border-r border-white/10 bg-slate-950/50 max-h-[560px] overflow-y-auto space-y-2"></div>
 
-                        <!-- Các Node vệ tinh định vị -->
-                        <div class="sat-ping-node node-1">
-                            <div class="sat-core-dot"></div>
-                            <div class="sat-ping-ring"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79A-123.45</div>
-                        </div>
+                        <!-- Live Map Stage -->
+                        <div class="lg:col-span-8 relative bg-slate-950/80 min-h-[440px] lg:min-h-[560px] p-4 flex flex-col justify-between overflow-hidden">
+                            <!-- Đường giao thông vector -->
+                            <svg viewBox="0 0 1000 600" class="absolute inset-0 w-full h-full pointer-events-none">
+                                <path d="M 80 140 Q 240 280, 420 120 T 740 280 T 880 180" fill="none" stroke="rgba(0, 212, 255, 0.35)" stroke-width="2.5" class="map-road"/>
+                                <path d="M 130 470 C 250 380, 340 470, 470 370 S 700 280, 880 440" fill="none" stroke="rgba(38, 135, 255, 0.25)" stroke-width="2.5" class="map-road"/>
+                            </svg>
 
-                        <div class="sat-ping-node node-2">
-                            <div class="sat-core-dot"></div>
-                            <div class="sat-ping-ring"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79B-678.90</div>
-                        </div>
+                            <!-- Node Markers Layer -->
+                            <div id="mapMarkers" class="absolute inset-0"></div>
 
-                        <div class="sat-ping-node node-3">
-                            <div class="sat-core-dot" style="background: var(--amber); box-shadow: 0 0 15px var(--amber);"></div>
-                            <div class="sat-ping-ring" style="border-color: var(--amber);"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79C-246.80</div>
-                        </div>
+                            <!-- Top Bar Tag -->
+                            <div class="relative z-10 flex justify-between items-center text-[11px] pointer-events-none font-mono">
+                                <span class="glass-panel px-3 py-1.5 rounded-xl text-slate-300">KHÁNH HÒA • LIVE TELEMETRY</span>
+                                <span class="glass-panel px-3 py-1.5 rounded-xl text-brand-emerald">ĐỒNG BỘ: 100% (4G)</span>
+                            </div>
 
-                        <div class="sat-ping-node node-4">
-                            <div class="sat-core-dot"></div>
-                            <div class="sat-ping-ring"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79D-135.79</div>
-                        </div>
-
-                        <div class="sat-ping-node node-5">
-                            <div class="sat-core-dot"></div>
-                            <div class="sat-ping-ring"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79H-567.89</div>
-                        </div>
-
-                        <div class="sat-ping-node node-6">
-                            <div class="sat-core-dot"></div>
-                            <div class="sat-ping-ring"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79A-889.90</div>
-                        </div>
-
-                        <div class="sat-ping-node node-7">
-                            <div class="sat-core-dot" style="background: var(--amber); box-shadow: 0 0 15px var(--amber);"></div>
-                            <div class="sat-ping-ring" style="border-color: var(--amber);"></div>
-                            <div class="sat-ping-ring-2"></div>
-                            <div class="sat-tag">🛰️ 79D-667.12</div>
-                        </div>
-
-                        <div style="position: absolute; top: 20px; left: 20px; font-family: var(--font-mono); font-size: 11px; background: rgba(0,0,0,0.65); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-glass);">
-                            GPS SATELLITE TELEMETRY | ACCURACY: 99.9% | FREQ: 4G LTE
+                            <!-- Detail Card (Responsive Mobile & Desktop) -->
+                            <div id="vehicleDetail" class="relative z-10 self-end w-full sm:w-[290px] glass-panel rounded-2xl p-4 shadow-2xl mt-auto"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- AI Driver Monitoring Camera - Nửa thân trên tài xế, Ghế lái & Dây đeo an toàn -->
-    <section id="camera">
-        <div class="container camera-grid-layout">
-            <div class="camera-screen-mockup">
-                <div class="laser-scan-bar"></div>
-                
-                <div class="driver-seatbelt-wrap">
-                    <svg class="driver-seatbelt-svg" viewBox="0 0 240 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Tựa đầu ghế lái -->
-                        <rect x="75" y="10" width="90" height="42" rx="14" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 136, 255, 0.08)"/>
-                        <path d="M95 52 L95 65 M145 52 L145 65" stroke="#00d4ff" stroke-width="2"/>
-                        
-                        <!-- Lưng ghế lái xe -->
-                        <path d="M45 65 C45 65 30 110 30 180 C30 240 40 270 40 270 L200 270 C200 270 210 240 210 180 C210 110 195 65 195 65 Z" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="4 3" fill="rgba(6, 15, 28, 0.8)"/>
-                        
-                        <!-- Đầu & Khuôn mặt tài xế -->
-                        <path d="M120 40 C144 40 160 58 160 85 C160 115 142 135 120 138 C98 135 80 115 80 85 C80 58 96 40 120 40 Z" stroke="#00f0a8" stroke-width="1.8" fill="rgba(0, 240, 168, 0.06)"/>
-                        
-                        <!-- Chi tiết mắt & Mũi nhận diện AI DMS -->
-                        <ellipse cx="104" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
-                        <ellipse cx="136" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
-                        <path d="M120 80 L120 98 L114 103 L126 103" stroke="#00d4ff" stroke-width="1.4"/>
-                        <path d="M108 118 Q120 124 132 118" stroke="#00f0a8" stroke-width="1.5"/>
-
-                        <!-- Cổ & Nửa thân trên tài xế -->
-                        <path d="M106 137 L106 150 M134 137 L134 150" stroke="#00f0a8" stroke-width="1.6"/>
-                        <path d="M106 150 C80 155 52 170 48 215 L46 270 L194 270 L192 215 C188 170 160 155 134 150 Z" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 212, 255, 0.08)"/>
-                        
-                        <!-- Dây đai an toàn ô tô bắt chéo vai -->
-                        <polygon points="176,146 192,154 78,270 62,270" stroke="#ffb703" stroke-width="2" fill="rgba(255, 183, 3, 0.28)"/>
-                        <rect x="68" y="248" width="16" height="20" rx="3" stroke="#ffb703" stroke-width="1.6" fill="rgba(255, 183, 3, 0.5)"/>
-                        <path d="M72 258 L80 258" stroke="#040811" stroke-width="2"/>
-
-                        <!-- Vô lăng góc nhìn dưới -->
-                        <path d="M60 265 Q120 235 180 265" stroke="rgba(0, 212, 255, 0.6)" stroke-width="3"/>
-
-                        <!-- Các điểm mốc cảm biến AI -->
-                        <circle cx="104" cy="82" r="2.5" class="dms-target-point"/>
-                        <circle cx="136" cy="82" r="2.5" class="dms-target-point"/>
-                        <circle cx="120" cy="103" r="2.5" class="dms-target-point" style="fill: #00d4ff;"/>
-                        <circle cx="120" cy="120" r="2.5" class="dms-target-point"/>
-                        <circle cx="128" cy="202" r="3" class="dms-target-point" style="fill: #ffb703;"/>
-                    </svg>
-                </div>
-
-                <div class="ai-telemetry-tags">
-                    <span>AI DMS: DRIVER SEATED</span>
-                    <span>SEATBELT: FASTENED [OK]</span>
-                    <span>ATTENTION: 99.2%</span>
-                    <span>REC: 1080P/4G</span>
-                </div>
-            </div>
-
-            <div>
-                <span class="section-tag">AI SMART SURVEILLANCE</span>
-                <h2 class="section-title">GPS biết xe ở đâu.<br><span class="gradient-text">Camera thấu hiểu</span> người lái & an toàn.</h2>
-                <p class="section-desc">
-                    Sự kết hợp giữa định vị vệ tinh và thị giác nhân tạo thông minh giúp giám sát trạng thái tài xế ngồi ghế lái, kiểm soát việc thắt dây an toàn, phát hiện sớm nguy cơ ngủ gật, sử dụng điện thoại hay mất tập trung theo đúng chuẩn Thông tư 71/2024/TT-BCA.
-                </p>
-
-                <div style="margin-top: 30px;">
-                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 14px 28px;">
-                        <i class="fa-solid fa-comment-dots"></i> TƯ VẤN CAMERA BCA QUA ZALO
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tech Specs & Legal Compliance -->
-    <section id="specs">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">MINH BẠCH & HỢP CHUẨN</span>
-                <h2 class="section-title">Thông Số Kỹ Thuật & Căn Cứ Pháp Lý</h2>
-                <p class="section-desc">Thiết bị hoàn chỉnh hồ sơ hợp quy, bảo đảm nghiệm thu đăng kiểm 100%.</p>
-            </div>
-
-            <div class="specs-grid-layout">
-                <div class="spec-glass-box">
-                    <h3><i class="fa-solid fa-sliders"></i> Phần Cứng Viview DV4G</h3>
-                    <table class="spec-table-dark">
-                        <tr><th>Nhà sản xuất</th><td>Viview (Công nghệ Việt)</td></tr>
-                        <tr><th>Nhà phân phối</th><td>Vạn Phú Khánh GPS</td></tr>
-                        <tr><th>Mã Model</th><td>DV4G / VV4G-02</td></tr>
-                        <tr><th>Hợp chuẩn quy chuẩn</th><td><strong>QCVN06:2024/BCA</strong></td></tr>
-                        <tr><th>Mạng truyền thông</th><td>4G LTE tốc độ cao</td></tr>
-                        <tr><th>Nguồn điện vận hành</th><td>12V – 24V DC</td></tr>
-                        <tr><th>Nhiệt độ hoạt động</th><td>0°C đến 70°C</td></tr>
-                        <tr><th>Phụ kiện kèm theo</th><td>Máy DV4G, Ăng-ten GPS, Thẻ RFID, SIM 4G</td></tr>
-                    </table>
-                </div>
-
-                <div class="spec-glass-box">
-                    <h3><i class="fa-solid fa-scale-balanced"></i> Căn Cứ Quy Chuẩn Pháp Lý</h3>
+        <!-- AI Driver Monitoring Camera Section -->
+        <section id="camera" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="camera-screen-mockup h-[420px] rounded-3xl overflow-hidden relative bg-[radial-gradient(circle_at_50%_45%,#182e44,#040912_75%)] border border-brand-cyan/35 shadow-[0_0_50px_rgba(0,180,255,0.18)] flex items-center justify-center">
+                    <div class="laser-scan-bar absolute left-0 w-full h-[2px] bg-brand-cyan shadow-[0_0_18px_#00d4ff,0_0_35px_#00d4ff] animate-laser-scan"></div>
                     
-                    <div class="law-item-strip">
-                        <div class="law-item-icon"><i class="fa-solid fa-gavel"></i></div>
-                        <div class="law-item-info">
-                            <h5>Luật TTATGT Đường Bộ 2024</h5>
-                            <p>Quy định bắt buộc đối với phương tiện kinh doanh vận tải về thiết bị giám sát hành trình và truyền dữ liệu liên tục.</p>
-                        </div>
+                    <div class="relative w-64 h-72 flex items-center justify-center">
+                        <svg class="w-full h-full filter drop-shadow-[0_0_14px_rgba(0,212,255,0.6)] animate-pulse" viewBox="0 0 240 280" fill="none">
+                            <rect x="75" y="10" width="90" height="42" rx="14" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 136, 255, 0.08)"/>
+                            <path d="M95 52 L95 65 M145 52 L145 65" stroke="#00d4ff" stroke-width="2"/>
+                            <path d="M45 65 C45 65 30 110 30 180 C30 240 40 270 40 270 L200 270 C200 270 210 240 210 180 C210 110 195 65 195 65 Z" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="4 3" fill="rgba(6, 15, 28, 0.8)"/>
+                            <path d="M120 40 C144 40 160 58 160 85 C160 115 142 135 120 138 C98 135 80 115 80 85 C80 58 96 40 120 40 Z" stroke="#00f0a8" stroke-width="1.8" fill="rgba(0, 240, 168, 0.06)"/>
+                            <ellipse cx="104" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
+                            <ellipse cx="136" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
+                            <path d="M120 80 L120 98 L114 103 L126 103" stroke="#00d4ff" stroke-width="1.4"/>
+                            <path d="M108 118 Q120 124 132 118" stroke="#00f0a8" stroke-width="1.5"/>
+                            <path d="M106 137 L106 150 M134 137 L134 150" stroke="#00f0a8" stroke-width="1.6"/>
+                            <path d="M106 150 C80 155 52 170 48 215 L46 270 L194 270 L192 215 C188 170 160 155 134 150 Z" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 212, 255, 0.08)"/>
+                            <polygon points="176,146 192,154 78,270 62,270" stroke="#ffb703" stroke-width="2" fill="rgba(255, 183, 3, 0.28)"/>
+                            <rect x="68" y="248" width="16" height="20" rx="3" stroke="#ffb703" stroke-width="1.6" fill="rgba(255, 183, 3, 0.5)"/>
+                            <path d="M72 258 L80 258" stroke="#040811" stroke-width="2"/>
+                            <path d="M60 265 Q120 235 180 265" stroke="rgba(0, 212, 255, 0.6)" stroke-width="3"/>
+                            <circle cx="104" cy="82" r="2.5" fill="#00e0a0"/>
+                            <circle cx="136" cy="82" r="2.5" fill="#00e0a0"/>
+                            <circle cx="120" cy="103" r="2.5" fill="#00d4ff"/>
+                            <circle cx="120" cy="120" r="2.5" fill="#00e0a0"/>
+                            <circle cx="128" cy="202" r="3" fill="#ffb703"/>
+                        </svg>
                     </div>
 
-                    <div class="law-item-strip">
-                        <div class="law-item-icon"><i class="fa-solid fa-file-contract"></i></div>
-                        <div class="law-item-info">
-                            <h5>Nghị Định 151/2024/NĐ-CP</h5>
-                            <p>Quy định chi tiết về chuyển đổi hạ tầng giám sát và chế tài an toàn kỹ thuật phương tiện cơ giới.</p>
-                        </div>
+                    <div class="absolute bottom-5 left-5 flex flex-wrap gap-2">
+                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">AI DMS: DRIVER SEATED</span>
+                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">SEATBELT: FASTENED [OK]</span>
+                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">ATTENTION: 99.2%</span>
+                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">REC: 1080P/4G</span>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">AI SMART SURVEILLANCE</span>
+                    <h2 class="text-3xl sm:text-4xl font-black leading-tight mb-6">
+                        GPS biết xe ở đâu.<br>
+                        <span class="gradient-text">Camera thấu hiểu</span> người lái & an toàn.
+                    </h2>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        Sự kết hợp giữa định vị vệ tinh và thị giác nhân tạo thông minh giúp giám sát trạng thái tài xế ngồi ghế lái, kiểm soát việc thắt dây an toàn, phát hiện sớm nguy cơ ngủ gật, sử dụng điện thoại hay mất tập trung theo đúng chuẩn Thông tư 71/2024/TT-BCA.
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all">
+                            <i class="fa-solid fa-comment-dots"></i> TƯ VẤN CAMERA BCA QUA ZALO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Specs & Legal Compliance Section -->
+        <section id="specs" class="py-24 px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-14">
+                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">MINH BẠCH & HỢP CHUẨN</span>
+                    <h2 class="text-3xl sm:text-4xl font-black">Thông Số Kỹ Thuật & Căn Cứ Pháp Lý</h2>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Thiết bị hoàn chỉnh hồ sơ hợp quy, bảo đảm nghiệm thu đăng kiểm 100%.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Tech Specs Table -->
+                    <div class="glass-panel p-8 rounded-3xl">
+                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
+                            <i class="fa-solid fa-sliders text-brand-cyan"></i> Phần Cứng Viview DV4G
+                        </h3>
+                        <table class="w-full text-sm border-collapse">
+                            <tbody>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium w-5/12">Nhà sản xuất</th><td class="py-3 text-slate-200">Viview (Công nghệ Việt)</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nhà phân phối</th><td class="py-3 text-slate-200">Vạn Phú Khánh GPS</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Mã Model</th><td class="py-3 text-slate-200">DV4G / VV4G-02</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-brand-cyan font-bold">Hợp chuẩn quy chuẩn</th><td class="py-3 text-brand-cyan font-bold">QCVN06:2024/BCA</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Mạng truyền thông</th><td class="py-3 text-slate-200">4G LTE tốc độ cao</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nguồn điện vận hành</th><td class="py-3 text-slate-200">12V – 24V DC</td></tr>
+                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nhiệt độ hoạt động</th><td class="py-3 text-slate-200">0°C đến 70°C</td></tr>
+                                <tr><th class="text-left py-3 text-slate-400 font-medium">Phụ kiện kèm theo</th><td class="py-3 text-slate-200">Máy DV4G, Ăng-ten GPS, Thẻ RFID, SIM 4G</td></tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                    <div class="law-item-strip">
-                        <div class="law-item-icon"><i class="fa-solid fa-stamp"></i></div>
-                        <div class="law-item-info">
-                            <h5>Thông Tư 71/2024/TT-BCA</h5>
-                            <p>Quy chuẩn Quốc gia chính thức từ Bộ Công An áp dụng cho hộp đen và camera giám sát tài xế / hành khách.</p>
+                    <!-- Legal Compliance -->
+                    <div class="glass-panel p-8 rounded-3xl">
+                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
+                            <i class="fa-solid fa-scale-balanced text-brand-cyan"></i> Căn Cứ Quy Chuẩn Pháp Lý
+                        </h3>
+
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-gavel"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white text-sm">Luật TTATGT Đường Bộ 2024</h5>
+                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy định bắt buộc đối với phương tiện kinh doanh vận tải về thiết bị giám sát hành trình và truyền dữ liệu liên tục.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white text-sm">Nghị Định 151/2024/NĐ-CP</h5>
+                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy định chi tiết về chuyển đổi hạ tầng giám sát và chế tài an toàn kỹ thuật phương tiện cơ giới.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                                    <i class="fa-solid fa-stamp"></i>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-white text-sm">Thông Tư 71/2024/TT-BCA</h5>
+                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy chuẩn Quốc gia chính thức từ Bộ Công An áp dụng cho hộp đen và camera giám sát tài xế / hành khách.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats Section (3000+ Phương Tiện) -->
-    <section id="about">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-num counter" data-target="3000">0</div>
-                    <div class="stat-label">Phương tiện đã lắp đặt</div>
+        <!-- Dịch Vụ Hậu Mãi Thực Chiến -->
+        <section id="hau-mai" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-2xl mb-14">
+                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">DỊCH VỤ & HẬU MÃI</span>
+                    <h2 class="text-3xl sm:text-4xl font-black">Hỗ Trợ Kỹ Thuật & Đồng Hành Đội Xe</h2>
+                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Đảm bảo thiết bị hoạt động ổn định, truyền dữ liệu không gián đoạn về máy chủ quản lý và Cục CSGT.</p>
                 </div>
 
-                <div class="stat-card">
-                    <div class="stat-num counter" data-target="24">0</div>
-                    <div class="stat-label">Giờ hỗ trợ kỹ thuật tận xe</div>
-                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-brand-cyan/30 text-brand-cyan flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Bảo Hành & Bảo Trì Định Kỳ</h3>
+                        <div class="space-y-3.5 text-xs text-slate-300">
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Quy trình bảo hành minh bạch:</strong>
+                                <span class="text-slate-400 leading-relaxed">Sửa chữa, đổi mới linh kiện nhanh chóng khi phát sinh lỗi phần cứng từ nhà sản xuất, hạn chế tối đa thời gian dừng xe.</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Kiểm tra & Cập nhật hệ thống:</strong>
+                                <span class="text-slate-400 leading-relaxed">Chủ động rà soát tín hiệu, vệ sinh giắc cắm và nâng cấp firmware thiết bị định kỳ để ngăn ngừa mất kết nối giữa đường.</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="stat-card">
-                    <div class="stat-num counter" data-target="99">0</div>
-                    <div class="stat-label">% Dữ liệu truyền ổn định</div>
-                </div>
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Kỹ Thuật Lưu Động & Hỗ Trợ 24/7</h3>
+                        <div class="space-y-3.5 text-xs text-slate-300">
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Đội thợ xử lý tận nơi:</strong>
+                                <span class="text-slate-400 leading-relaxed">Có mặt kiểm tra tại bến bãi, gara hoặc trạm dừng xe khi phát sinh lỗi tín hiệu, thẻ lái xe hay mắt camera.</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Kênh trực ban liên tục:</strong>
+                                <span class="text-slate-400 leading-relaxed">Hotline và Zalo trực tuyến giải quyết ngay các tình huống gấp khi xe đang trên đường đi đăng kiểm.</span>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="stat-card">
-                    <div class="stat-num counter" data-target="10">0</div>
-                    <div class="stat-label">Năm uy tín ngành vận tải</div>
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-brand-emerald/30 text-brand-emerald flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Chuyển Giao & Hướng Dẫn Vận Hành</h3>
+                        <div class="space-y-3.5 text-xs text-slate-300">
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Hướng dẫn tài xế & quản lý:</strong>
+                                <span class="text-slate-400 leading-relaxed">Thao tác quẹt thẻ RFID đúng quy định, nhận diện cảnh báo âm thanh trên xe và cách theo dõi xe trên ứng dụng điện thoại.</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Tài liệu & Video kỹ thuật:</strong>
+                                <span class="text-slate-400 leading-relaxed">Cung cấp tài liệu tra cứu nhanh, video trích xuất dữ liệu camera và xuất báo cáo hành trình chuẩn mẫu kiểm định.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-brand-amber/30 text-brand-amber flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-rotate"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-4">Chính Sách Khách Hàng & Nâng Cấp</h3>
+                        <div class="space-y-3.5 text-xs text-slate-300">
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Ưu đãi gói cước & thiết bị mở rộng:</strong>
+                                <span class="text-slate-400 leading-relaxed">Chiết khấu tốt khi duy trì server, SIM 4G nhiều xe hoặc lắp thêm cảm biến nhiên liệu, camera phụ.</span>
+                            </div>
+                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
+                                <strong class="text-white block text-sm mb-1">Chương trình thu cũ - đổi mới:</strong>
+                                <span class="text-slate-400 leading-relaxed">Hỗ trợ chi phí chuyển đổi từ thiết bị 2G/3G đời cũ sang hộp đen 4G đạt chuẩn QCVN06:2024/BCA mới nhất.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- High-Impact CTA -->
-    <section>
-        <div class="container">
-            <div class="cta-box">
-                <h2>SẴN SÀNG QUẢN LÝ<br><span class="gradient-text">ĐỘI XE CHUẨN BCA?</span></h2>
-                <p>Nâng cấp ngay hôm nay để nhận trọn gói ưu đãi chuyển đổi 4G miễn phí 100% và bảo hành trọn đời VPK Care.</p>
-                <div class="cta-buttons">
-                    <a href="tel:0585114114" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;">
+        <!-- Stats Section -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-3xl text-center">
+                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="3000">0</div>
+                    <div class="text-xs font-semibold text-slate-400">Phương tiện đã lắp đặt</div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-3xl text-center">
+                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="24">0</div>
+                    <div class="text-xs font-semibold text-slate-400">Giờ hỗ trợ kỹ thuật tận xe</div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-3xl text-center">
+                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="99">0</div>
+                    <div class="text-xs font-semibold text-slate-400">% Dữ liệu truyền ổn định</div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-3xl text-center">
+                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="10">0</div>
+                    <div class="text-xs font-semibold text-slate-400">Năm uy tín ngành vận tải</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- High-Impact CTA -->
+        <section class="py-20 px-4">
+            <div class="max-w-4xl mx-auto glass-panel p-10 sm:p-14 rounded-3xl text-center border border-brand-cyan/40 shadow-[0_0_80px_rgba(0,136,255,0.2)] relative overflow-hidden">
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-4">
+                    SẴN SÀNG QUẢN LÝ <br>
+                    <span class="gradient-text">ĐỘI XE CHUẨN BCA?</span>
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                    Nâng cấp ngay hôm nay để nhận trọn gói ưu đãi chuyển đổi 4G miễn phí 100% và chính sách hỗ trợ kỹ thuật tận xe từ Vạn Phú Khánh GPS.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <a href="tel:0585114114" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-2">
                         <i class="fa-solid fa-phone"></i> GỌI HOTLINE: 0585.114.114
                     </a>
-                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="btn btn-zalo" style="padding: 16px 32px; font-size: 16px;">
+                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-blue-600/15 border border-blue-500/40 text-blue-400 hover:bg-blue-600 hover:text-white font-bold text-sm transition-all flex items-center gap-2">
                         <i class="fa-solid fa-comment-dots"></i> NHẮN ZALO ĐẶT LỊCH TẬN XE
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <h4>VẠN PHÚ KHÁNH GPS</h4>
-                    <p>Thương nhân triển khai chương trình nâng cấp thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA miễn phí 100% tại Khánh Hòa và khu vực lân cận. Đồng hành tin cậy của mọi đội xe.</p>
-                    
-                    <!-- Google Rating Badge -->
-                    <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="google-rating-card" title="Xem đánh giá trên Google Maps">
-                        <i class="fa-brands fa-google google-icon"></i>
-                        <div>
-                            <div style="display: flex; align-items: center;">
-                                <div class="stars-group">
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </div>
-                                <span class="rating-score">5.0</span>
-                            </div>
-                            <span class="rating-count">Đánh giá xuất sắc trên Google Maps ↗</span>
+    <footer class="border-t border-white/5 bg-black/80 py-16 px-4 text-slate-400 text-xs">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+            <div class="md:col-span-5">
+                <h4 class="text-base font-bold text-white mb-3">VẠN PHÚ KHÁNH GPS</h4>
+                <p class="text-slate-400 text-xs leading-relaxed mb-4">
+                    Thương nhân triển khai chương trình nâng cấp thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA miễn phí 100% tại Khánh Hòa và khu vực lân cận. Đồng hành tin cậy của mọi đội xe.
+                </p>
+
+                <!-- Google Rating Badge -->
+                <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-all">
+                    <i class="fa-brands fa-google text-2xl text-red-500"></i>
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400 text-xs">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            <span class="font-bold text-white text-xs ml-1">5.0</span>
                         </div>
-                    </a>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Hệ Thống Trụ Sở & Trạm Bảo Hành</h5>
-                    <ul class="footer-list">
-                        <li>
-                            <i class="fa-solid fa-building-flag"></i>
-                            <span><strong>Trụ sở chính:</strong> Thôn Tân Mỹ, xã Tân Định, tỉnh Khánh Hòa</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-wrench"></i>
-                            <span><strong>Trạm Nha Trang:</strong> KĐT Phước Long, Nam Nha Trang, Khánh Hòa</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-wrench"></i>
-                            <span><strong>Trạm Vân Phong:</strong> QL1A, Bắc Ninh Hòa, Khánh Hòa</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-wrench"></i>
-                            <span><strong>Trạm Nam Khánh Hòa:</strong> Thôn Suối Đá, xã Thuận Bắc, tỉnh Khánh Hòa</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h5>Kênh Liên Hệ 24/7</h5>
-                    <ul class="footer-list">
-                        <li>
-                            <i class="fa-solid fa-phone"></i>
-                            <span>Hotline: <a href="tel:0585114114" style="color: #fff; font-weight: 700;">0585.114.114</a></span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-comment-dots"></i>
-                            <span>Zalo: <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" style="color: #fff;">0585.114.114</a></span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Email: ctyvanphukhanh@gmail.com</span>
-                        </li>
-                        <li>
-                            <i class="fa-solid fa-globe"></i>
-                            <span>Web: www.vanphukhanh.com</span>
-                        </li>
-                    </ul>
-                </div>
+                        <span class="text-[11px] text-slate-400">Đánh giá xuất sắc trên Google Maps ↗</span>
+                    </div>
+                </a>
             </div>
 
-            <div class="footer-bottom">
-                <div>© 2026 VẠN PHÚ KHÁNH GPS. All rights reserved.</div>
-                <div>Thiết bị giám sát hành trình • Camera AI DMS • Quản lý đội xe BCA</div>
+            <div class="md:col-span-4">
+                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hệ Thống Trụ Sở & Trạm Bảo Hành</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-building-flag text-brand-cyan mt-0.5"></i>
+                        <span><strong>Trụ sở chính:</strong> Thôn Tân Mỹ, xã Tân Định, tỉnh Khánh Hòa</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
+                        <span><strong>Trạm Nha Trang:</strong> KĐT Phước Long, Nam Nha Trang, Khánh Hòa</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
+                        <span><strong>Trạm Vân Phong:</strong> QL1A, Bắc Ninh Hòa, Khánh Hòa</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
+                        <span><strong>Trạm Nam Khánh Hòa:</strong> Thôn Suối Đá, xã Thuận Bắc, tỉnh Khánh Hòa</span>
+                    </li>
+                </ul>
             </div>
+
+            <div class="md:col-span-3">
+                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Kênh Liên Hệ 24/7</h5>
+                <ul class="space-y-2.5 text-xs">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-cyan"></i> Hotline: <a href="tel:0585114114" class="text-white font-bold">0585.114.114</a></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-comment-dots text-brand-cyan"></i> Zalo: <a href="https://zalo.me/0585114114" target="_blank" class="text-white">0585.114.114</a></li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-cyan"></i> Email: ctyvanphukhanh@gmail.com</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-brand-cyan"></i> Web: www.vanphukhanh.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-6xl mx-auto pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px]">
+            <div>© 2026 VẠN PHÚ KHÁNH GPS. All rights reserved.</div>
+            <div>Thiết bị giám sát hành trình • Camera AI DMS • Quản lý đội xe BCA</div>
         </div>
     </footer>
 
     <!-- Floating Action Buttons -->
-    <div class="float-ctas">
-        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="float-btn float-btn-zalo" title="Chat Zalo 0585114114">
+    <div class="fixed bottom-5 right-5 flex flex-col gap-3 z-50">
+        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 text-white shadow-[0_0_25px_rgba(0,104,255,0.5)] hover:scale-110 transition-all flex items-center justify-center text-xl">
             <i class="fa-solid fa-comment-dots"></i>
         </a>
-        <a href="tel:0585114114" class="float-btn float-btn-phone" title="Gọi Hotline 0585114114">
+        <a href="tel:0585114114" class="w-13 h-13 p-3.5 rounded-full bg-red-600 text-white shadow-[0_0_25px_rgba(229,62,62,0.5)] hover:scale-110 transition-all flex items-center justify-center text-xl">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
-    <!-- Script Counter, Navbar Scroll & Random GNSS Satellite Stream -->
+    <!-- Scripts (Nubila Particle Canvas + VPK Interactive Fleet) -->
     <script>
-        // Hiệu ứng số vệ tinh GNSS nhảy ngẫu nhiên từ 12 đến 24 vệ tinh
+        // 1. Particle Canvas Network Effect
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.35;
+                this.vy = (Math.random() - 0.5) * 0.35;
+                this.radius = Math.random() * 1.5 + 0.5;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 212, 255, 0.4)';
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 40; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 110) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.12 * (1 - dist / 110)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // 2. GNSS Satellite Random Ticker
         const gnssElement = document.getElementById('gnssCount');
         if (gnssElement) {
             function updateGNSS() {
                 const count = Math.floor(Math.random() * (24 - 12 + 1)) + 12;
                 gnssElement.innerText = Math.max(12, Math.min(24, count));
-                const nextInterval = Math.floor(Math.random() * 2500) + 2500;
-                setTimeout(updateGNSS, nextInterval);
+                setTimeout(updateGNSS, Math.floor(Math.random() * 2500) + 2500);
             }
             updateGNSS();
         }
 
-        // Counter chạy số chuẩn xác theo từng loại chỉ số
+        // 3. Quản lý 13 phương tiện và Bản đồ tương tác
+        const vehicles = [
+            { plate: '79A-123.45', type: 'Container', speed: 68, status: 'running', statusText: 'Đang chạy', place: 'Bắc Nha Trang ➔ Cam Ranh', acc: 'ON', lat: '12.2388', lng: '109.1967', x: 22, y: 28 },
+            { plate: '79B-678.90', type: 'Xe khách 45c', speed: 54, status: 'running', statusText: 'Đang chạy', place: 'QL1A Khánh Hòa', acc: 'ON', lat: '12.2512', lng: '109.1843', x: 45, y: 52 },
+            { plate: '79C-246.80', type: 'Tải 15 tấn', speed: 0, status: 'parked', statusText: 'Đang dừng đỗ', place: 'KĐT Phước Long', acc: 'OFF', lat: '12.2104', lng: '109.2155', x: 66, y: 22 },
+            { plate: '79D-135.79', type: 'Đầu kéo', speed: 62, status: 'running', statusText: 'Đang chạy', place: 'Đại lộ Nguyễn Tất Thành', acc: 'ON', lat: '12.2890', lng: '109.1450', x: 74, y: 64 },
+            { plate: '79B-012.34', type: 'Xe buýt liên tỉnh', speed: 48, status: 'running', statusText: 'Đang chạy', place: 'Bến xe Phía Bắc ➔ Vạn Giã', acc: 'ON', lat: '12.2700', lng: '109.1800', x: 34, y: 78 },
+            { plate: '79H-567.89', type: 'Xe đông lạnh', speed: 71, status: 'running', statusText: 'Đang chạy', place: 'Cảng Cam Ranh ➔ QL1A', acc: 'ON', lat: '11.9980', lng: '109.1230', x: 84, y: 38 },
+            { plate: '79C-998.81', type: 'Tải ben 4 chân', speed: 38, status: 'running', statusText: 'Đang chạy', place: 'Mỏ đá Hòn Ngang ➔ Diên Khánh', acc: 'ON', lat: '12.2600', lng: '109.1000', x: 56, y: 72 },
+            { plate: '79E-112.23', type: 'Taxi hợp đồng', speed: 52, status: 'running', statusText: 'Đang chạy', place: 'Sân bay Cam Ranh ➔ Trần Phú', acc: 'ON', lat: '12.0100', lng: '109.2000', x: 28, y: 42 },
+            { plate: '79B-334.45', type: 'Xe du lịch 29c', speed: 0, status: 'parked', statusText: 'Đang đón khách', place: 'Cảng Du Lịch Nha Trang', acc: 'OFF', lat: '12.2150', lng: '109.2200', x: 62, y: 35 },
+            { plate: '79C-445.56', type: 'Xe bồn xăng dầu', speed: 45, status: 'running', statusText: 'Đang chạy', place: 'Kho Xăng Dầu Vĩnh Nguyên', acc: 'ON', lat: '12.2050', lng: '109.2100', x: 50, y: 65 },
+            { plate: '79A-889.90', type: 'Container lạnh', speed: 65, status: 'running', statusText: 'Đang chạy', place: 'Khu Kinh Tế Vân Phong', acc: 'ON', lat: '12.5800', lng: '109.2300', x: 80, y: 55 },
+            { plate: '79C-778.89', type: 'Xe chở thư tín', speed: 58, status: 'running', statusText: 'Đang chạy', place: 'Bưu cục Nha Trang ➔ Ninh Hòa', acc: 'ON', lat: '12.3500', lng: '109.1700', x: 38, y: 20 },
+            { plate: '79D-667.12', type: 'Xe cẩu tự hành', speed: 0, status: 'parked', statusText: 'Đang bốc dỡ', place: 'KCN Suối Dầu, Cam Lâm', acc: 'ON', lat: '12.1800', lng: '109.1100', x: 18, y: 68 }
+        ];
+
+        let activeFilter = 'all';
+        let selectedIndex = 0;
+
+        function renderFleet() {
+            const listContainer = document.getElementById('vehicleList');
+            const markersContainer = document.getElementById('mapMarkers');
+
+            // Cập nhật số lượng đếm
+            document.getElementById('count-all').innerText = vehicles.length;
+            document.getElementById('count-running').innerText = vehicles.filter(v => v.status === 'running').length;
+            document.getElementById('count-parked').innerText = vehicles.filter(v => v.status === 'parked').length;
+
+            const filtered = vehicles.filter(v => activeFilter === 'all' || v.status === activeFilter);
+
+            // Render danh sách xe
+            listContainer.innerHTML = filtered.map(v => {
+                const originalIndex = vehicles.indexOf(v);
+                const isRunning = v.status === 'running';
+                return `
+                    <div class="vehicle-strip p-3 rounded-xl bg-white/[.03] border border-white/5 hover:border-cyan-300/30 transition cursor-pointer ${originalIndex === selectedIndex ? 'vehicle-active' : ''}" onclick="selectVehicle(${originalIndex})">
+                        <div class="flex items-center justify-between">
+                            <span class="font-bold text-xs text-white">${v.plate}</span>
+                            <span class="text-xs font-mono font-bold ${isRunning ? 'text-brand-emerald' : 'text-brand-amber'}">${v.speed} km/h</span>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-slate-400 font-mono mt-1">
+                            <span>${v.type}</span>
+                            <span class="${isRunning ? 'text-slate-300' : 'text-amber-200/80'}">● ${v.statusText}</span>
+                        </div>
+                        <div class="text-[10px] text-slate-500 font-mono mt-1 truncate">📍 ${v.place}</div>
+                    </div>`;
+            }).join('');
+
+            // Render Markers trên bản đồ
+            markersContainer.innerHTML = vehicles.map((v, i) => {
+                const isRunning = v.status === 'running';
+                const isHidden = activeFilter !== 'all' && v.status !== activeFilter;
+                return `
+                    <button type="button" class="marker absolute -translate-x-1/2 -translate-y-1/2 ${i === selectedIndex ? 'active' : ''} ${isHidden ? 'opacity-20 pointer-events-none' : 'opacity-100'}" style="left:${v.x}%;top:${v.y}%" onclick="selectVehicle(${i})" aria-label="${v.plate}">
+                        <span class="relative flex h-3.5 w-3.5 items-center justify-center">
+                            ${isRunning ? '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>' : ''}
+                            <span class="relative inline-flex rounded-full h-3 w-3 ${isRunning ? 'bg-brand-cyan' : 'bg-brand-amber'} border-2 border-slate-950"></span>
+                        </span>
+                        <span class="mt-1 block font-mono text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/85 border border-white/10 text-slate-200 whitespace-nowrap">${v.plate}</span>
+                    </button>`;
+            }).join('');
+
+            updateDetail(selectedIndex);
+        }
+
+        function selectVehicle(index) {
+            selectedIndex = index;
+            renderFleet();
+        }
+
+        function updateDetail(index) {
+            const v = vehicles[index];
+            const isRunning = v.status === 'running';
+            document.getElementById('vehicleDetail').innerHTML = `
+                <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-brand-cyan font-bold border-b border-white/10 pb-2 font-mono">
+                    <span>CHI TIẾT PHƯƠNG TIỆN</span>
+                    <span class="${isRunning ? 'text-brand-emerald' : 'text-brand-amber'}">● ${v.statusText}</span>
+                </div>
+                <div class="mt-2.5 flex justify-between items-baseline">
+                    <div class="text-lg font-display font-extrabold text-white">${v.plate}</div>
+                    <div class="text-xs text-slate-400 font-mono">${v.type}</div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
+                    <div class="rounded-xl bg-white/[.04] p-2.5 border border-white/5">
+                        <div class="text-[10px] text-slate-500 font-mono">Tốc độ GPS</div>
+                        <div class="font-bold text-white mt-0.5 font-mono text-sm">${v.speed} km/h</div>
+                    </div>
+                    <div class="rounded-xl bg-white/[.04] p-2.5 border border-white/5">
+                        <div class="text-[10px] text-slate-500 font-mono">Khóa điện ACC</div>
+                        <div class="font-bold mt-0.5 font-mono text-sm ${v.acc === 'ON' ? 'text-brand-emerald' : 'text-slate-400'}">${v.acc}</div>
+                    </div>
+                </div>
+                <div class="mt-2.5 text-[10px] font-mono text-slate-400 truncate">📍 ${v.place}</div>
+                <div class="text-[10px] font-mono text-slate-500 truncate mt-0.5">Tọa độ: ${v.lat}, ${v.lng}</div>`;
+        }
+
+        // Bắt sự kiện Tabs Filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-cyan-400/20', 'text-cyan-300');
+                    b.classList.add('text-slate-400');
+                });
+                const target = e.currentTarget;
+                target.classList.remove('text-slate-400');
+                target.classList.add('bg-cyan-400/20', 'text-cyan-300');
+                activeFilter = target.dataset.filter;
+                renderFleet();
+            });
+        });
+
+        renderFleet();
+
+        // 4. Number Counters Observer
         const counters = document.querySelectorAll('.counter');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -2097,18 +947,6 @@
         }, { threshold: 0.5 });
 
         counters.forEach(counter => observer.observe(counter));
-
-        // Navbar đổi nền kính mờ khi cuộn trang
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(4, 10, 18, 0.92)';
-                nav.style.boxShadow = '0 15px 45px rgba(0, 0, 0, 0.7)';
-            } else {
-                nav.style.background = 'rgba(8, 16, 29, 0.75)';
-                nav.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.4)';
-            }
-        });
     </script>
 </body>
 </html>
