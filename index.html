@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi" class="dark scroll-smooth">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -17,14 +17,14 @@
     <meta property="og:locale" content="vi_VN">
     <meta property="og:url" content="https://www.vanphukhanh.com/">
     <meta property="og:title" content="Vạn Phú Khánh GPS - Thiết Bị Giám Sát Hành Trình Đạt Chuẩn BCA QCVN06:2024">
-    <meta property="og:description" content="Giải pháp hộp đen 4G tích hợp Camera giám sát lái xe & hành khách. Đạt chuẩn QCVN06:2024/BCA. Truyền dữ liệu về Cục CSGT - Bộ Công An. Lắp đặt tận nơi, bảo hành trọn đời.">
+    <meta property="og:description" content="Giải pháp hộp đen 4G tích hợp Camera giám sát lái xe & hành khách. Đạt chuẩn QCVN06:2024/BCA. Truyền dữ liệu về Cục CSGT - Bộ Công An. Lắp đặt tận nơi, bảo hành chu đáo.">
     <meta property="og:image" content="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
 
-    <!-- Favicon & Fonts -->
+    <!-- Favicon & Fonts (Be Vietnam Pro & JetBrains Mono - Chuẩn dấu Tiếng Việt 100%) -->
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -54,37 +54,22 @@
 
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['"Be Vietnam Pro"', 'system-ui', '-apple-system', 'sans-serif'],
                         mono: ['"JetBrains Mono"', 'monospace'],
                     },
                     colors: {
                         brand: {
-                            base: '#040811',
-                            surface: '#09121f',
-                            card: 'rgba(13, 25, 44, 0.7)',
-                            cyan: '#00d4ff',
-                            primary: '#0088ff',
-                            emerald: '#00f0a8',
-                            amber: '#ffb703'
+                            navy: '#0F172A',
+                            blue: '#1D4ED8',
+                            primary: '#2563EB',
+                            light: '#EFF6FF',
+                            emerald: '#059669',
+                            amber: '#D97706',
+                            orange: '#EA580C'
                         }
-                    },
-                    animation: {
-                        'radar-sweep': 'radar 6s linear infinite',
-                        'float-hud': 'floatHud 5s ease-in-out infinite',
-                        'pulse-dot': 'pulseDot 2s infinite',
-                        'laser-scan': 'laserScan 3.2s linear infinite',
-                        'spin-slow': 'spin 36s linear infinite'
-                    },
-                    keyframes: {
-                        radar: { '0%': { transform: 'rotate(0deg)' }, '100%': { transform: 'rotate(360deg)' } },
-                        floatHud: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-8px)' } },
-                        pulseDot: { '0%, 100%': { opacity: '1', transform: 'scale(1)' }, '50%': { opacity: '0.4', transform: 'scale(0.85)' } },
-                        laserScan: { '0%': { top: '0', opacity: '0.2' }, '50%': { opacity: '1' }, '100%': { top: '100%', opacity: '0.2' } }
                     }
                 }
             }
@@ -92,438 +77,695 @@
     </script>
 
     <style>
-        .glass-panel {
-            background: rgba(9, 18, 33, 0.82);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --accent-cta: #EA580C;
+            --surface-bg: #F8FAFC;
+            --text-main: #0F172A;
         }
-        .glass-panel:hover {
-            border-color: rgba(0, 212, 255, 0.35);
-            box-shadow: 0 0 35px rgba(0, 136, 255, 0.15);
+
+        body {
+            background-color: var(--surface-bg);
+            color: var(--text-main);
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #ffffff, #67e8f9, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .card-surface {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
+
+        .card-surface:hover {
+            border-color: #BFDBFE;
+            box-shadow: 0 12px 28px -4px rgba(37, 99, 235, 0.1);
+        }
+
         .vehicle-active {
-            border-color: #00d4ff !important;
-            background: rgba(0, 212, 255, 0.08) !important;
-            box-shadow: inset 3px 0 0 #00d4ff;
+            border-color: #38BDF8 !important;
+            background: rgba(56, 189, 248, 0.14) !important;
+            box-shadow: inset 3px 0 0 #38BDF8;
         }
+
         .marker {
-            transition: transform 0.25s ease, filter 0.25s ease;
+            transition: transform 0.2s ease, filter 0.2s ease;
         }
+
         .marker.active {
-            transform: scale(1.35) !important;
-            filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.95));
+            transform: scale(1.25) !important;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
             z-index: 30;
         }
+
         .map-road {
             stroke-dasharray: 8 8;
-            animation: dash 14s linear infinite;
+            animation: dash 18s linear infinite;
         }
+
         @keyframes dash {
             to { stroke-dashoffset: -200; }
         }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #040811; }
-        ::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.3); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #00d4ff; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .map-road, .animate-ping, .animate-pulse {
+                animation: none !important;
+            }
+            * {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom Scrollbar for Fleet List */
+        .fleet-scroll::-webkit-scrollbar { width: 5px; }
+        .fleet-scroll::-webkit-scrollbar-track { background: #0F172A; }
+        .fleet-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        .fleet-scroll::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
     </style>
 </head>
-<body class="bg-brand-base text-slate-100 antialiased font-sans selection:bg-brand-cyan/20 selection:text-brand-cyan relative overflow-x-hidden">
+<body class="antialiased font-sans selection:bg-blue-600 selection:text-white relative overflow-x-hidden">
 
-    <!-- Interactive Canvas & Glowing Ambient Background -->
-    <canvas id="bg-canvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
-    <div class="fixed top-[-200px] right-[-200px] w-[700px] h-[700px] rounded-full bg-blue-600/15 blur-[120px] pointer-events-none z-[-1]"></div>
-    <div class="fixed bottom-[10%] left-[-200px] w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[140px] pointer-events-none z-[-1]"></div>
+    <!-- Top Utility Bar -->
+    <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <i class="fa-solid fa-circle-check"></i> Hợp chuẩn QCVN06:2024/BCA & Thông tư 71/2024/TT-BCA
+                </span>
+                <span class="hidden md:inline text-slate-600">|</span>
+                <span class="hidden md:flex items-center gap-1.5">
+                    <i class="fa-solid fa-location-dot text-amber-400"></i> Lắp đặt & bảo hành tận xe tại Khánh Hòa
+                </span>
+            </div>
+            <div class="flex items-center gap-4 ml-auto">
+                <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-star text-amber-400"></i> 5.0 Google Maps
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="mailto:ctyvanphukhanh@gmail.com" class="hover:text-white transition-colors hidden sm:inline">ctyvanphukhanh@gmail.com</a>
+            </div>
+        </div>
+    </div>
 
-    <!-- Glass Floating Navbar -->
-    <header class="fixed top-4 left-0 right-0 z-50 px-4">
-        <nav class="max-w-6xl mx-auto glass-panel rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
-            <a href="#" class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-white/5 border border-brand-cyan/40 flex items-center justify-center p-1 shadow-[0_0_16px_rgba(0,170,255,0.35)] hover:scale-105 transition-transform">
+    <!-- Sticky Main Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center p-1.5 group-hover:border-blue-400 transition-colors">
                     <img src="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png" alt="Logo Vạn Phú Khánh GPS" class="w-full h-full object-contain">
                 </div>
-                <div class="hidden sm:block">
-                    <span class="font-display font-bold text-sm tracking-wider text-white">VẠN PHÚ KHÁNH GPS</span>
-                    <span class="text-[9.5px] block font-mono text-brand-cyan tracking-widest uppercase">QCVN06:2024/BCA TELEMETRY</span>
+                <div>
+                    <span class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 block leading-none">VẠN PHÚ KHÁNH GPS</span>
+                    <span class="text-[11px] font-medium text-blue-700 mt-1 block">Giám sát hành trình & Camera hợp chuẩn BCA</span>
                 </div>
             </a>
 
-            <div class="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-300">
-                <a href="#solutions" class="hover:text-brand-cyan transition-colors">Giải pháp 4G</a>
-                <a href="#dashboard" class="hover:text-brand-cyan transition-colors flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
-                    Quản lý đội xe
+            <!-- Desktop Navigation -->
+            <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+                <a href="#solutions" class="hover:text-blue-600 transition-colors">Thiết bị & Giải pháp</a>
+                <a href="#dashboard" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Xem thử phần mềm
                 </a>
-                <a href="#camera" class="hover:text-brand-cyan transition-colors">Camera BCA</a>
-                <a href="#specs" class="hover:text-brand-cyan transition-colors">Thông số & Pháp lý</a>
-                <a href="#hau-mai" class="hover:text-brand-cyan transition-colors">Dịch vụ hậu mãi</a>
+                <a href="#camera" class="hover:text-blue-600 transition-colors">Camera Nghị định</a>
+                <a href="#specs" class="hover:text-blue-600 transition-colors">Thông số & Pháp lý</a>
+                <a href="#hau-mai" class="hover:text-blue-600 transition-colors">Bảo hành tận nơi</a>
             </div>
 
+            <!-- Action Buttons -->
             <div class="flex items-center gap-2.5">
-                <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="text-xs font-bold px-3.5 py-2 rounded-xl bg-blue-600/15 border border-blue-500/40 text-blue-400 hover:bg-blue-600 hover:text-white transition-all flex items-center gap-1.5">
-                    <i class="fa-solid fa-comment-dots"></i> Zalo
+                <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="text-xs sm:text-sm font-bold px-3.5 py-2.5 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 hover:bg-blue-100 transition-colors flex items-center gap-1.5 cursor-pointer">
+                    <i class="fa-solid fa-comments"></i> <span class="hidden sm:inline">Chat</span> Zalo
                 </a>
-                <a href="tel:0585114114" class="text-xs font-bold px-4 py-2 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-1.5">
+                <a href="tel:0585114114" class="text-xs sm:text-sm font-bold px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-colors flex items-center gap-1.5 cursor-pointer">
                     <i class="fa-solid fa-phone"></i> 0585.114.114
                 </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" type="button" class="lg:hidden p-2.5 rounded-xl border border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer" aria-label="Mở menu">
+                    <i class="fa-solid fa-bars text-base"></i>
+                </button>
             </div>
         </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 text-sm font-semibold text-slate-700">
+            <a href="#solutions" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Thiết bị & Giải pháp 4G</a>
+            <a href="#dashboard" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Xem thử phần mềm quản lý xe</a>
+            <a href="#camera" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Camera giám sát tài xế BCA</a>
+            <a href="#specs" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Thông số kỹ thuật & Pháp lý</a>
+            <a href="#hau-mai" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Dịch vụ lắp đặt & Hậu mãi</a>
+        </div>
     </header>
 
-    <main class="relative z-10">
-
+    <main>
         <!-- Hero Section -->
-        <section class="min-h-screen pt-36 pb-20 px-4 flex items-center">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+        <section class="relative pt-10 pb-20 lg:pt-16 lg:pb-24 px-4 bg-gradient-to-b from-blue-50/80 via-white to-slate-50 overflow-hidden border-b border-slate-200/80">
+            <!-- Subtle Heritage Watermark -->
+            <img src="https://raw.githubusercontent.com/canhntnear/photo/main/trong-dong-o.png" alt="" aria-hidden="true" class="-right-24 -top-24 w-[480px] h-[480px] object-contain opacity-[0.04] pointer-events-none select-none absolute">
+
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center relative z-10">
+                <!-- Left Column: Clear, Practical Value Proposition -->
                 <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-brand-emerald/30 bg-brand-emerald/10 text-brand-emerald text-xs font-bold mb-6 backdrop-blur-md">
-                        <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span>
-                        HỢP CHUẨN QUY ĐỊNH BỘ CÔNG AN
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold mb-5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                        ĐẠT CHUẨN ĐĂNG KIỂM & THÔNG TƯ 71/2024/TT-BCA
                     </div>
 
-                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.15] mb-6">
-                        GIÁM SÁT 4G. <br>
-                        <span class="gradient-text">CHUẨN BCA.</span> <br>
-                        VỮNG TÂM LÁI.
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2] mb-5">
+                        Lắp Đặt Hộp Đen 4G & Camera Hợp Chuẩn <span class="text-blue-600">Bộ Công An</span>
                     </h1>
 
-                    <p class="text-slate-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8">
-                        Giải pháp hộp đen giám sát hành trình 4G thế hệ mới tích hợp Camera người lái & khoang hành khách theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong> và <strong>Luật TTATGT đường bộ 2024</strong>.
+                    <p class="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 max-w-2xl">
+                        Giải pháp giám sát hành trình <strong>Viview DV4G</strong> và Camera ghi hình tài xế theo đúng quy chuẩn <strong>QCVN06:2024/BCA</strong>. Truyền dữ liệu ổn định về Cục CSGT, đầy đủ giấy tờ nghiệm thu đăng kiểm, kỹ thuật viên lắp đặt tận xe tại Khánh Hòa.
                     </p>
 
-                    <div class="flex flex-wrap items-center gap-4">
-                        <a href="tel:0585114114" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-phone-volume"></i> GỌI ĐẶT LỊCH: 0585.114.114
+                    <!-- Practical Checklist for Vehicle Owners -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm text-slate-700 font-medium">
+                        <div class="flex items-center gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                            <span>Cấp đủ hồ sơ, giấy hợp chuẩn đi đăng kiểm ngay</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                            <span>Hỗ trợ nâng cấp thiết bị 2G/3G lên 4G miễn phí 100%</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                            <span>Lắp giắc zin an toàn điện xe (12V – 24V)</span>
+                        </div>
+                        <div class="flex items-center gap-2.5 bg-white px-3.5 py-2.5 rounded-xl border border-slate-200/80 shadow-sm">
+                            <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                            <span>Đội ngũ thợ hỗ trợ tận bến bãi, gara tại Khánh Hòa</span>
+                        </div>
+                    </div>
+
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-wrap items-center gap-3.5">
+                        <a href="tel:0585114114" class="px-6 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 cursor-pointer">
+                            <i class="fa-solid fa-phone-volume"></i> Gọi đặt lịch lắp tận nơi: 0585.114.114
                         </a>
-                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-brand-cyan/40 text-slate-200 font-bold text-sm transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-bolt text-brand-cyan"></i> NÂNG CẤP MIỄN PHÍ 100%
+                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white hover:bg-blue-50 border border-slate-300 hover:border-blue-400 text-slate-800 font-bold text-sm transition-all flex items-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-comments text-blue-600"></i> Nhận báo giá & ưu đãi qua Zalo
                         </a>
                     </div>
                 </div>
 
-                <!-- Telemetry Stage Trống Đồng & 4 HUD Badges -->
-                <div class="lg:col-span-5 relative h-[450px] flex items-center justify-center">
-                    <div class="absolute w-[360px] h-[360px] flex items-center justify-center pointer-events-none">
-                        <img class="absolute w-full h-full object-contain opacity-40 filter drop-shadow-[0_0_18px_rgba(0,212,255,0.45)] animate-spin-slow" src="https://raw.githubusercontent.com/canhntnear/photo/main/trong-dong-o.png" alt="Trống đồng Vạn Phú Khánh GPS">
-                        <div class="absolute inset-0 rounded-full border border-dashed border-brand-cyan/25 shadow-[inset_0_0_35px_rgba(0,136,255,0.12)]"></div>
-                        <div class="absolute -inset-1 rounded-full bg-[conic-gradient(from_0deg,transparent_0deg,rgba(0,212,255,0.28)_45deg,transparent_90deg)] animate-radar-sweep filter drop-shadow-[0_0_10px_rgba(0,212,255,0.5)]"></div>
-                    </div>
+                <!-- Right Column: Authentic Hardware & Compliance Overview Card -->
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-7 relative">
+                        <!-- Top Status Header -->
+                        <div class="flex items-center justify-between pb-4 mb-5 border-b border-slate-100">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-lg">
+                                    <i class="fa-solid fa-satellite-dish"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-bold text-slate-400 uppercase">Bộ thiết bị tiêu chuẩn</div>
+                                    <div class="text-base font-extrabold text-slate-900">Viview DV4G & Camera BCA</div>
+                                </div>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold">
+                                ● Hợp quy BCA
+                            </span>
+                        </div>
 
-                    <!-- Center Box -->
-                    <div class="relative z-10 w-44 h-44 rounded-3xl bg-slate-950/90 border-2 border-brand-cyan/50 flex flex-col items-center justify-center shadow-[0_0_45px_rgba(0,136,255,0.4)] backdrop-blur-xl animate-float-hud">
-                        <i class="fa-solid fa-microchip text-5xl text-brand-cyan mb-2 drop-shadow-[0_0_15px_rgba(0,212,255,0.6)]"></i>
-                        <span class="font-mono text-xs font-bold text-white tracking-wider">DV4G PRO</span>
-                        <span class="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30 mt-1">● QCVN06:2024</span>
-                    </div>
+                        <!-- Visual Equipment Highlight -->
+                        <div class="bg-slate-900 rounded-2xl p-5 text-white mb-5 relative overflow-hidden">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <span class="text-[11px] font-mono text-sky-400 uppercase tracking-wider block">MODEL: DV4G / VV4G-02</span>
+                                    <h3 class="text-lg font-bold mt-0.5">Hộp Đen Định Vị 4G LTE</h3>
+                                </div>
+                                <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-400/30 flex items-center justify-center text-sky-400 text-2xl">
+                                    <i class="fa-solid fa-microchip"></i>
+                                </div>
+                            </div>
 
-                    <!-- HUD Badges -->
-                    <div class="absolute -top-2 right-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud">
-                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">TÍN HIỆU TRUYỀN DẪN</div>
-                        <div class="text-xs font-bold text-brand-emerald flex items-center gap-2 mt-1">
-                            <span>4G LTE</span>
-                            <div class="flex items-end gap-0.5 h-3">
-                                <span class="w-1 h-1.5 bg-brand-emerald rounded-sm"></span>
-                                <span class="w-1 h-2.5 bg-brand-emerald rounded-sm"></span>
-                                <span class="w-1 h-3.5 bg-brand-emerald rounded-sm"></span>
-                                <span class="w-1 h-4 bg-brand-emerald rounded-sm"></span>
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                                    <div class="text-slate-400 mb-1">Tín hiệu truyền dẫn</div>
+                                    <div class="font-bold text-emerald-400 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-signal"></i> 4G LTE (SIM tích hợp)
+                                    </div>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                                    <div class="text-slate-400 mb-1">Vệ tinh định vị GNSS</div>
+                                    <div class="font-bold text-sky-300 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-satellite"></i> <span id="gnssCount" class="font-mono">18</span> vệ tinh bắt sóng
+                                    </div>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                                    <div class="text-slate-400 mb-1">Truyền dữ liệu</div>
+                                    <div class="font-bold text-white flex items-center gap-1.5">
+                                        <i class="fa-solid fa-cloud-arrow-up text-sky-400"></i> Máy chủ Cục CSGT
+                                    </div>
+                                </div>
+                                <div class="bg-white/5 border border-white/10 rounded-xl p-3">
+                                    <div class="text-slate-400 mb-1">Phụ kiện đi kèm</div>
+                                    <div class="font-bold text-amber-300 flex items-center gap-1.5">
+                                        <i class="fa-solid fa-id-card"></i> Đầu đọc & Thẻ RFID
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="absolute -top-2 left-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:2s]">
-                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">TÍN HIỆU VỆ TINH GNSS</div>
-                        <div class="text-xs font-bold text-brand-cyan flex items-center gap-1.5 mt-1">
-                            <i class="fa-solid fa-satellite"></i>
-                            <span id="gnssCount" class="font-mono text-sm">18</span>
-                            <span class="text-[10px] text-cyan-200">Vệ Tinh</span>
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-2 left-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:1.5s]">
-                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">CHUYỂN TÍN HIỆU VỀ CỤC CSGT</div>
-                        <div class="text-xs font-bold text-brand-cyan flex items-center gap-1 mt-1">
-                            <i class="fa-solid fa-cloud-arrow-up"></i> 100% ĐỒNG BỘ
-                        </div>
-                    </div>
-
-                    <div class="absolute -bottom-2 right-0 glass-panel px-3.5 py-2.5 rounded-2xl z-20 animate-float-hud [animation-delay:3s]">
-                        <div class="text-[9px] font-mono text-slate-400 uppercase tracking-wider">KHU VỰC LẮP ĐẶT</div>
-                        <div class="text-xs font-bold text-slate-100 flex items-center gap-1 mt-1">
-                            <i class="fa-solid fa-location-dot text-brand-amber"></i> KHÁNH HÒA
+                        <!-- 3-Step Fast Onboarding -->
+                        <div class="space-y-3">
+                            <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Quy trình lắp đặt nhanh trong ngày</div>
+                            <div class="grid grid-cols-3 gap-2.5 text-center text-xs">
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-1.5 text-[11px]">1</div>
+                                    <div class="font-bold text-slate-800">Tư vấn đúng xe</div>
+                                    <div class="text-[11px] text-slate-500 mt-0.5">Xe tải, đầu kéo, xe khách</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="w-6 h-6 rounded-full bg-blue-600 text-white font-bold flex items-center justify-center mx-auto mb-1.5 text-[11px]">2</div>
+                                    <div class="font-bold text-slate-800">Lắp đặt tận nơi</div>
+                                    <div class="text-[11px] text-slate-500 mt-0.5">30 – 45 phút hoàn tất</div>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 border border-slate-200/80">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center mx-auto mb-1.5 text-[11px]">3</div>
+                                    <div class="font-bold text-slate-800">Bàn giao hồ sơ</div>
+                                    <div class="text-[11px] text-slate-500 mt-0.5">Đi xét xe đăng kiểm ngay</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Problems Section -->
-        <section class="py-24 px-4">
+        <!-- Practical Challenges Section -->
+        <section class="py-20 px-4 bg-white">
             <div class="max-w-6xl mx-auto">
-                <div class="max-w-2xl mb-14">
-                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">THÁCH THỨC VẬN HÀNH</span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Bạn có đang kiểm soát trọn vẹn đội xe của mình?</h2>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Khi quy định đăng kiểm và an toàn giao thông 2024 siết chặt, quản lý thủ công qua điện thoại không còn bảo đảm an toàn pháp lý.</p>
+                <div class="max-w-2xl mb-12">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">NỖI LO CỦA CHỦ XE & DOANH NGHIỆP VẬN TẢI</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Vì sao cần kiểm tra và nâng cấp thiết bị giám sát ngay?</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+                        Từ năm 2024 – 2026, quy định kiểm định phương tiện và truyền dữ liệu về Cục CSGT được kiểm soát chặt chẽ hơn trước rất nhiều.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-red-50 border border-red-100 text-red-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-file-shield"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Quy Chuẩn BCA Mới?</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Phương tiện kinh doanh vận tải bắt buộc trang bị thiết bị giám sát hành trình và camera đạt chuẩn QCVN06:2024/BCA để kiểm định thông suốt.</p>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2.5">Tránh bị từ chối khi đi đăng kiểm</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Thiết bị 2G cũ bị cắt sóng hoặc mất tín hiệu truyền về Cục CSGT sẽ khiến xe không đủ điều kiện kiểm định, gây gián đoạn lịch chạy hàng.
+                        </p>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-eye-slash"></i>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 text-amber-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-user-shield"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Lái Xe Đang Làm Gì?</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Thiếu hệ thống camera AI nhận diện mệt mỏi, mất tập trung khiến chủ xe không kịp thời ngăn ngừa nguy cơ tai nạn trên đường.</p>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2.5">Giám sát an toàn tài xế trên đường dài</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Quan sát trực tiếp khoang lái và hành khách qua điện thoại, kịp thời nhắc nhở khi tài xế chạy quá tốc độ, quá giờ liên tục hoặc quên thắt dây an toàn.
+                        </p>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl group transition-all duration-300">
-                        <div class="w-12 h-12 rounded-2xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-chart-line-down"></i>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 text-blue-600 flex items-center justify-center text-xl mb-5">
+                            <i class="fa-solid fa-route"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Thất Thoát Nhiên Liệu?</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Không nắm được chính xác km thực chạy, lộ trình gian lận hoặc hao hụt dầu máy khiến chi phí đội xe đội lên 15 - 25% mỗi tháng.</p>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2.5">Minh bạch lộ trình & định mức nhiên liệu</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Nắm rõ số km thực chạy, điểm dừng đỗ, thời gian nổ máy điều hòa tại bến bãi, giúp chủ xe tiết kiệm từ 15% – 25% chi phí vận hành mỗi tháng.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Solutions Ecosystem -->
-        <section id="solutions" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
+        <section id="solutions" class="py-20 px-4 bg-slate-50 border-y border-slate-200/80">
             <div class="max-w-6xl mx-auto">
-                <div class="max-w-2xl mb-14">
-                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">HỆ SINH THÁI THIẾT BỊ</span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Một Nền Tảng. Đa Tầng Quản Trị.</h2>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Bộ giải pháp chuyên sâu từ phần cứng công nghệ Việt đến hệ thống máy chủ dữ liệu tốc độ cao.</p>
+                <div class="max-w-2xl mb-12">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">SẢN PHẨM & GIẢI PHÁP TRỌN GÓI</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Trọn bộ thiết bị phần cứng & phần mềm theo dõi dễ dùng</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+                        Thiết bị chính hãng công nghệ Việt, hoạt động bền bỉ trong môi trường nhiệt độ cabin cao, giao diện tiếng Việt rõ ràng trên cả điện thoại và máy tính.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">01 / HARDWARE</div>
-                        <i class="fa-solid fa-satellite absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Hộp Đen Viview DV4G</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Thiết bị giám sát hành trình 4G tốc độ 150Mbps, thiết kế cắm giắc tiện dụng, đáp ứng hoàn toàn chuẩn QCVN06:2024/BCA.</p>
-                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Vỏ công nghiệp tản nhiệt bền bỉ</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Điện áp tự thích ứng 12V - 24V</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Đầu đọc thẻ lái xe RFID tích hợp</li>
+                    <!-- Solution 1 -->
+                    <div class="card-surface p-7 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold mb-5">
+                                <i class="fa-solid fa-satellite"></i> Thiết bị định vị 4G
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2.5">Hộp Đen Viview DV4G</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Thiết bị giám sát hành trình 4G tốc độ cao, cắm giắc gọn gàng, đáp ứng đầy đủ quy chuẩn QCVN06:2024/BCA cho xe tải, xe hợp đồng, xe du lịch.
+                            </p>
+                        </div>
+                        <ul class="border-t border-slate-100 pt-4 space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Vỏ hợp kim tản nhiệt tốt, chịu nhiệt tới 70°C</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Nguồn điện tự thích ứng 12V – 24V DC</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Tích hợp sẵn đầu đọc thẻ tài xế RFID</li>
                         </ul>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">02 / CAMERA AI</div>
-                        <i class="fa-solid fa-video absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Camera Nghị Định & DMS</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Tích hợp camera giám sát người lái nhận diện hành vi buồn ngủ, mất tập trung và camera bao quát khoang hành khách.</p>
-                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Tự động chụp định kỳ gửi máy chủ</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Ghi hình rõ nét cả trong bóng tối hồng ngoại</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Cảnh báo vi phạm âm thanh tức thì</li>
+                    <!-- Solution 2 -->
+                    <div class="card-surface p-7 rounded-2xl flex flex-col justify-between border-blue-200 ring-1 ring-blue-100">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold mb-5">
+                                <i class="fa-solid fa-video"></i> Camera hợp chuẩn BCA
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2.5">Camera Nghị Định & Khoang Lái</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Ghi hình rõ nét khu vực tài xế và khoang hành khách, hỗ trợ cảnh báo mất tập trung, tự động chụp và truyền ảnh định kỳ về máy chủ.
+                            </p>
+                        </div>
+                        <ul class="border-t border-slate-100 pt-4 space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Hồng ngoại quay đêm rõ nét không chói mắt</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Góc rộng bao quát cabin & cửa lên xuống</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Lưu trữ an toàn ngay cả khi đi vào vùng mất sóng</li>
                         </ul>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="font-mono text-xs font-bold text-brand-cyan tracking-widest mb-6">03 / FLEET OS</div>
-                        <i class="fa-solid fa-server absolute right-6 top-8 text-7xl text-brand-cyan/10 group-hover:scale-110 group-hover:text-brand-cyan/20 transition-all"></i>
-                        <h3 class="text-2xl font-bold text-white mb-3">Máy Chủ Điều Hành VPK</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-6">Giao diện bản đồ số trực quan, dữ liệu lưu trữ máy chủ trong nước an toàn và kết nối thông suốt với Cục CSGT.</p>
-                        <ul class="border-t border-white/10 pt-5 space-y-2.5 text-xs text-slate-300">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Báo cáo tổng hợp xuất Excel chuẩn đăng kiểm</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Tra cứu lịch sử lộ trình & dừng đỗ 24/7</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-emerald"></i> Giám sát đồng thời hàng ngàn phương tiện</li>
+                    <!-- Solution 3 -->
+                    <div class="card-surface p-7 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-amber-50 text-amber-700 text-xs font-bold mb-5">
+                                <i class="fa-solid fa-mobile-screen-button"></i> Phần mềm & App di động
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2.5">Hệ Thống Quản Lý Đội Xe VPK</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                Theo dõi vị trí xe trực tiếp trên bản đồ số tiếng Việt, xem lại lịch sử di chuyển và xuất báo cáo chuẩn mẫu kiểm định chỉ với vài thao tác.
+                            </p>
+                        </div>
+                        <ul class="border-t border-slate-100 pt-4 space-y-2.5 text-xs sm:text-sm text-slate-700">
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Xuất file Excel báo cáo chuẩn đăng kiểm</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Xem lại lộ trình & điểm dừng đỗ 24/7</li>
+                            <li class="flex items-center gap-2.5"><i class="fa-solid fa-check text-emerald-600"></i> Dùng mượt trên iOS, Android và máy tính</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- FLEET CONTROL CENTER (Mô phỏng nâng cấp toàn diện) -->
-        <section id="dashboard" class="py-24 px-4">
+        <!-- Interactive Fleet Control Center Demo -->
+        <section id="dashboard" class="py-20 px-4 bg-white">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
                     <div>
-                        <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">FLEET CONTROL CENTER</span>
-                        <h2 class="text-3xl sm:text-4xl font-black">Một Màn Hình. Toàn Bộ Đội Xe.</h2>
-                        <p class="text-slate-400 text-sm mt-2 max-w-2xl">Mô phỏng giao diện trung tâm điều hành đội xe thời gian thực của Vạn Phú Khánh GPS.</p>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">TRẢI NGHIỆM TRỰC TIẾP TRÊN WEB</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mô phỏng màn hình quản lý đội xe Vạn Phú Khánh</h2>
+                        <p class="text-slate-600 text-sm mt-2 max-w-2xl">
+                            Bấm vào từng biển số xe bên dưới để xem thử cách hệ thống hiển thị tốc độ, trạng thái khóa điện ACC và vị trí thực tế tại Khánh Hòa.
+                        </p>
                     </div>
 
                     <!-- Filter Tabs -->
-                    <div class="flex items-center gap-2 self-start lg:self-auto p-1 bg-white/5 border border-white/10 rounded-2xl text-xs font-semibold">
-                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl bg-cyan-400/20 text-cyan-300 transition" data-filter="all">Tất cả (<span id="count-all">13</span>)</button>
-                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl text-slate-400 hover:text-white transition" data-filter="running">Đang chạy (<span id="count-running">10</span>)</button>
-                        <button type="button" class="filter-btn px-3 py-1.5 rounded-xl text-slate-400 hover:text-white transition" data-filter="parked">Dừng đỗ (<span id="count-parked">3</span>)</button>
+                    <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto p-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold">
+                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg bg-blue-600 text-white shadow-sm transition cursor-pointer" data-filter="all">
+                            Tất cả (<span id="count-all">13</span>)
+                        </button>
+                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="running">
+                            Đang chạy (<span id="count-running">10</span>)
+                        </button>
+                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="parked">
+                            Dừng đỗ (<span id="count-parked">3</span>)
+                        </button>
                     </div>
                 </div>
 
-                <div class="glass-panel rounded-3xl overflow-hidden border border-brand-cyan/30 shadow-[0_40px_100px_rgba(0,0,0,0.6)]">
-                    <div class="px-6 py-4 bg-slate-900/90 border-b border-white/10 flex justify-between items-center font-mono text-xs">
-                        <div>
-                            <strong class="text-white">VAN PHU KHANH FLEET TELEMETRY</strong>
-                            <span class="text-slate-400 ml-2 hidden sm:inline">v4.8 BCA-COMPLIANT</span>
+                <!-- Dashboard Window -->
+                <div class="rounded-2xl overflow-hidden border border-slate-300 shadow-2xl bg-slate-900 text-slate-100">
+                    <!-- Window Top Bar -->
+                    <div class="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
+                        <div class="flex items-center gap-2.5">
+                            <span class="flex gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                            </span>
+                            <strong class="text-white font-semibold ml-1">Hệ Thống Giám Sát Trực Tuyến VPK GPS</strong>
+                            <span class="text-slate-400 hidden sm:inline">• Khu vực Khánh Hòa</span>
                         </div>
-                        <div class="text-brand-emerald font-bold flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span> 13 XE ĐANG GIÁM SÁT
+                        <div class="text-emerald-400 font-semibold flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            Đang kết nối 13 phương tiện (Truyền dữ liệu BCA: Tốt)
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
-                        <!-- Sidebar danh sách 13 xe -->
-                        <div id="vehicleList" class="lg:col-span-4 p-3 border-b lg:border-b-0 lg:border-r border-white/10 bg-slate-950/50 max-h-[560px] overflow-y-auto space-y-2"></div>
+                        <!-- Sidebar Vehicle List -->
+                        <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-900/90 flex flex-col max-h-[560px]">
+                            <!-- Quick Search Input -->
+                            <div class="p-3 border-b border-slate-800">
+                                <div class="relative">
+                                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                                    <input id="vehicleSearch" type="text" placeholder="Tìm biển số hoặc tuyến đường..." class="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-400">
+                                </div>
+                            </div>
+                            <div id="vehicleList" class="fleet-scroll p-3 overflow-y-auto space-y-2 flex-1"></div>
+                        </div>
 
                         <!-- Live Map Stage -->
-                        <div class="lg:col-span-8 relative bg-slate-950/80 min-h-[440px] lg:min-h-[560px] p-4 flex flex-col justify-between overflow-hidden">
-                            <!-- Đường giao thông vector -->
-                            <svg viewBox="0 0 1000 600" class="absolute inset-0 w-full h-full pointer-events-none">
-                                <path d="M 80 140 Q 240 280, 420 120 T 740 280 T 880 180" fill="none" stroke="rgba(0, 212, 255, 0.35)" stroke-width="2.5" class="map-road"/>
-                                <path d="M 130 470 C 250 380, 340 470, 470 370 S 700 280, 880 440" fill="none" stroke="rgba(38, 135, 255, 0.25)" stroke-width="2.5" class="map-road"/>
+                        <div class="lg:col-span-8 relative bg-[#0B1528] min-h-[440px] lg:min-h-[560px] p-4 flex flex-col justify-between overflow-hidden">
+                            <!-- Subtle Map Grid & Coastline Feel -->
+                            <svg viewBox="0 0 1000 600" class="absolute inset-0 w-full h-full pointer-events-none opacity-80">
+                                <defs>
+                                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+                                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(148, 163, 184, 0.07)" stroke-width="1"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="1000" height="600" fill="url(#grid)" />
+                                <!-- Simulated Highway Routes (QL1A & Nguyễn Tất Thành) -->
+                                <path d="M 80 140 Q 240 280, 420 120 T 740 280 T 880 180" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="3" class="map-road"/>
+                                <path d="M 130 470 C 250 380, 340 470, 470 370 S 700 280, 880 440" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2.5" class="map-road"/>
+                                <!-- Place Labels on Map -->
+                                <text x="760" y="150" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">VÂN PHONG - NINH HÒA</text>
+                                <text x="450" y="300" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">TP. NHA TRANG</text>
+                                <text x="200" y="510" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">CAM LÂM - CAM RANH</text>
                             </svg>
 
                             <!-- Node Markers Layer -->
                             <div id="mapMarkers" class="absolute inset-0"></div>
 
-                            <!-- Top Bar Tag -->
-                            <div class="relative z-10 flex justify-between items-center text-[11px] pointer-events-none font-mono">
-                                <span class="glass-panel px-3 py-1.5 rounded-xl text-slate-300">KHÁNH HÒA • LIVE TELEMETRY</span>
-                                <span class="glass-panel px-3 py-1.5 rounded-xl text-brand-emerald">ĐỒNG BỘ: 100% (4G)</span>
+                            <!-- Map Legend Bar -->
+                            <div class="relative z-10 flex flex-wrap justify-between items-center gap-2 text-[11px] pointer-events-none">
+                                <span class="bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-200 font-medium">
+                                    <i class="fa-solid fa-map-location-dot text-sky-400 mr-1"></i> Bản đồ tuyến Quốc lộ 1A – Khánh Hòa
+                                </span>
+                                <div class="flex items-center gap-3 bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300">
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span> Xe đang chạy</span>
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span> Xe dừng đỗ</span>
+                                </div>
                             </div>
 
-                            <!-- Detail Card (Responsive Mobile & Desktop) -->
-                            <div id="vehicleDetail" class="relative z-10 self-end w-full sm:w-[290px] glass-panel rounded-2xl p-4 shadow-2xl mt-auto"></div>
+                            <!-- Selected Vehicle Detail Card -->
+                            <div id="vehicleDetail" class="relative z-10 self-end w-full sm:w-[310px] bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-2xl p-4 shadow-2xl mt-auto"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- AI Driver Monitoring Camera Section -->
-        <section id="camera" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="camera-screen-mockup h-[420px] rounded-3xl overflow-hidden relative bg-[radial-gradient(circle_at_50%_45%,#182e44,#040912_75%)] border border-brand-cyan/35 shadow-[0_0_50px_rgba(0,180,255,0.18)] flex items-center justify-center">
-                    <div class="laser-scan-bar absolute left-0 w-full h-[2px] bg-brand-cyan shadow-[0_0_18px_#00d4ff,0_0_35px_#00d4ff] animate-laser-scan"></div>
-                    
-                    <div class="relative w-64 h-72 flex items-center justify-center">
-                        <svg class="w-full h-full filter drop-shadow-[0_0_14px_rgba(0,212,255,0.6)] animate-pulse" viewBox="0 0 240 280" fill="none">
-                            <rect x="75" y="10" width="90" height="42" rx="14" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 136, 255, 0.08)"/>
-                            <path d="M95 52 L95 65 M145 52 L145 65" stroke="#00d4ff" stroke-width="2"/>
-                            <path d="M45 65 C45 65 30 110 30 180 C30 240 40 270 40 270 L200 270 C200 270 210 240 210 180 C210 110 195 65 195 65 Z" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="4 3" fill="rgba(6, 15, 28, 0.8)"/>
-                            <path d="M120 40 C144 40 160 58 160 85 C160 115 142 135 120 138 C98 135 80 115 80 85 C80 58 96 40 120 40 Z" stroke="#00f0a8" stroke-width="1.8" fill="rgba(0, 240, 168, 0.06)"/>
-                            <ellipse cx="104" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
-                            <ellipse cx="136" cy="82" rx="6" ry="3" stroke="#00f0a8" stroke-width="1.5" fill="rgba(0, 240, 168, 0.3)"/>
-                            <path d="M120 80 L120 98 L114 103 L126 103" stroke="#00d4ff" stroke-width="1.4"/>
-                            <path d="M108 118 Q120 124 132 118" stroke="#00f0a8" stroke-width="1.5"/>
-                            <path d="M106 137 L106 150 M134 137 L134 150" stroke="#00f0a8" stroke-width="1.6"/>
-                            <path d="M106 150 C80 155 52 170 48 215 L46 270 L194 270 L192 215 C188 170 160 155 134 150 Z" stroke="#00d4ff" stroke-width="1.8" fill="rgba(0, 212, 255, 0.08)"/>
-                            <polygon points="176,146 192,154 78,270 62,270" stroke="#ffb703" stroke-width="2" fill="rgba(255, 183, 3, 0.28)"/>
-                            <rect x="68" y="248" width="16" height="20" rx="3" stroke="#ffb703" stroke-width="1.6" fill="rgba(255, 183, 3, 0.5)"/>
-                            <path d="M72 258 L80 258" stroke="#040811" stroke-width="2"/>
-                            <path d="M60 265 Q120 235 180 265" stroke="rgba(0, 212, 255, 0.6)" stroke-width="3"/>
-                            <circle cx="104" cy="82" r="2.5" fill="#00e0a0"/>
-                            <circle cx="136" cy="82" r="2.5" fill="#00e0a0"/>
-                            <circle cx="120" cy="103" r="2.5" fill="#00d4ff"/>
-                            <circle cx="120" cy="120" r="2.5" fill="#00e0a0"/>
-                            <circle cx="128" cy="202" r="3" fill="#ffb703"/>
-                        </svg>
-                    </div>
+        <!-- Practical Driver & Cabin Camera Section -->
+        <section id="camera" class="py-20 px-4 bg-slate-50 border-y border-slate-200/80">
+            <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                <!-- Left Column: Realistic Cabin Camera Preview Screen -->
+                <div class="lg:col-span-6">
+                    <div class="rounded-2xl overflow-hidden bg-slate-900 border border-slate-300 shadow-xl">
+                        <!-- Camera OSD Header -->
+                        <div class="px-4 py-2.5 bg-slate-950 border-b border-slate-800 flex items-center justify-between text-xs font-mono text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                                <span>CAM 01 - CABIN TÀI XẾ</span>
+                            </div>
+                            <span class="text-sky-400">79A-123.45 • 1080P FHD</span>
+                        </div>
 
-                    <div class="absolute bottom-5 left-5 flex flex-wrap gap-2">
-                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">AI DMS: DRIVER SEATED</span>
-                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">SEATBELT: FASTENED [OK]</span>
-                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">ATTENTION: 99.2%</span>
-                        <span class="bg-black/80 border border-white/10 px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-cyan-200">REC: 1080P/4G</span>
+                        <!-- Cabin View Illustration -->
+                        <div class="p-6 relative bg-gradient-to-b from-slate-900 to-slate-950 flex flex-col items-center justify-center min-h-[320px]">
+                            <div class="w-56 h-56 flex items-center justify-center relative">
+                                <!-- Clean Driver & Seatbelt Graphic -->
+                                <svg class="w-full h-full" viewBox="0 0 240 240" fill="none">
+                                    <!-- Seat Frame -->
+                                    <rect x="75" y="15" width="90" height="36" rx="12" stroke="#475569" stroke-width="2" fill="#1E293B"/>
+                                    <path d="M48 60 C48 60 36 100 36 165 L36 225 L204 225 L204 165 C204 100 192 60 192 60 Z" stroke="#475569" stroke-width="2" fill="#0F172A"/>
+                                    <!-- Driver Silhouette -->
+                                    <circle cx="120" cy="78" r="28" stroke="#38BDF8" stroke-width="2" fill="rgba(56, 189, 248, 0.1)"/>
+                                    <path d="M70 195 C72 145 92 125 120 125 C148 125 168 145 170 195" stroke="#38BDF8" stroke-width="2.5" fill="rgba(56, 189, 248, 0.08)"/>
+                                    <!-- Seatbelt Highlight -->
+                                    <line x1="162" y1="128" x2="82" y2="205" stroke="#10B981" stroke-width="7" stroke-linecap="round"/>
+                                    <!-- Steering Wheel -->
+                                    <path d="M72 205 A48 48 0 0 1 168 205" stroke="#94A3B8" stroke-width="5" stroke-linecap="round"/>
+                                    <!-- Detection Frame -->
+                                    <rect x="82" y="42" width="76" height="74" rx="8" stroke="#10B981" stroke-width="1.5" stroke-dasharray="5 4"/>
+                                </svg>
+                            </div>
+
+                            <!-- Realistic Camera Status Badges -->
+                            <div class="w-full grid grid-cols-2 sm:grid-cols-4 gap-2 mt-4">
+                                <div class="bg-slate-800/90 border border-slate-700 px-2.5 py-2 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400">Tài xế trực ca</div>
+                                    <div class="text-xs font-bold text-emerald-400 mt-0.5">Đã quẹt thẻ RFID</div>
+                                </div>
+                                <div class="bg-slate-800/90 border border-slate-700 px-2.5 py-2 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400">Dây an toàn</div>
+                                    <div class="text-xs font-bold text-emerald-400 mt-0.5">Đã cài đúng chuẩn</div>
+                                </div>
+                                <div class="bg-slate-800/90 border border-slate-700 px-2.5 py-2 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400">Tập trung lái xe</div>
+                                    <div class="text-xs font-bold text-sky-300 mt-0.5">Bình thường</div>
+                                </div>
+                                <div class="bg-slate-800/90 border border-slate-700 px-2.5 py-2 rounded-lg text-center">
+                                    <div class="text-[10px] text-slate-400">Gửi ảnh CSGT</div>
+                                    <div class="text-xs font-bold text-white mt-0.5">Tự động 3 phút/lần</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">AI SMART SURVEILLANCE</span>
-                    <h2 class="text-3xl sm:text-4xl font-black leading-tight mb-6">
-                        GPS biết xe ở đâu.<br>
-                        <span class="gradient-text">Camera thấu hiểu</span> người lái & an toàn.
+                <!-- Right Column: Clear Explanation -->
+                <div class="lg:col-span-6">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">CAMERA GIÁM SÁT HỢP CHUẨN THÔNG TƯ 71/2024/TT-BCA</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">
+                        Hình ảnh rõ nét ngày đêm, hỗ trợ nhắc nhở an toàn cho bác tài
                     </h2>
-                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                        Sự kết hợp giữa định vị vệ tinh và thị giác nhân tạo thông minh giúp giám sát trạng thái tài xế ngồi ghế lái, kiểm soát việc thắt dây an toàn, phát hiện sớm nguy cơ ngủ gật, sử dụng điện thoại hay mất tập trung theo đúng chuẩn Thông tư 71/2024/TT-BCA.
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
+                        Không chỉ phục vụ đúng quy định đăng kiểm đối với xe đầu kéo, xe container, xe khách và xe tải, hệ thống Camera hợp chuẩn của Vạn Phú Khánh còn giúp nhà xe bảo vệ tài xế khi có tình huống va chạm hoặc tranh chấp trên đường.
                     </p>
-                    <div class="mt-8">
-                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all">
-                            <i class="fa-solid fa-comment-dots"></i> TƯ VẤN CAMERA BCA QUA ZALO
-                        </a>
+
+                    <div class="space-y-3.5 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="text-sm text-slate-700">
+                                <strong>Truyền dữ liệu đúng chuẩn Bộ Công An:</strong> Tự động gửi hình ảnh kèm tọa độ GPS và biển số xe về máy chủ quản lý.
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="text-sm text-slate-700">
+                                <strong>Nhắc nhở bằng âm thanh thân thiện:</strong> Cảnh báo nhẹ nhàng khi chạy quá tốc độ giới hạn hoặc lái xe liên tục quá 4 giờ.
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 text-xs">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div class="text-sm text-slate-700">
+                                <strong>Xem trực tiếp trên điện thoại:</strong> Chủ xe mở ứng dụng là xem được ngay video trực tiếp hoặc tải lại video lịch sử.
+                            </div>
+                        </div>
                     </div>
+
+                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-sm transition-colors cursor-pointer">
+                        <i class="fa-solid fa-comments"></i> Tư vấn cấu hình Camera phù hợp cho xe của bạn
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Tech Specs & Legal Compliance Section -->
-        <section id="specs" class="py-24 px-4">
+        <section id="specs" class="py-20 px-4 bg-white">
             <div class="max-w-6xl mx-auto">
-                <div class="max-w-2xl mb-14">
-                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">MINH BẠCH & HỢP CHUẨN</span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Thông Số Kỹ Thuật & Căn Cứ Pháp Lý</h2>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Thiết bị hoàn chỉnh hồ sơ hợp quy, bảo đảm nghiệm thu đăng kiểm 100%.</p>
+                <div class="max-w-2xl mb-12">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">MINH BẠCH THÔNG SỐ & HỒ SƠ PHÁP LÝ</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Thông số kỹ thuật & Căn cứ quy chuẩn</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+                        Mọi thiết bị do Vạn Phú Khánh GPS lắp đặt đều có đầy đủ giấy chứng nhận hợp chuẩn, hợp quy phục vụ công tác kiểm định phương tiện.
+                    </p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Tech Specs Table -->
-                    <div class="glass-panel p-8 rounded-3xl">
-                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
-                            <i class="fa-solid fa-sliders text-brand-cyan"></i> Phần Cứng Viview DV4G
+                    <div class="card-surface p-7 sm:p-8 rounded-2xl">
+                        <h3 class="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2.5">
+                            <i class="fa-solid fa-sliders text-blue-600"></i> Thông Số Thiết Bị Viview DV4G
                         </h3>
                         <table class="w-full text-sm border-collapse">
                             <tbody>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium w-5/12">Nhà sản xuất</th><td class="py-3 text-slate-200">Viview (Công nghệ Việt)</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nhà phân phối</th><td class="py-3 text-slate-200">Vạn Phú Khánh GPS</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Mã Model</th><td class="py-3 text-slate-200">DV4G / VV4G-02</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-brand-cyan font-bold">Hợp chuẩn quy chuẩn</th><td class="py-3 text-brand-cyan font-bold">QCVN06:2024/BCA</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Mạng truyền thông</th><td class="py-3 text-slate-200">4G LTE tốc độ cao</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nguồn điện vận hành</th><td class="py-3 text-slate-200">12V – 24V DC</td></tr>
-                                <tr class="border-b border-white/5"><th class="text-left py-3 text-slate-400 font-medium">Nhiệt độ hoạt động</th><td class="py-3 text-slate-200">0°C đến 70°C</td></tr>
-                                <tr><th class="text-left py-3 text-slate-400 font-medium">Phụ kiện kèm theo</th><td class="py-3 text-slate-200">Máy DV4G, Ăng-ten GPS, Thẻ RFID, SIM 4G</td></tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium w-5/12">Đơn vị sản xuất</th>
+                                    <td class="py-3 text-slate-900 font-semibold">Viview (Công nghệ Việt Nam)</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium">Đơn vị phân phối & lắp đặt</th>
+                                    <td class="py-3 text-slate-900 font-semibold">Vạn Phú Khánh GPS</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium">Mã thiết bị (Model)</th>
+                                    <td class="py-3 text-slate-900 font-mono">DV4G / VV4G-02</td>
+                                </tr>
+                                <tr class="border-b border-slate-100 bg-blue-50/60">
+                                    <th class="text-left py-3 px-2 text-blue-800 font-bold">Quy chuẩn đạt được</th>
+                                    <td class="py-3 px-2 text-blue-700 font-bold">QCVN06:2024/BCA</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium">Băng tần mạng</th>
+                                    <td class="py-3 text-slate-800">4G LTE tốc độ cao</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium">Điện áp hoạt động</th>
+                                    <td class="py-3 text-slate-800">12V – 24V DC (Tự động ổn áp)</td>
+                                </tr>
+                                <tr class="border-b border-slate-100">
+                                    <th class="text-left py-3 text-slate-500 font-medium">Nhiệt độ làm việc</th>
+                                    <td class="py-3 text-slate-800">0°C đến 70°C</td>
+                                </tr>
+                                <tr>
+                                    <th class="text-left py-3 text-slate-500 font-medium">Trọn bộ phụ kiện</th>
+                                    <td class="py-3 text-slate-800">Máy chủ DV4G, Ăng-ten GPS/4G, Thẻ tài xế RFID, SIM 4G</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
 
                     <!-- Legal Compliance -->
-                    <div class="glass-panel p-8 rounded-3xl">
-                        <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2.5">
-                            <i class="fa-solid fa-scale-balanced text-brand-cyan"></i> Căn Cứ Quy Chuẩn Pháp Lý
+                    <div class="card-surface p-7 sm:p-8 rounded-2xl">
+                        <h3 class="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2.5">
+                            <i class="fa-solid fa-scale-balanced text-blue-600"></i> Căn Cứ Quy Định Pháp Luật Hiện Hành
                         </h3>
 
                         <div class="space-y-4">
-                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-gavel"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-white text-sm">Luật TTATGT Đường Bộ 2024</h5>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy định bắt buộc đối với phương tiện kinh doanh vận tải về thiết bị giám sát hành trình và truyền dữ liệu liên tục.</p>
+                                    <h4 class="font-bold text-slate-900 text-sm">Luật Trật Tự, An Toàn Giao Thông Đường Bộ 2024</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        Quy định xe ô tô kinh doanh vận tải phải lắp thiết bị giám sát hành trình và thiết bị ghi nhận hình ảnh người lái xe theo đúng quy chuẩn kỹ thuật.
+                                    </p>
                                 </div>
                             </div>
 
-                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-file-contract"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-white text-sm">Nghị Định 151/2024/NĐ-CP</h5>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy định chi tiết về chuyển đổi hạ tầng giám sát và chế tài an toàn kỹ thuật phương tiện cơ giới.</p>
+                                    <h4 class="font-bold text-slate-900 text-sm">Nghị Định 151/2024/NĐ-CP của Chính Phủ</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        Quy định chi tiết điều kiện phương tiện tham gia kinh doanh vận tải, thời gian làm việc của người lái xe và trách nhiệm duy trì truyền dữ liệu.
+                                    </p>
                                 </div>
                             </div>
 
-                            <div class="p-4 rounded-2xl bg-white/5 border border-white/5 flex gap-4 items-start">
-                                <div class="w-10 h-10 rounded-xl bg-blue-600/15 text-brand-cyan flex items-center justify-center shrink-0">
+                            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex gap-4 items-start">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-stamp"></i>
                                 </div>
                                 <div>
-                                    <h5 class="font-bold text-white text-sm">Thông Tư 71/2024/TT-BCA</h5>
-                                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Quy chuẩn Quốc gia chính thức từ Bộ Công An áp dụng cho hộp đen và camera giám sát tài xế / hành khách.</p>
+                                    <h4 class="font-bold text-slate-900 text-sm">Thông Tư 71/2024/TT-BCA & QCVN06:2024/BCA</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        Quy chuẩn kỹ thuật quốc gia do Bộ Công An ban hành về quản lý, vận hành và kết nối dữ liệu thiết bị giám sát hành trình về hệ thống Cục CSGT.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -532,128 +774,124 @@
             </div>
         </section>
 
-        <!-- Dịch Vụ Hậu Mãi Thực Chiến -->
-        <section id="hau-mai" class="py-24 px-4 bg-slate-950/40 border-y border-white/5">
+        <!-- After-Sales Service Section -->
+        <section id="hau-mai" class="py-20 px-4 bg-slate-50 border-y border-slate-200/80">
             <div class="max-w-6xl mx-auto">
-                <div class="max-w-2xl mb-14">
-                    <span class="text-xs font-extrabold text-brand-cyan tracking-widest uppercase mb-2 block">DỊCH VỤ & HẬU MÃI</span>
-                    <h2 class="text-3xl sm:text-4xl font-black">Hỗ Trợ Kỹ Thuật & Đồng Hành Đội Xe</h2>
-                    <p class="text-slate-400 text-sm mt-3 leading-relaxed">Đảm bảo thiết bị hoạt động ổn định, truyền dữ liệu không gián đoạn về máy chủ quản lý và Cục CSGT.</p>
+                <div class="max-w-2xl mb-12">
+                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">CAM KẾT ĐỒNG HÀNH DÀI LÂU</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Dịch vụ kỹ thuật tận tâm tại Khánh Hòa</h2>
+                    <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+                        Chúng tôi hiểu rằng xe nằm bãi ngày nào là chủ xe thiệt hại ngày đó. Đội kỹ thuật Vạn Phú Khánh luôn ưu tiên xử lý nhanh gọn nhất.
+                    </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-brand-cyan/30 text-brand-cyan flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Bảo Hành & Bảo Trì Định Kỳ</h3>
-                        <div class="space-y-3.5 text-xs text-slate-300">
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Quy trình bảo hành minh bạch:</strong>
-                                <span class="text-slate-400 leading-relaxed">Sửa chữa, đổi mới linh kiện nhanh chóng khi phát sinh lỗi phần cứng từ nhà sản xuất, hạn chế tối đa thời gian dừng xe.</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="flex items-center gap-3.5 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-blue-50 border border-blue-200 text-blue-700 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Kiểm tra & Cập nhật hệ thống:</strong>
-                                <span class="text-slate-400 leading-relaxed">Chủ động rà soát tín hiệu, vệ sinh giắc cắm và nâng cấp firmware thiết bị định kỳ để ngăn ngừa mất kết nối giữa đường.</span>
-                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Bảo Hành Đổi Mới Nhanh Chóng</h3>
                         </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                            Đổi mới linh kiện nhanh khi phát sinh lỗi phần cứng từ nhà sản xuất, không để xe phải chờ đợi lâu làm ảnh hưởng lịch trình giao nhận hàng.
+                        </p>
+                        <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200/60">
+                            <i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> Chủ động kiểm tra tín hiệu từ xa, vệ sinh giắc cắm và cập nhật phần mềm định kỳ miễn phí.
+                        </p>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-truck-fast"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Kỹ Thuật Lưu Động & Hỗ Trợ 24/7</h3>
-                        <div class="space-y-3.5 text-xs text-slate-300">
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Đội thợ xử lý tận nơi:</strong>
-                                <span class="text-slate-400 leading-relaxed">Có mặt kiểm tra tại bến bãi, gara hoặc trạm dừng xe khi phát sinh lỗi tín hiệu, thẻ lái xe hay mắt camera.</span>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="flex items-center gap-3.5 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-truck-fast"></i>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Kênh trực ban liên tục:</strong>
-                                <span class="text-slate-400 leading-relaxed">Hotline và Zalo trực tuyến giải quyết ngay các tình huống gấp khi xe đang trên đường đi đăng kiểm.</span>
-                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Kỹ Thuật Lưu Động Tận Bến Bãi</h3>
                         </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                            Với 4 trạm kỹ thuật trải dọc từ Vân Phong, Ninh Hòa, Nha Trang đến Nam Khánh Hòa, thợ kỹ thuật có mặt tận gara, bến xe để lắp đặt và kiểm tra.
+                        </p>
+                        <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200/60">
+                            <i class="fa-solid fa-phone text-emerald-600 mr-1"></i> Trực hotline và Zalo 24/7 hỗ trợ tức thì khi xe đang đi đăng kiểm hoặc cần giấy xác nhận gấp.
+                        </p>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-brand-emerald/30 text-brand-emerald flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Chuyển Giao & Hướng Dẫn Vận Hành</h3>
-                        <div class="space-y-3.5 text-xs text-slate-300">
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Hướng dẫn tài xế & quản lý:</strong>
-                                <span class="text-slate-400 leading-relaxed">Thao tác quẹt thẻ RFID đúng quy định, nhận diện cảnh báo âm thanh trên xe và cách theo dõi xe trên ứng dụng điện thoại.</span>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="flex items-center gap-3.5 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-amber-50 border border-amber-200 text-amber-700 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Tài liệu & Video kỹ thuật:</strong>
-                                <span class="text-slate-400 leading-relaxed">Cung cấp tài liệu tra cứu nhanh, video trích xuất dữ liệu camera và xuất báo cáo hành trình chuẩn mẫu kiểm định.</span>
-                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Hướng Dẫn Tài Xế & Kế Toán Vận Tải</h3>
                         </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                            Hướng dẫn chi tiết cách quẹt thẻ lái xe RFID đúng quy định khi đổi tài, cách xem cảnh báo trên xe và thao tác trích xuất dữ liệu cho bộ phận quản lý.
+                        </p>
+                        <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200/60">
+                            <i class="fa-solid fa-file-excel text-amber-600 mr-1"></i> Hỗ trợ xuất báo cáo hành trình, tốc độ theo đúng biểu mẫu cơ quan chức năng yêu cầu.
+                        </p>
                     </div>
 
-                    <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-brand-amber/30 text-brand-amber flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
-                            <i class="fa-solid fa-rotate"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Chính Sách Khách Hàng & Nâng Cấp</h3>
-                        <div class="space-y-3.5 text-xs text-slate-300">
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Ưu đãi gói cước & thiết bị mở rộng:</strong>
-                                <span class="text-slate-400 leading-relaxed">Chiết khấu tốt khi duy trì server, SIM 4G nhiều xe hoặc lắp thêm cảm biến nhiên liệu, camera phụ.</span>
+                    <div class="card-surface p-7 rounded-2xl">
+                        <div class="flex items-center gap-3.5 mb-4">
+                            <div class="w-11 h-11 rounded-xl bg-purple-50 border border-purple-200 text-purple-700 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-rotate"></i>
                             </div>
-                            <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5">
-                                <strong class="text-white block text-sm mb-1">Chương trình thu cũ - đổi mới:</strong>
-                                <span class="text-slate-400 leading-relaxed">Hỗ trợ chi phí chuyển đổi từ thiết bị 2G/3G đời cũ sang hộp đen 4G đạt chuẩn QCVN06:2024/BCA mới nhất.</span>
-                            </div>
+                            <h3 class="text-lg font-bold text-slate-900">Hỗ Trợ Thu Cũ Đổi Mới Lên 4G</h3>
                         </div>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-3">
+                            Trợ giá trực tiếp và miễn phí thiết bị khi chuyển đổi từ hộp đen 2G/3G đời cũ sang thiết bị 4G hợp chuẩn mới, kèm chiết khấu tốt cho đội xe số lượng nhiều.
+                        </p>
+                        <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-xl border border-slate-200/60">
+                            <i class="fa-solid fa-tags text-purple-600 mr-1"></i> Chi phí gia hạn SIM 4G và máy chủ hàng năm rõ ràng, ổn định, không phát sinh phụ phí ẩn.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Stats Section -->
-        <section class="py-20 px-4">
+        <!-- Trust Numbers Section -->
+        <section class="py-16 px-4 bg-white border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-panel p-6 rounded-3xl text-center">
-                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="3000">0</div>
-                    <div class="text-xs font-semibold text-slate-400">Phương tiện đã lắp đặt</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
+                    <div class="counter text-3xl sm:text-4xl font-extrabold text-blue-600 mb-1" data-target="3000">0</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600">Phương tiện đã lắp đặt</div>
                 </div>
 
-                <div class="glass-panel p-6 rounded-3xl text-center">
-                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="24">0</div>
-                    <div class="text-xs font-semibold text-slate-400">Giờ hỗ trợ kỹ thuật tận xe</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
+                    <div class="counter text-3xl sm:text-4xl font-extrabold text-blue-600 mb-1" data-target="24">0</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600">Hỗ trợ kỹ thuật & đăng kiểm</div>
                 </div>
 
-                <div class="glass-panel p-6 rounded-3xl text-center">
-                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="99">0</div>
-                    <div class="text-xs font-semibold text-slate-400">% Dữ liệu truyền ổn định</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
+                    <div class="counter text-3xl sm:text-4xl font-extrabold text-blue-600 mb-1" data-target="99">0</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600">Tỷ lệ truyền dữ liệu ổn định</div>
                 </div>
 
-                <div class="glass-panel p-6 rounded-3xl text-center">
-                    <div class="counter text-4xl sm:text-5xl font-black font-display text-white mb-2" data-target="10">0</div>
-                    <div class="text-xs font-semibold text-slate-400">Năm uy tín ngành vận tải</div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 text-center">
+                    <div class="counter text-3xl sm:text-4xl font-extrabold text-blue-600 mb-1" data-target="10">0</div>
+                    <div class="text-xs sm:text-sm font-semibold text-slate-600">Năm kinh nghiệm tại Khánh Hòa</div>
                 </div>
             </div>
         </section>
 
-        <!-- High-Impact CTA -->
-        <section class="py-20 px-4">
-            <div class="max-w-4xl mx-auto glass-panel p-10 sm:p-14 rounded-3xl text-center border border-brand-cyan/40 shadow-[0_0_80px_rgba(0,136,255,0.2)] relative overflow-hidden">
-                <h2 class="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-                    SẴN SÀNG QUẢN LÝ <br>
-                    <span class="gradient-text">ĐỘI XE CHUẨN BCA?</span>
+        <!-- Final CTA Section -->
+        <section class="py-20 px-4 bg-gradient-to-b from-white to-blue-50/60">
+            <div class="max-w-4xl mx-auto bg-slate-900 text-white p-8 sm:p-12 rounded-3xl text-center shadow-xl relative overflow-hidden">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-sky-300 text-xs font-bold mb-4">
+                    ƯU ĐÃI CHUYỂN ĐỔI HỘP ĐEN 4G CHUẨN BCA
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight mb-4">
+                    Cần lắp đặt mới hoặc gia hạn đi đăng kiểm ngay hôm nay?
                 </h2>
-                <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto mb-8">
-                    Nâng cấp ngay hôm nay để nhận trọn gói ưu đãi chuyển đổi 4G miễn phí 100% và chính sách hỗ trợ kỹ thuật tận xe từ Vạn Phú Khánh GPS.
+                <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                    Gọi trực tiếp hoặc nhắn biển số xe qua Zalo, đội ngũ Vạn Phú Khánh GPS sẽ kiểm tra trạng thái thiết bị và báo lịch kỹ thuật viên đến tận xe hỗ trợ bạn.
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="tel:0585114114" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-cyan to-brand-primary text-white font-bold text-sm shadow-[0_6px_25px_rgba(0,130,255,0.35)] hover:scale-105 transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-phone"></i> GỌI HOTLINE: 0585.114.114
+                    <a href="tel:0585114114" class="px-7 py-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-lg transition-all flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-phone-volume"></i> Gọi Hotline: 0585.114.114
                     </a>
-                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl bg-blue-600/15 border border-blue-500/40 text-blue-400 hover:bg-blue-600 hover:text-white font-bold text-sm transition-all flex items-center gap-2">
-                        <i class="fa-solid fa-comment-dots"></i> NHẮN ZALO ĐẶT LỊCH TẬN XE
+                    <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-7 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm transition-all flex items-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-comments text-sky-400"></i> Nhắn Zalo đặt lịch tận xe
                     </a>
                 </div>
             </div>
@@ -661,210 +899,195 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-black/80 py-16 px-4 text-slate-400 text-xs">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+    <footer class="bg-slate-950 text-slate-400 py-14 px-4 text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
             <div class="md:col-span-5">
-                <h4 class="text-base font-bold text-white mb-3">VẠN PHÚ KHÁNH GPS</h4>
-                <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                    Thương nhân triển khai chương trình nâng cấp thiết bị giám sát hành trình 4G đạt chuẩn QCVN06:2024/BCA miễn phí 100% tại Khánh Hòa và khu vực lân cận. Đồng hành tin cậy của mọi đội xe.
+                <div class="flex items-center gap-3 mb-3">
+                    <div class="w-9 h-9 rounded-lg bg-white/10 p-1 flex items-center justify-center">
+                        <img src="https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png" alt="Logo Vạn Phú Khánh GPS" class="w-full h-full object-contain">
+                    </div>
+                    <h4 class="text-base font-extrabold text-white">VẠN PHÚ KHÁNH GPS</h4>
+                </div>
+                <p class="text-slate-400 text-xs leading-relaxed mb-5">
+                    Đơn vị chuyên cung cấp, lắp đặt và nâng cấp thiết bị giám sát hành trình 4G & Camera hợp chuẩn QCVN06:2024/BCA tại Khánh Hòa và khu vực lân cận. Đồng hành tin cậy cùng mọi cá nhân và doanh nghiệp vận tải.
                 </p>
 
                 <!-- Google Rating Badge -->
-                <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/40 transition-all">
-                    <i class="fa-brands fa-google text-2xl text-red-500"></i>
+                <a href="https://maps.app.goo.gl/nePVen1FDzinLxLk9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 p-3 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-400/50 transition-all">
+                    <i class="fa-brands fa-google text-xl text-red-500"></i>
                     <div>
                         <div class="flex items-center gap-1 text-amber-400 text-xs">
                             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                             <span class="font-bold text-white text-xs ml-1">5.0</span>
                         </div>
-                        <span class="text-[11px] text-slate-400">Đánh giá xuất sắc trên Google Maps ↗</span>
+                        <span class="text-[11px] text-slate-400">Xem địa chỉ & đánh giá trên Google Maps ↗</span>
                     </div>
                 </a>
             </div>
 
             <div class="md:col-span-4">
-                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hệ Thống Trụ Sở & Trạm Bảo Hành</h5>
+                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Hệ Thống Trụ Sở & Trạm Kỹ Thuật</h5>
                 <ul class="space-y-2.5 text-xs">
-                    <li class="flex items-start gap-2">
-                        <i class="fa-solid fa-building-flag text-brand-cyan mt-0.5"></i>
-                        <span><strong>Trụ sở chính:</strong> Thôn Tân Mỹ, xã Tân Định, tỉnh Khánh Hòa</span>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-building-flag text-sky-400 mt-0.5"></i>
+                        <span><strong class="text-slate-200">Trụ sở chính:</strong> Thôn Tân Mỹ, xã Tân Định, tỉnh Khánh Hòa</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
-                        <span><strong>Trạm Nha Trang:</strong> KĐT Phước Long, Nam Nha Trang, Khánh Hòa</span>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-sky-400 mt-0.5"></i>
+                        <span><strong class="text-slate-200">Trạm Nha Trang:</strong> KĐT Phước Long, Nam Nha Trang, Khánh Hòa</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
-                        <span><strong>Trạm Vân Phong:</strong> QL1A, Bắc Ninh Hòa, Khánh Hòa</span>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-sky-400 mt-0.5"></i>
+                        <span><strong class="text-slate-200">Trạm Vân Phong:</strong> QL1A, Bắc Ninh Hòa, Khánh Hòa</span>
                     </li>
-                    <li class="flex items-start gap-2">
-                        <i class="fa-solid fa-wrench text-brand-cyan mt-0.5"></i>
-                        <span><strong>Trạm Nam Khánh Hòa:</strong> Thôn Suối Đá, xã Thuận Bắc, tỉnh Khánh Hòa</span>
+                    <li class="flex items-start gap-2.5">
+                        <i class="fa-solid fa-location-dot text-sky-400 mt-0.5"></i>
+                        <span><strong class="text-slate-200">Trạm Nam Khánh Hòa:</strong> Thôn Suối Đá, xã Thuận Bắc, tỉnh Khánh Hòa</span>
                     </li>
                 </ul>
             </div>
 
             <div class="md:col-span-3">
-                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Kênh Liên Hệ 24/7</h5>
-                <ul class="space-y-2.5 text-xs">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-cyan"></i> Hotline: <a href="tel:0585114114" class="text-white font-bold">0585.114.114</a></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-comment-dots text-brand-cyan"></i> Zalo: <a href="https://zalo.me/0585114114" target="_blank" class="text-white">0585.114.114</a></li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-cyan"></i> Email: ctyvanphukhanh@gmail.com</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-brand-cyan"></i> Web: www.vanphukhanh.com</li>
+                <h5 class="text-xs font-bold text-white uppercase tracking-wider mb-4">Thông Tin Liên Hệ 24/7</h5>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-phone text-sky-400"></i>
+                        <span>Hotline: <a href="tel:0585114114" class="text-white font-bold hover:underline">0585.114.114</a></span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-comments text-sky-400"></i>
+                        <span>Zalo hỗ trợ: <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="text-white hover:underline">0585.114.114</a></span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-envelope text-sky-400"></i>
+                        <span>Email: <a href="mailto:ctyvanphukhanh@gmail.com" class="hover:text-white">ctyvanphukhanh@gmail.com</a></span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i class="fa-solid fa-globe text-sky-400"></i>
+                        <span>Website: <a href="https://www.vanphukhanh.com" class="hover:text-white">www.vanphukhanh.com</a></span>
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <div class="max-w-6xl mx-auto pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px]">
-            <div>© 2026 VẠN PHÚ KHÁNH GPS. All rights reserved.</div>
-            <div>Thiết bị giám sát hành trình • Camera AI DMS • Quản lý đội xe BCA</div>
+        <div class="max-w-6xl mx-auto pt-6 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+            <div>© 2026 Vạn Phú Khánh GPS. Bảo lưu mọi quyền.</div>
+            <div>Thiết bị giám sát hành trình 4G • Camera Nghị Định • Quản lý đội xe hợp chuẩn BCA</div>
         </div>
     </footer>
 
-    <!-- Floating Action Buttons -->
+    <!-- Floating Quick Contact Buttons -->
     <div class="fixed bottom-5 right-5 flex flex-col gap-3 z-50">
-        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="w-13 h-13 p-3.5 rounded-full bg-blue-600 text-white shadow-[0_0_25px_rgba(0,104,255,0.5)] hover:scale-110 transition-all flex items-center justify-center text-xl">
-            <i class="fa-solid fa-comment-dots"></i>
+        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo 0585.114.114" class="w-12 h-12 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:scale-105 transition-all flex items-center justify-center text-lg cursor-pointer">
+            <i class="fa-solid fa-comments"></i>
         </a>
-        <a href="tel:0585114114" class="w-13 h-13 p-3.5 rounded-full bg-red-600 text-white shadow-[0_0_25px_rgba(229,62,62,0.5)] hover:scale-110 transition-all flex items-center justify-center text-xl">
+        <a href="tel:0585114114" aria-label="Gọi điện 0585.114.114" class="w-12 h-12 rounded-full bg-orange-600 hover:bg-orange-700 text-white shadow-lg hover:scale-105 transition-all flex items-center justify-center text-lg cursor-pointer">
             <i class="fa-solid fa-phone"></i>
         </a>
     </div>
 
-    <!-- Scripts (Nubila Particle Canvas + VPK Interactive Fleet) -->
+    <!-- Interactive Scripts -->
     <script>
-        // 1. Particle Canvas Network Effect
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.35;
-                this.vy = (Math.random() - 0.5) * 0.35;
-                this.radius = Math.random() * 1.5 + 0.5;
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 212, 255, 0.4)';
-                ctx.fill();
-            }
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
         }
 
-        for (let i = 0; i < 40; i++) {
-            particles.push(new Particle());
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 110) {
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.strokeStyle = `rgba(0, 212, 255, ${0.12 * (1 - dist / 110)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.stroke();
-                    }
-                }
-            }
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-
-        // 2. GNSS Satellite Random Ticker
+        // 2. GNSS Satellite Ticker
         const gnssElement = document.getElementById('gnssCount');
         if (gnssElement) {
             function updateGNSS() {
-                const count = Math.floor(Math.random() * (24 - 12 + 1)) + 12;
-                gnssElement.innerText = Math.max(12, Math.min(24, count));
-                setTimeout(updateGNSS, Math.floor(Math.random() * 2500) + 2500);
+                const count = Math.floor(Math.random() * (22 - 15 + 1)) + 15;
+                gnssElement.innerText = count;
+                setTimeout(updateGNSS, 3500);
             }
             updateGNSS();
         }
 
-        // 3. Quản lý 13 phương tiện và Bản đồ tương tác
+        // 3. Interactive Fleet Control Center (13 Vehicles)
         const vehicles = [
-            { plate: '79A-123.45', type: 'Container', speed: 68, status: 'running', statusText: 'Đang chạy', place: 'Bắc Nha Trang ➔ Cam Ranh', acc: 'ON', lat: '12.2388', lng: '109.1967', x: 22, y: 28 },
-            { plate: '79B-678.90', type: 'Xe khách 45c', speed: 54, status: 'running', statusText: 'Đang chạy', place: 'QL1A Khánh Hòa', acc: 'ON', lat: '12.2512', lng: '109.1843', x: 45, y: 52 },
-            { plate: '79C-246.80', type: 'Tải 15 tấn', speed: 0, status: 'parked', statusText: 'Đang dừng đỗ', place: 'KĐT Phước Long', acc: 'OFF', lat: '12.2104', lng: '109.2155', x: 66, y: 22 },
-            { plate: '79D-135.79', type: 'Đầu kéo', speed: 62, status: 'running', statusText: 'Đang chạy', place: 'Đại lộ Nguyễn Tất Thành', acc: 'ON', lat: '12.2890', lng: '109.1450', x: 74, y: 64 },
-            { plate: '79B-012.34', type: 'Xe buýt liên tỉnh', speed: 48, status: 'running', statusText: 'Đang chạy', place: 'Bến xe Phía Bắc ➔ Vạn Giã', acc: 'ON', lat: '12.2700', lng: '109.1800', x: 34, y: 78 },
-            { plate: '79H-567.89', type: 'Xe đông lạnh', speed: 71, status: 'running', statusText: 'Đang chạy', place: 'Cảng Cam Ranh ➔ QL1A', acc: 'ON', lat: '11.9980', lng: '109.1230', x: 84, y: 38 },
-            { plate: '79C-998.81', type: 'Tải ben 4 chân', speed: 38, status: 'running', statusText: 'Đang chạy', place: 'Mỏ đá Hòn Ngang ➔ Diên Khánh', acc: 'ON', lat: '12.2600', lng: '109.1000', x: 56, y: 72 },
-            { plate: '79E-112.23', type: 'Taxi hợp đồng', speed: 52, status: 'running', statusText: 'Đang chạy', place: 'Sân bay Cam Ranh ➔ Trần Phú', acc: 'ON', lat: '12.0100', lng: '109.2000', x: 28, y: 42 },
-            { plate: '79B-334.45', type: 'Xe du lịch 29c', speed: 0, status: 'parked', statusText: 'Đang đón khách', place: 'Cảng Du Lịch Nha Trang', acc: 'OFF', lat: '12.2150', lng: '109.2200', x: 62, y: 35 },
-            { plate: '79C-445.56', type: 'Xe bồn xăng dầu', speed: 45, status: 'running', statusText: 'Đang chạy', place: 'Kho Xăng Dầu Vĩnh Nguyên', acc: 'ON', lat: '12.2050', lng: '109.2100', x: 50, y: 65 },
-            { plate: '79A-889.90', type: 'Container lạnh', speed: 65, status: 'running', statusText: 'Đang chạy', place: 'Khu Kinh Tế Vân Phong', acc: 'ON', lat: '12.5800', lng: '109.2300', x: 80, y: 55 },
-            { plate: '79C-778.89', type: 'Xe chở thư tín', speed: 58, status: 'running', statusText: 'Đang chạy', place: 'Bưu cục Nha Trang ➔ Ninh Hòa', acc: 'ON', lat: '12.3500', lng: '109.1700', x: 38, y: 20 },
-            { plate: '79D-667.12', type: 'Xe cẩu tự hành', speed: 0, status: 'parked', statusText: 'Đang bốc dỡ', place: 'KCN Suối Dầu, Cam Lâm', acc: 'ON', lat: '12.1800', lng: '109.1100', x: 18, y: 68 }
+            { plate: '79A-123.45', type: 'Container', speed: 68, status: 'running', statusText: 'Đang chạy', place: 'Bắc Nha Trang ➔ Cam Ranh', acc: 'BẬT', lat: '12.2388', lng: '109.1967', x: 22, y: 28 },
+            { plate: '79B-678.90', type: 'Xe khách 45 chỗ', speed: 54, status: 'running', statusText: 'Đang chạy', place: 'QL1A Khánh Hòa', acc: 'BẬT', lat: '12.2512', lng: '109.1843', x: 45, y: 52 },
+            { plate: '79C-246.80', type: 'Xe tải 15 tấn', speed: 0, status: 'parked', statusText: 'Đang dừng đỗ', place: 'KĐT Phước Long, Nha Trang', acc: 'TẮT', lat: '12.2104', lng: '109.2155', x: 66, y: 22 },
+            { plate: '79D-135.79', type: 'Đầu kéo', speed: 62, status: 'running', statusText: 'Đang chạy', place: 'Đại lộ Nguyễn Tất Thành', acc: 'BẬT', lat: '12.2890', lng: '109.1450', x: 74, y: 64 },
+            { plate: '79B-012.34', type: 'Xe buýt liên tỉnh', speed: 48, status: 'running', statusText: 'Đang chạy', place: 'Bến xe Phía Bắc ➔ Vạn Giã', acc: 'BẬT', lat: '12.2700', lng: '109.1800', x: 34, y: 78 },
+            { plate: '79H-567.89', type: 'Xe tải đông lạnh', speed: 71, status: 'running', statusText: 'Đang chạy', place: 'Cảng Cam Ranh ➔ QL1A', acc: 'BẬT', lat: '11.9980', lng: '109.1230', x: 84, y: 38 },
+            { plate: '79C-998.81', type: 'Tải ben 4 chân', speed: 38, status: 'running', statusText: 'Đang chạy', place: 'Mỏ đá Hòn Ngang ➔ Diên Khánh', acc: 'BẬT', lat: '12.2600', lng: '109.1000', x: 56, y: 72 },
+            { plate: '79E-112.23', type: 'Xe hợp đồng', speed: 52, status: 'running', statusText: 'Đang chạy', place: 'Sân bay Cam Ranh ➔ Trần Phú', acc: 'BẬT', lat: '12.0100', lng: '109.2000', x: 28, y: 42 },
+            { plate: '79B-334.45', type: 'Xe du lịch 29 chỗ', speed: 0, status: 'parked', statusText: 'Đang đón khách', place: 'Cảng Du Lịch Nha Trang', acc: 'TẮT', lat: '12.2150', lng: '109.2200', x: 62, y: 35 },
+            { plate: '79C-445.56', type: 'Xe bồn xăng dầu', speed: 45, status: 'running', statusText: 'Đang chạy', place: 'Kho Xăng Dầu Vĩnh Nguyên', acc: 'BẬT', lat: '12.2050', lng: '109.2100', x: 50, y: 65 },
+            { plate: '79A-889.90', type: 'Container lạnh', speed: 65, status: 'running', statusText: 'Đang chạy', place: 'Khu Kinh Tế Vân Phong', acc: 'BẬT', lat: '12.5800', lng: '109.2300', x: 80, y: 55 },
+            { plate: '79C-778.89', type: 'Xe chuyển phát', speed: 58, status: 'running', statusText: 'Đang chạy', place: 'Bưu cục Nha Trang ➔ Ninh Hòa', acc: 'BẬT', lat: '12.3500', lng: '109.1700', x: 38, y: 20 },
+            { plate: '79D-667.12', type: 'Xe cẩu tự hành', speed: 0, status: 'parked', statusText: 'Đang bốc dỡ hàng', place: 'KCN Suối Dầu, Cam Lâm', acc: 'BẬT', lat: '12.1800', lng: '109.1100', x: 18, y: 68 }
         ];
 
         let activeFilter = 'all';
+        let searchQuery = '';
         let selectedIndex = 0;
 
         function renderFleet() {
             const listContainer = document.getElementById('vehicleList');
             const markersContainer = document.getElementById('mapMarkers');
 
-            // Cập nhật số lượng đếm
             document.getElementById('count-all').innerText = vehicles.length;
             document.getElementById('count-running').innerText = vehicles.filter(v => v.status === 'running').length;
             document.getElementById('count-parked').innerText = vehicles.filter(v => v.status === 'parked').length;
 
-            const filtered = vehicles.filter(v => activeFilter === 'all' || v.status === activeFilter);
+            const filtered = vehicles.filter(v => {
+                const matchesTab = activeFilter === 'all' || v.status === activeFilter;
+                const q = searchQuery.trim().toLowerCase();
+                const matchesSearch = !q || v.plate.toLowerCase().includes(q) || v.place.toLowerCase().includes(q) || v.type.toLowerCase().includes(q);
+                return matchesTab && matchesSearch;
+            });
 
-            // Render danh sách xe
-            listContainer.innerHTML = filtered.map(v => {
-                const originalIndex = vehicles.indexOf(v);
-                const isRunning = v.status === 'running';
-                return `
-                    <div class="vehicle-strip p-3 rounded-xl bg-white/[.03] border border-white/5 hover:border-cyan-300/30 transition cursor-pointer ${originalIndex === selectedIndex ? 'vehicle-active' : ''}" onclick="selectVehicle(${originalIndex})">
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-xs text-white">${v.plate}</span>
-                            <span class="text-xs font-mono font-bold ${isRunning ? 'text-brand-emerald' : 'text-brand-amber'}">${v.speed} km/h</span>
-                        </div>
-                        <div class="flex justify-between text-[10px] text-slate-400 font-mono mt-1">
-                            <span>${v.type}</span>
-                            <span class="${isRunning ? 'text-slate-300' : 'text-amber-200/80'}">● ${v.statusText}</span>
-                        </div>
-                        <div class="text-[10px] text-slate-500 font-mono mt-1 truncate">📍 ${v.place}</div>
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="p-6 text-center text-xs text-slate-400">
+                        Không tìm thấy phương tiện phù hợp.
                     </div>`;
-            }).join('');
+            } else {
+                listContainer.innerHTML = filtered.map(v => {
+                    const originalIndex = vehicles.indexOf(v);
+                    const isRunning = v.status === 'running';
+                    return `
+                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-sky-400/50 transition cursor-pointer ${originalIndex === selectedIndex ? 'vehicle-active' : ''}" onclick="selectVehicle(${originalIndex})">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-white">${v.plate}</span>
+                                <span class="text-xs font-mono font-bold ${isRunning ? 'text-emerald-400' : 'text-amber-400'}">${v.speed} km/h</span>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>${v.type}</span>
+                                <span class="${isRunning ? 'text-emerald-300' : 'text-amber-300'}">● ${v.statusText}</span>
+                            </div>
+                            <div class="text-[11px] text-slate-400 mt-1 truncate flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-sky-400 text-[10px]"></i>
+                                <span class="truncate">${v.place}</span>
+                            </div>
+                        </div>`;
+                }).join('');
+            }
 
-            // Render Markers trên bản đồ
             markersContainer.innerHTML = vehicles.map((v, i) => {
                 const isRunning = v.status === 'running';
-                const isHidden = activeFilter !== 'all' && v.status !== activeFilter;
+                const matchesTab = activeFilter === 'all' || v.status === activeFilter;
+                const q = searchQuery.trim().toLowerCase();
+                const matchesSearch = !q || v.plate.toLowerCase().includes(q) || v.place.toLowerCase().includes(q) || v.type.toLowerCase().includes(q);
+                const isHidden = !(matchesTab && matchesSearch);
+
                 return `
-                    <button type="button" class="marker absolute -translate-x-1/2 -translate-y-1/2 ${i === selectedIndex ? 'active' : ''} ${isHidden ? 'opacity-20 pointer-events-none' : 'opacity-100'}" style="left:${v.x}%;top:${v.y}%" onclick="selectVehicle(${i})" aria-label="${v.plate}">
-                        <span class="relative flex h-3.5 w-3.5 items-center justify-center">
-                            ${isRunning ? '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>' : ''}
-                            <span class="relative inline-flex rounded-full h-3 w-3 ${isRunning ? 'bg-brand-cyan' : 'bg-brand-amber'} border-2 border-slate-950"></span>
+                    <button type="button" class="marker absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer ${i === selectedIndex ? 'active' : ''} ${isHidden ? 'opacity-15 pointer-events-none' : 'opacity-100'}" style="left:${v.x}%;top:${v.y}%" onclick="selectVehicle(${i})" aria-label="Xe ${v.plate}">
+                        <span class="relative flex h-3.5 w-3.5 items-center justify-center mx-auto">
+                            ${isRunning ? '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>' : ''}
+                            <span class="relative inline-flex rounded-full h-3 w-3 ${isRunning ? 'bg-sky-400' : 'bg-amber-400'} border-2 border-slate-950"></span>
                         </span>
-                        <span class="mt-1 block font-mono text-[9px] font-bold px-1.5 py-0.5 rounded bg-black/85 border border-white/10 text-slate-200 whitespace-nowrap">${v.plate}</span>
+                        <span class="mt-1 block font-mono text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-950/90 border border-slate-700 text-slate-100 whitespace-nowrap shadow">${v.plate}</span>
                     </button>`;
             }).join('');
 
@@ -880,42 +1103,56 @@
             const v = vehicles[index];
             const isRunning = v.status === 'running';
             document.getElementById('vehicleDetail').innerHTML = `
-                <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-brand-cyan font-bold border-b border-white/10 pb-2 font-mono">
-                    <span>CHI TIẾT PHƯƠNG TIỆN</span>
-                    <span class="${isRunning ? 'text-brand-emerald' : 'text-brand-amber'}">● ${v.statusText}</span>
+                <div class="flex justify-between items-center text-[11px] font-bold border-b border-slate-800 pb-2">
+                    <span class="text-slate-400">THÔNG TIN PHƯƠNG TIỆN</span>
+                    <span class="${isRunning ? 'text-emerald-400' : 'text-amber-400'}">● ${v.statusText}</span>
                 </div>
                 <div class="mt-2.5 flex justify-between items-baseline">
-                    <div class="text-lg font-display font-extrabold text-white">${v.plate}</div>
-                    <div class="text-xs text-slate-400 font-mono">${v.type}</div>
+                    <div class="text-base font-extrabold text-white font-mono">${v.plate}</div>
+                    <div class="text-xs text-slate-300 font-medium">${v.type}</div>
                 </div>
                 <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
-                    <div class="rounded-xl bg-white/[.04] p-2.5 border border-white/5">
-                        <div class="text-[10px] text-slate-500 font-mono">Tốc độ GPS</div>
+                    <div class="rounded-xl bg-slate-800/80 p-2.5 border border-slate-700/80">
+                        <div class="text-[10px] text-slate-400">Vận tốc hiện tại</div>
                         <div class="font-bold text-white mt-0.5 font-mono text-sm">${v.speed} km/h</div>
                     </div>
-                    <div class="rounded-xl bg-white/[.04] p-2.5 border border-white/5">
-                        <div class="text-[10px] text-slate-500 font-mono">Khóa điện ACC</div>
-                        <div class="font-bold mt-0.5 font-mono text-sm ${v.acc === 'ON' ? 'text-brand-emerald' : 'text-slate-400'}">${v.acc}</div>
+                    <div class="rounded-xl bg-slate-800/80 p-2.5 border border-slate-700/80">
+                        <div class="text-[10px] text-slate-400">Khóa điện (ACC)</div>
+                        <div class="font-bold mt-0.5 font-mono text-sm ${v.acc === 'BẬT' ? 'text-emerald-400' : 'text-slate-400'}">${v.acc}</div>
                     </div>
                 </div>
-                <div class="mt-2.5 text-[10px] font-mono text-slate-400 truncate">📍 ${v.place}</div>
-                <div class="text-[10px] font-mono text-slate-500 truncate mt-0.5">Tọa độ: ${v.lat}, ${v.lng}</div>`;
+                <div class="mt-2.5 text-xs text-slate-300 truncate flex items-center gap-1.5">
+                    <i class="fa-solid fa-route text-sky-400"></i>
+                    <span class="truncate">${v.place}</span>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 truncate mt-1">
+                    Tọa độ GPS: ${v.lat}, ${v.lng}
+                </div>`;
         }
 
-        // Bắt sự kiện Tabs Filter
+        // Filter Buttons Event
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('bg-cyan-400/20', 'text-cyan-300');
-                    b.classList.add('text-slate-400');
+                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                    b.classList.add('text-slate-600');
                 });
                 const target = e.currentTarget;
-                target.classList.remove('text-slate-400');
-                target.classList.add('bg-cyan-400/20', 'text-cyan-300');
+                target.classList.remove('text-slate-600');
+                target.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
                 activeFilter = target.dataset.filter;
                 renderFleet();
             });
         });
+
+        // Search Input Event
+        const searchInput = document.getElementById('vehicleSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderFleet();
+            });
+        }
 
         renderFleet();
 
@@ -927,7 +1164,7 @@
                 const counter = entry.target;
                 const target = Number(counter.dataset.target);
                 let current = 0;
-                const step = Math.max(1, Math.floor(target / 50));
+                const step = Math.max(1, Math.floor(target / 45));
                 const timer = setInterval(() => {
                     current += step;
                     if (current >= target) {
