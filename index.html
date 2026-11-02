@@ -1089,4 +1089,354 @@
 
         // 3. Interactive Fleet Control Center with Real-Time Moving Vehicles along SVG Highway Paths
         const vehicles = [
-            { plate: '79A-123.45', driver: 'Nguyễn Văn Hùng', type: 'Container', baseSpeed: 68, speed: 68, kmToday: 214.5, driveTime: '02g 15p', status: '
+            { plate: '79A-123.45', driver: 'Nguyễn Văn Hùng', type: 'Container', baseSpeed: 68, speed: 68, kmToday: 214.5, driveTime: '02g 15p', status: 'running', statusText: 'Đang chạy', place: 'QL1A • Bắc Nha Trang ➔ Cam Ranh', acc: 'BẬT', routeId: 'route-ql1a', progress: 0.18, dir: 1, lat: 12.2388, lng: 109.1967, x: 22, y: 28 },
+            { plate: '79B-678.90', driver: 'Trần Minh Tuấn', type: 'Xe khách 45 chỗ', baseSpeed: 54, speed: 54, kmToday: 168.2, driveTime: '01g 45p', status: 'running', statusText: 'Đang chạy', place: 'QL1A • Ninh Hòa ➔ Nha Trang', acc: 'BẬT', routeId: 'route-ql1a', progress: 0.42, dir: 1, lat: 12.2512, lng: 109.1843, x: 45, y: 52 },
+            { plate: '79C-246.80', driver: 'Lê Hoàng Nam', type: 'Xe tải 15 tấn', baseSpeed: 0, speed: 0, kmToday: 92.0, driveTime: '00g 00p', status: 'parked', statusText: 'Đang dừng đỗ', place: 'KĐT Phước Long, Nha Trang', acc: 'TẮT', routeId: null, progress: 0, dir: 1, lat: 12.2104, lng: 109.2155, x: 64, y: 29 },
+            { plate: '79D-135.79', driver: 'Phạm Quốc Bảo', type: 'Đầu kéo', baseSpeed: 62, speed: 62, kmToday: 310.8, driveTime: '03g 10p', status: 'running', statusText: 'Đang chạy', place: 'Đại lộ Nguyễn Tất Thành', acc: 'BẬT', routeId: 'route-coastal', progress: 0.35, dir: 1, lat: 12.2890, lng: 109.1450, x: 74, y: 64 },
+            { plate: '79B-012.34', driver: 'Võ Thành Tâm', type: 'Xe buýt liên tỉnh', baseSpeed: 48, speed: 48, kmToday: 142.6, driveTime: '01g 30p', status: 'running', statusText: 'Đang chạy', place: 'Bến xe Phía Bắc ➔ Vạn Giã', acc: 'BẬT', routeId: 'route-ql1a', progress: 0.68, dir: -1, lat: 12.2700, lng: 109.1800, x: 34, y: 78 },
+            { plate: '79H-567.89', driver: 'Đặng Văn Khoa', type: 'Xe tải đông lạnh', baseSpeed: 71, speed: 71, kmToday: 276.4, driveTime: '02g 50p', status: 'running', statusText: 'Đang chạy', place: 'Cảng Cam Ranh ➔ QL1A', acc: 'BẬT', routeId: 'route-ql1a', progress: 0.86, dir: -1, lat: 11.9980, lng: 109.1230, x: 84, y: 38 },
+            { plate: '79C-998.81', driver: 'Huỳnh Tấn Phát', type: 'Tải ben 4 chân', baseSpeed: 38, speed: 38, kmToday: 88.5, driveTime: '01g 12p', status: 'running', statusText: 'Đang chạy', place: 'QL26 • Hòn Ngang ➔ Diên Khánh', acc: 'BẬT', routeId: 'route-highway', progress: 0.55, dir: 1, lat: 12.2600, lng: 109.1000, x: 56, y: 72 },
+            { plate: '79E-112.23', driver: 'Ngô Gia Huy', type: 'Xe hợp đồng', baseSpeed: 52, speed: 52, kmToday: 134.0, driveTime: '01g 20p', status: 'running', statusText: 'Đang chạy', place: 'Sân bay Cam Ranh ➔ Trần Phú', acc: 'BẬT', routeId: 'route-coastal', progress: 0.78, dir: -1, lat: 12.0100, lng: 109.2000, x: 28, y: 42 },
+            { plate: '79B-334.45', driver: 'Bùi Văn Đạt', type: 'Xe du lịch 29 chỗ', baseSpeed: 0, speed: 0, kmToday: 64.2, driveTime: '00g 00p', status: 'parked', statusText: 'Đang đón khách', place: 'Cảng Du Lịch Nha Trang', acc: 'TẮT', routeId: null, progress: 0, dir: 1, lat: 12.2150, lng: 109.2200, x: 60, y: 41 },
+            { plate: '79C-445.56', driver: 'Đỗ Thanh Tùng', type: 'Xe bồn xăng dầu', baseSpeed: 45, speed: 45, kmToday: 119.7, driveTime: '01g 40p', status: 'running', statusText: 'Đang chạy', place: 'Cao tốc • Diên Khánh ➔ Ninh Hòa', acc: 'BẬT', routeId: 'route-highway', progress: 0.25, dir: -1, lat: 12.2050, lng: 109.2100, x: 50, y: 65 },
+            { plate: '79A-889.90', driver: 'Phan Văn Trị', type: 'Container lạnh', baseSpeed: 65, speed: 65, kmToday: 295.1, driveTime: '03g 05p', status: 'running', statusText: 'Đang chạy', place: 'Khu Kinh Tế Vân Phong ➔ QL1A', acc: 'BẬT', routeId: 'route-ql1a', progress: 0.06, dir: 1, lat: 12.5800, lng: 109.2300, x: 80, y: 55 },
+            { plate: '79C-778.89', driver: 'Vũ Đình Trọng', type: 'Xe chuyển phát', baseSpeed: 58, speed: 58, kmToday: 185.3, driveTime: '02g 00p', status: 'running', statusText: 'Đang chạy', place: 'Bưu cục Nha Trang ➔ Suối Dầu', acc: 'BẬT', routeId: 'route-highway', progress: 0.82, dir: 1, lat: 12.3500, lng: 109.1700, x: 38, y: 20 },
+            { plate: '79D-667.12', driver: 'Trương Công Định', type: 'Xe cẩu tự hành', baseSpeed: 0, speed: 0, kmToday: 45.0, driveTime: '00g 00p', status: 'parked', statusText: 'Đang bốc dỡ hàng', place: 'KCN Suối Dầu, Cam Lâm', acc: 'BẬT', routeId: null, progress: 0, dir: 1, lat: 12.1800, lng: 109.1100, x: 38, y: 71 }
+        ];
+
+        let activeFilter = 'all';
+        let searchQuery = '';
+        let selectedIndex = 0;
+        let isSimRunning = true;
+        let simSpeedMultiplier = 1;
+        let markerElements = [];
+
+        // Cache SVG Path Elements for Smooth Movement Calculation
+        const routePaths = {};
+        ['route-ql1a', 'route-coastal', 'route-highway'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                routePaths[id] = {
+                    el,
+                    length: el.getTotalLength()
+                };
+            }
+        });
+
+        function isVehicleVisible(v) {
+            const matchesTab = activeFilter === 'all' || v.status === activeFilter;
+            const q = searchQuery.trim().toLowerCase();
+            const matchesSearch = !q || v.plate.toLowerCase().includes(q) || v.place.toLowerCase().includes(q) || v.type.toLowerCase().includes(q) || v.driver.toLowerCase().includes(q);
+            return matchesTab && matchesSearch;
+        }
+
+        function renderFleetSidebar() {
+            const listContainer = document.getElementById('vehicleList');
+            document.getElementById('count-all').innerText = vehicles.length;
+            document.getElementById('count-running').innerText = vehicles.filter(v => v.status === 'running').length;
+            document.getElementById('count-parked').innerText = vehicles.filter(v => v.status === 'parked').length;
+
+            const filtered = vehicles.filter(isVehicleVisible);
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="p-6 text-center text-xs text-slate-400">
+                        Không tìm thấy phương tiện phù hợp.
+                    </div>`;
+            } else {
+                listContainer.innerHTML = filtered.map(v => {
+                    const originalIndex = vehicles.indexOf(v);
+                    const isRunning = v.status === 'running';
+                    return `
+                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-sky-400/50 transition cursor-pointer ${originalIndex === selectedIndex ? 'vehicle-active' : ''}" onclick="selectVehicle(${originalIndex})">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-xs text-white flex items-center gap-1.5">
+                                    <i class="fa-solid ${isRunning ? 'fa-truck-Fast text-sky-400' : 'fa-square-parking text-amber-400'}"></i>
+                                    ${v.plate}
+                                </span>
+                                <span id="sidebar-speed-${originalIndex}" class="text-xs font-mono font-bold ${isRunning ? 'text-emerald-400' : 'text-amber-400'}">${v.speed} km/h</span>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                                <span>${v.type} • ${v.driver}</span>
+                                <span class="${isRunning ? 'text-emerald-300' : 'text-amber-300'}">● ${v.statusText}</span>
+                            </div>
+                            <div class="text-[11px] text-slate-400 mt-1 truncate flex items-center gap-1.5">
+                                <i class="fa-solid fa-location-dot text-sky-400 text-[10px]"></i>
+                                <span class="truncate">${v.place}</span>
+                            </div>
+                        </div>`;
+                }).join('');
+            }
+        }
+
+        function createMapMarkers() {
+            const markersContainer = document.getElementById('mapMarkers');
+            markersContainer.innerHTML = vehicles.map((v, i) => {
+                const isRunning = v.status === 'running';
+                return `
+                    <button id="marker-${i}" type="button" class="marker absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer group" style="left:${v.x}%;top:${v.y}%" onclick="selectVehicle(${i})" aria-label="Xe ${v.plate}">
+                        <div class="relative flex items-center justify-center">
+                            ${isRunning ? '<span class="animate-ping absolute inline-flex h-6 w-6 rounded-full bg-sky-400 opacity-50"></span>' : ''}
+                            <div id="marker-ring-${i}" class="w-6 h-6 rounded-full ${isRunning ? 'bg-sky-500 border-white' : 'bg-amber-500 border-slate-950'} border-2 shadow-lg flex items-center justify-center">
+                                <i id="marker-arrow-${i}" class="fa-solid ${isRunning ? 'fa-location-arrow text-[10px] text-white marker-icon-box' : 'fa-pause text-[9px] text-slate-950'}"></i>
+                            </div>
+                        </div>
+                        <span class="marker-label mt-1 block font-mono text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-950/90 border border-slate-700 text-slate-100 whitespace-nowrap shadow transition-transform">
+                            ${v.plate}
+                        </span>
+                    </button>`;
+            }).join('');
+
+            markerElements = vehicles.map((_, i) => ({
+                btn: document.getElementById(`marker-${i}`),
+                arrow: document.getElementById(`marker-arrow-${i}`)
+            }));
+
+            syncMarkerStates();
+        }
+
+        function syncMarkerStates() {
+            vehicles.forEach((v, i) => {
+                const el = markerElements[i];
+                if (!el || !el.btn) return;
+                const visible = isVehicleVisible(v);
+                el.btn.classList.toggle('active', i === selectedIndex);
+                el.btn.classList.toggle('opacity-15', !visible);
+                el.btn.classList.toggle('pointer-events-none', !visible);
+                el.btn.classList.toggle('opacity-100', visible);
+            });
+        }
+
+        function selectVehicle(index) {
+            selectedIndex = index;
+            renderFleetSidebar();
+            syncMarkerStates();
+            updateDetail(selectedIndex);
+            const camTag = document.getElementById('cameraVehicleTag');
+            if (camTag) {
+                camTag.innerText = `${vehicles[index].plate} • ${vehicles[index].driver} • 1080P FHD`;
+            }
+        }
+
+        function updateDetail(index) {
+            const v = vehicles[index];
+            const isRunning = v.status === 'running';
+            const detailEl = document.getElementById('vehicleDetail');
+            if (!detailEl) return;
+
+            detailEl.innerHTML = `
+                <div class="flex justify-between items-center text-[11px] font-bold border-b border-slate-800 pb-2">
+                    <span class="text-sky-400 flex items-center gap-1.5">
+                        <i class="fa-solid fa-satellite-dish"></i> GIÁM SÁT TRỰC TIẾP
+                    </span>
+                    <span class="${isRunning ? 'text-emerald-400' : 'text-amber-400'}">● ${v.statusText}</span>
+                </div>
+                <div class="mt-2.5 flex justify-between items-baseline">
+                    <div class="text-base font-extrabold text-white font-mono">${v.plate}</div>
+                    <div class="text-xs text-slate-300 font-medium">${v.type}</div>
+                </div>
+                <div class="text-[11px] text-slate-400 mt-1 flex items-center justify-between">
+                    <span><i class="fa-solid fa-id-card text-emerald-400 mr-1"></i> Tài xế: <strong class="text-slate-200">${v.driver}</strong></span>
+                    <span class="text-emerald-400 font-mono text-[10px]">RFID: Hợp lệ</span>
+                </div>
+                <div class="grid grid-cols-3 gap-2 mt-3 text-xs">
+                    <div class="rounded-xl bg-slate-800/90 p-2 border border-slate-700/80">
+                        <div class="text-[10px] text-slate-400">Vận tốc</div>
+                        <div id="detail-speed" class="font-bold text-emerald-400 mt-0.5 font-mono text-xs sm:text-sm">${v.speed} km/h</div>
+                    </div>
+                    <div class="rounded-xl bg-slate-800/90 p-2 border border-slate-700/80">
+                        <div class="text-[10px] text-slate-400">Km trong ngày</div>
+                        <div id="detail-km" class="font-bold text-white mt-0.5 font-mono text-xs sm:text-sm">${v.kmToday.toFixed(1)} km</div>
+                    </div>
+                    <div class="rounded-xl bg-slate-800/90 p-2 border border-slate-700/80">
+                        <div class="text-[10px] text-slate-400">Lái liên tục</div>
+                        <div class="font-bold mt-0.5 font-mono text-xs ${isRunning ? 'text-sky-300' : 'text-slate-400'}">${v.driveTime}</div>
+                    </div>
+                </div>
+                <div class="mt-2.5 text-xs text-slate-300 truncate flex items-center gap-1.5">
+                    <i class="fa-solid fa-route text-sky-400"></i>
+                    <span class="truncate">${v.place}</span>
+                </div>
+                <div class="mt-1 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                    <span id="detail-coords">GPS: ${v.lat.toFixed(4)}, ${v.lng.toFixed(4)}</span>
+                    <a href="#camera" class="text-sky-400 hover:underline font-sans font-semibold flex items-center gap-1">
+                        <i class="fa-solid fa-video"></i> Xem Camera
+                    </a>
+                </div>`;
+        }
+
+        // Animation Loop (60 FPS) moving vehicles along SVG paths
+        let lastTime = performance.now();
+        function animateFleet(now) {
+            const dt = Math.min((now - lastTime) / 1000, 0.1);
+            lastTime = now;
+
+            if (isSimRunning) {
+                vehicles.forEach((v, i) => {
+                    if (v.status === 'running' && v.routeId && routePaths[v.routeId]) {
+                        const route = routePaths[v.routeId];
+                        // Move proportional to vehicle speed
+                        const step = (v.speed / 1100) * dt * simSpeedMultiplier * v.dir;
+                        v.progress += step;
+
+                        // Reverse smoothly at ends of highway route
+                        if (v.progress >= 0.96) {
+                            v.progress = 0.96;
+                            v.dir = -1;
+                        } else if (v.progress <= 0.04) {
+                            v.progress = 0.04;
+                            v.dir = 1;
+                        }
+
+                        const distOnPath = v.progress * route.length;
+                        const pt = route.el.getPointAtLength(distOnPath);
+                        const lookAheadDist = Math.min(Math.max(distOnPath + v.dir * 6, 0), route.length);
+                        const ptNext = route.el.getPointAtLength(lookAheadDist);
+
+                        // Convert 1000x600 SVG viewBox coordinates to percentage
+                        v.x = (pt.x / 1000) * 100;
+                        v.y = (pt.y / 600) * 100;
+
+                        // Update realistic GPS coordinates based on map position
+                        v.lat = 12.65 - (v.y / 100) * 0.72;
+                        v.lng = 109.02 + (v.x / 100) * 0.28;
+                        v.kmToday += (v.speed / 3600) * dt * simSpeedMultiplier * 12;
+
+                        // Calculate heading rotation angle (fa-location-arrow points 45deg up-right by default)
+                        const angleDeg = Math.atan2(ptNext.y - pt.y, ptNext.x - pt.x) * (180 / Math.PI) + 45;
+
+                        const el = markerElements[i];
+                        if (el && el.btn) {
+                            el.btn.style.left = `${v.x.toFixed(2)}%`;
+                            el.btn.style.top = `${v.y.toFixed(2)}%`;
+                            if (el.arrow) {
+                                el.arrow.style.transform = `rotate(${angleDeg.toFixed(1)}deg)`;
+                            }
+                        }
+                    }
+                });
+
+                // Live update active vehicle detail coordinates & odometer
+                const activeVehicle = vehicles[selectedIndex];
+                if (activeVehicle && activeVehicle.status === 'running') {
+                    const coordsEl = document.getElementById('detail-coords');
+                    const kmEl = document.getElementById('detail-km');
+                    if (coordsEl) {
+                        coordsEl.innerText = `GPS: ${activeVehicle.lat.toFixed(4)}, ${activeVehicle.lng.toFixed(4)}`;
+                    }
+                    if (kmEl) {
+                        kmEl.innerText = `${activeVehicle.kmToday.toFixed(1)} km`;
+                    }
+                }
+            }
+
+            requestAnimationFrame(animateFleet);
+        }
+
+        // Realistic Speed Fluctuation every 1.8 seconds
+        setInterval(() => {
+            if (!isSimRunning) return;
+            vehicles.forEach((v, i) => {
+                if (v.status === 'running') {
+                    const delta = Math.floor(Math.random() * 5) - 2; // -2 to +2 km/h
+                    v.speed = Math.max(32, Math.min(78, v.baseSpeed + delta));
+                    const sideSpeedEl = document.getElementById(`sidebar-speed-${i}`);
+                    if (sideSpeedEl) sideSpeedEl.innerText = `${v.speed} km/h`;
+                }
+            });
+            const activeVehicle = vehicles[selectedIndex];
+            const detailSpeedEl = document.getElementById('detail-speed');
+            if (activeVehicle && detailSpeedEl) {
+                detailSpeedEl.innerText = `${activeVehicle.speed} km/h`;
+            }
+        }, 1800);
+
+        // Filter Buttons Event
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
+                    b.classList.add('text-slate-600');
+                });
+                const target = e.currentTarget;
+                target.classList.remove('text-slate-600');
+                target.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
+                activeFilter = target.dataset.filter;
+                renderFleetSidebar();
+                syncMarkerStates();
+            });
+        });
+
+        // Search Input Event
+        const searchInput = document.getElementById('vehicleSearch');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                renderFleetSidebar();
+                syncMarkerStates();
+            });
+        }
+
+        // Play / Pause & Speed Multiplier Controls
+        const toggleSimBtn = document.getElementById('toggleSimBtn');
+        const toggleSimIcon = document.getElementById('toggleSimIcon');
+        const toggleSimText = document.getElementById('toggleSimText');
+        if (toggleSimBtn) {
+            toggleSimBtn.addEventListener('click', () => {
+                isSimRunning = !isSimRunning;
+                if (isSimRunning) {
+                    toggleSimIcon.className = 'fa-solid fa-pause text-emerald-400';
+                    toggleSimText.innerText = 'Tạm dừng xe';
+                } else {
+                    toggleSimIcon.className = 'fa-solid fa-play text-amber-400';
+                    toggleSimText.innerText = 'Tiếp tục chạy';
+                }
+            });
+        }
+
+        const speedSimBtn = document.getElementById('speedSimBtn');
+        const simSpeedLabel = document.getElementById('simSpeedLabel');
+        if (speedSimBtn) {
+            speedSimBtn.addEventListener('click', () => {
+                simSpeedMultiplier = simSpeedMultiplier === 1 ? 2 : simSpeedMultiplier === 2 ? 4 : 1;
+                simSpeedLabel.innerText = `${simSpeedMultiplier}x`;
+            });
+        }
+
+        // Initialize Fleet Simulation
+        renderFleetSidebar();
+        createMapMarkers();
+        updateDetail(selectedIndex);
+        requestAnimationFrame(animateFleet);
+
+        // 4. Number Counters Observer
+        const counters = document.querySelectorAll('.counter');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const counter = entry.target;
+                const target = Number(counter.dataset.target);
+                let current = 0;
+                const step = Math.max(1, Math.floor(target / 45));
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    if (target === 99) {
+                        counter.innerText = current + '%';
+                    } else if (target === 24) {
+                        counter.innerText = current + '/7';
+                    } else {
+                        counter.innerText = current.toLocaleString('vi-VN') + '+';
+                    }
+                }, 25);
+                observer.unobserve(counter);
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => observer.observe(counter));
+    </script>
+</body>
+</html>
