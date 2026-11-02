@@ -109,26 +109,41 @@
         }
 
         .marker {
-            transition: transform 0.2s ease, filter 0.2s ease;
+            transition: filter 0.2s ease;
+            will-change: left, top;
         }
 
         .marker.active {
-            transform: scale(1.25) !important;
-            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.9));
-            z-index: 30;
+            z-index: 40;
+            filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.95));
         }
 
-        .map-road {
-            stroke-dasharray: 8 8;
-            animation: dash 18s linear infinite;
+        .marker.active .marker-label {
+            background: #0284C7 !important;
+            border-color: #7DD3FC !important;
+            color: #FFFFFF !important;
+            transform: scale(1.08);
+        }
+
+        .marker-icon-box {
+            transition: transform 0.15s linear;
+        }
+
+        .map-road-glow {
+            filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.35));
+        }
+
+        .map-road-dash {
+            stroke-dasharray: 10 10;
+            animation: dash 22s linear infinite;
         }
 
         @keyframes dash {
-            to { stroke-dashoffset: -200; }
+            to { stroke-dashoffset: -400; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            .map-road, .animate-ping, .animate-pulse {
+            .map-road-dash, .animate-ping, .animate-pulse {
                 animation: none !important;
             }
             * {
@@ -185,8 +200,8 @@
             <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
                 <a href="#solutions" class="hover:text-blue-600 transition-colors">Thiết bị & Giải pháp</a>
                 <a href="#dashboard" class="hover:text-blue-600 transition-colors flex items-center gap-1.5">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    Xem thử phần mềm
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    Mô phỏng đội xe Live
                 </a>
                 <a href="#camera" class="hover:text-blue-600 transition-colors">Camera Nghị định</a>
                 <a href="#specs" class="hover:text-blue-600 transition-colors">Thông số & Pháp lý</a>
@@ -211,7 +226,7 @@
         <!-- Mobile Menu Dropdown -->
         <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 text-sm font-semibold text-slate-700">
             <a href="#solutions" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Thiết bị & Giải pháp 4G</a>
-            <a href="#dashboard" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Xem thử phần mềm quản lý xe</a>
+            <a href="#dashboard" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Mô phỏng đội xe di chuyển Live</a>
             <a href="#camera" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Camera giám sát tài xế BCA</a>
             <a href="#specs" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Thông số kỹ thuật & Pháp lý</a>
             <a href="#hau-mai" class="mobile-link block py-2 px-3 rounded-lg hover:bg-slate-100">Dịch vụ lắp đặt & Hậu mãi</a>
@@ -265,8 +280,8 @@
                         <a href="tel:0585114114" class="px-6 py-3.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2.5 cursor-pointer">
                             <i class="fa-solid fa-phone-volume"></i> Gọi đặt lịch lắp tận nơi: 0585.114.114
                         </a>
-                        <a href="https://zalo.me/0585114114" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-white hover:bg-blue-50 border border-slate-300 hover:border-blue-400 text-slate-800 font-bold text-sm transition-all flex items-center gap-2 cursor-pointer">
-                            <i class="fa-solid fa-comments text-blue-600"></i> Nhận báo giá & ưu đãi qua Zalo
+                        <a href="#dashboard" class="px-6 py-3.5 rounded-xl bg-white hover:bg-blue-50 border border-slate-300 hover:border-blue-400 text-slate-800 font-bold text-sm transition-all flex items-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-satellite-dish text-blue-600"></i> Xem mô phỏng xe chạy thực tế
                         </a>
                     </div>
                 </div>
@@ -356,8 +371,161 @@
             </div>
         </section>
 
+        <!-- INTERACTIVE FLEET CONTROL CENTER DEMO (ƯU TIÊN NÂNG CẤP HIỆU ỨNG XE DI CHUYỂN THỜI GIAN THỰC) -->
+        <section id="dashboard" class="py-20 px-4 bg-white border-b border-slate-200/80">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-7">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold mb-2.5">
+                            <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+                            MÔ PHỎNG LỘ TRÌNH THỜI GIAN THỰC (LIVE GPS TELEMETRY)
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mô phỏng màn hình quản lý đội xe Vạn Phú Khánh</h2>
+                        <p class="text-slate-600 text-sm mt-2 max-w-2xl">
+                            Các phương tiện đang chạy <strong>di chuyển trực tiếp trên các trục đường Quốc lộ 1A, Nguyễn Tất Thành và QL26</strong> theo vận tốc thực tế. Bấm vào bất kỳ xe nào trên bản đồ hoặc danh sách để bám theo lộ trình.
+                        </p>
+                    </div>
+
+                    <!-- Filter Tabs & Simulation Controls -->
+                    <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto">
+                        <div class="flex items-center gap-1.5 p-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold">
+                            <button type="button" class="filter-btn px-3 py-1.5 rounded-lg bg-blue-600 text-white shadow-sm transition cursor-pointer" data-filter="all">
+                                Tất cả (<span id="count-all">13</span>)
+                            </button>
+                            <button type="button" class="filter-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="running">
+                                Đang chạy (<span id="count-running">10</span>)
+                            </button>
+                            <button type="button" class="filter-btn px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="parked">
+                                Dừng đỗ (<span id="count-parked">3</span>)
+                            </button>
+                        </div>
+
+                        <!-- Speed / Play-Pause Button -->
+                        <button id="toggleSimBtn" type="button" class="px-3.5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-1.5 transition cursor-pointer shadow-sm">
+                            <i id="toggleSimIcon" class="fa-solid fa-pause text-emerald-400"></i>
+                            <span id="toggleSimText">Tạm dừng xe</span>
+                        </button>
+                        <button id="speedSimBtn" type="button" class="px-3 py-2.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold font-mono transition cursor-pointer" title="Tăng tốc độ mô phỏng">
+                            Tốc độ: <span id="simSpeedLabel">1x</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Window -->
+                <div class="rounded-2xl overflow-hidden border border-slate-300 shadow-2xl bg-slate-900 text-slate-100">
+                    <!-- Window Top Bar -->
+                    <div class="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex flex-wrap justify-between items-center gap-3 text-xs">
+                        <div class="flex items-center gap-2.5">
+                            <span class="flex gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                            </span>
+                            <strong class="text-white font-semibold ml-1">TRUNG TÂM ĐIỀU HÀNH ĐỘI XE VPK GPS</strong>
+                            <span class="text-slate-400 hidden sm:inline">• Bản đồ số tỉnh Khánh Hòa</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-slate-400 font-mono hidden md:inline">Cập nhật: <span id="liveClock" class="text-sky-300">--:--:--</span></span>
+                            <div class="text-emerald-400 font-semibold flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                                Đồng bộ Cục CSGT: 100% (4G)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+                        <!-- Sidebar Vehicle List -->
+                        <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-900/95 flex flex-col max-h-[600px]">
+                            <!-- Quick Search Input -->
+                            <div class="p-3 border-b border-slate-800">
+                                <div class="relative">
+                                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                                    <input id="vehicleSearch" type="text" placeholder="Tìm biển số (VD: 79A), loại xe, tuyến..." class="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-400">
+                                </div>
+                            </div>
+                            <div id="vehicleList" class="fleet-scroll p-3 overflow-y-auto space-y-2 flex-1"></div>
+                        </div>
+
+                        <!-- Live Map Stage -->
+                        <div class="lg:col-span-8 relative bg-[#071120] min-h-[480px] lg:min-h-[600px] p-4 flex flex-col justify-between overflow-hidden select-none">
+                            <!-- Realistic Vector Map of Khánh Hòa (Coastline, Grid & 3 Highway Routes) -->
+                            <svg id="fleetMapSvg" viewBox="0 0 1000 600" preserveAspectRatio="none" class="absolute inset-0 w-full h-full pointer-events-none">
+                                <defs>
+                                    <pattern id="mapGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+                                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(148, 163, 184, 0.06)" stroke-width="1"/>
+                                    </pattern>
+                                    <linearGradient id="seaGrad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#0A192F" stop-opacity="0.35"/>
+                                        <stop offset="100%" stop-color="#0284C7" stop-opacity="0.12"/>
+                                    </linearGradient>
+                                </defs>
+
+                                <!-- Map Background Grid -->
+                                <rect width="1000" height="600" fill="url(#mapGrid)" />
+
+                                <!-- East Sea / Biển Đông Coastline Polygon -->
+                                <path d="M 880 0 L 1000 0 L 1000 600 L 580 600 C 620 500, 680 420, 720 340 C 760 250, 820 120, 880 0 Z" fill="url(#seaGrad)" stroke="rgba(56, 189, 248, 0.12)" stroke-width="1.5"/>
+
+                                <!-- Route 1: Quốc lộ 1A (Vân Phong -> Ninh Hòa -> Nha Trang -> Cam Lâm -> Cam Ranh) -->
+                                <path d="M 830 55 C 745 125, 675 180, 610 245 C 550 300, 465 360, 390 420 C 310 485, 225 520, 125 550" fill="none" stroke="rgba(30, 58, 138, 0.7)" stroke-width="10" stroke-linecap="round"/>
+                                <path id="route-ql1a" d="M 830 55 C 745 125, 675 180, 610 245 C 550 300, 465 360, 390 420 C 310 485, 225 520, 125 550" fill="none" stroke="rgba(56, 189, 248, 0.55)" stroke-width="2.5" class="map-road-dash map-road-glow"/>
+
+                                <!-- Route 2: Đại lộ Nguyễn Tất Thành & Tuyến Ven Biển (Bắc Nha Trang -> Trần Phú -> Sân bay Cam Ranh) -->
+                                <path d="M 730 165 C 690 230, 650 285, 615 340 C 565 415, 495 475, 405 535" fill="none" stroke="rgba(30, 58, 138, 0.6)" stroke-width="8" stroke-linecap="round"/>
+                                <path id="route-coastal" d="M 730 165 C 690 230, 650 285, 615 340 C 565 415, 495 475, 405 535" fill="none" stroke="rgba(16, 185, 129, 0.5)" stroke-width="2.2" class="map-road-dash"/>
+
+                                <!-- Route 3: Quốc lộ 26 & Cao tốc Bắc Nam (Ninh Hòa -> Diên Khánh -> Suối Dầu) -->
+                                <path d="M 675 140 C 540 175, 420 225, 310 295 C 225 350, 165 415, 110 475" fill="none" stroke="rgba(30, 58, 138, 0.6)" stroke-width="8" stroke-linecap="round"/>
+                                <path id="route-highway" d="M 675 140 C 540 175, 420 225, 310 295 C 225 350, 165 415, 110 475" fill="none" stroke="rgba(99, 102, 241, 0.55)" stroke-width="2.2" class="map-road-dash"/>
+
+                                <!-- City / Hub Nodes on Map -->
+                                <g fill="rgba(148, 163, 184, 0.55)" font-family="Be Vietnam Pro, sans-serif" font-size="11" font-weight="700">
+                                    <circle cx="830" cy="55" r="4" fill="#38BDF8"/>
+                                    <text x="705" y="50">KKT VÂN PHONG</text>
+
+                                    <circle cx="675" cy="140" r="4" fill="#38BDF8"/>
+                                    <text x="580" y="132">TX. NINH HÒA</text>
+
+                                    <circle cx="610" cy="245" r="5" fill="#10B981"/>
+                                    <text x="625" y="248" fill="#E2E8F0">TP. NHA TRANG</text>
+
+                                    <circle cx="310" cy="295" r="4" fill="#818CF8"/>
+                                    <text x="215" y="288">DIÊN KHÁNH</text>
+
+                                    <circle cx="390" cy="420" r="4" fill="#38BDF8"/>
+                                    <text x="405" y="425">KCN SUỐI DẦU - CAM LÂM</text>
+
+                                    <circle cx="125" cy="550" r="5" fill="#F59E0B"/>
+                                    <text x="140" y="565" fill="#E2E8F0">CẢNG & SÂN BAY CAM RANH</text>
+
+                                    <text x="845" y="380" fill="rgba(56, 189, 248, 0.25)" font-size="13" letter-spacing="3">BIỂN ĐÔNG</text>
+                                </g>
+                            </svg>
+
+                            <!-- Moving & Parked Vehicle Markers Layer -->
+                            <div id="mapMarkers" class="absolute inset-0 overflow-hidden"></div>
+
+                            <!-- Map Top Status Overlay -->
+                            <div class="relative z-20 flex flex-wrap justify-between items-center gap-2 text-[11px] pointer-events-none">
+                                <span class="bg-slate-900/90 backdrop-blur border border-slate-700 px-3 py-1.5 rounded-lg text-slate-200 font-medium shadow">
+                                    <i class="fa-solid fa-route text-sky-400 mr-1.5"></i> Mô phỏng trực tuyến: QL1A • Cao tốc • Nguyễn Tất Thành
+                                </span>
+                                <div class="flex items-center gap-3 bg-slate-900/90 backdrop-blur border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300 shadow">
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span> Đang di chuyển (10)</span>
+                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span> Đang dừng đỗ (3)</span>
+                                </div>
+                            </div>
+
+                            <!-- Selected Vehicle Live Telemetry Card -->
+                            <div id="vehicleDetail" class="relative z-20 self-end w-full sm:w-[340px] bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-2xl p-4 shadow-2xl mt-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Practical Challenges Section -->
-        <section class="py-20 px-4 bg-white">
+        <section class="py-20 px-4 bg-slate-50 border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto">
                 <div class="max-w-2xl mb-12">
                     <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">NỖI LO CỦA CHỦ XE & DOANH NGHIỆP VẬN TẢI</span>
@@ -402,7 +570,7 @@
         </section>
 
         <!-- Solutions Ecosystem -->
-        <section id="solutions" class="py-20 px-4 bg-slate-50 border-y border-slate-200/80">
+        <section id="solutions" class="py-20 px-4 bg-white border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto">
                 <div class="max-w-2xl mb-12">
                     <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">SẢN PHẨM & GIẢI PHÁP TRỌN GÓI</span>
@@ -470,107 +638,8 @@
             </div>
         </section>
 
-        <!-- Interactive Fleet Control Center Demo -->
-        <section id="dashboard" class="py-20 px-4 bg-white">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-8">
-                    <div>
-                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2 block">TRẢI NGHIỆM TRỰC TIẾP TRÊN WEB</span>
-                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Mô phỏng màn hình quản lý đội xe Vạn Phú Khánh</h2>
-                        <p class="text-slate-600 text-sm mt-2 max-w-2xl">
-                            Bấm vào từng biển số xe bên dưới để xem thử cách hệ thống hiển thị tốc độ, trạng thái khóa điện ACC và vị trí thực tế tại Khánh Hòa.
-                        </p>
-                    </div>
-
-                    <!-- Filter Tabs -->
-                    <div class="flex flex-wrap items-center gap-2 self-start lg:self-auto p-1.5 bg-slate-100 border border-slate-200 rounded-xl text-xs font-bold">
-                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg bg-blue-600 text-white shadow-sm transition cursor-pointer" data-filter="all">
-                            Tất cả (<span id="count-all">13</span>)
-                        </button>
-                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="running">
-                            Đang chạy (<span id="count-running">10</span>)
-                        </button>
-                        <button type="button" class="filter-btn px-3.5 py-2 rounded-lg text-slate-600 hover:text-slate-900 transition cursor-pointer" data-filter="parked">
-                            Dừng đỗ (<span id="count-parked">3</span>)
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Dashboard Window -->
-                <div class="rounded-2xl overflow-hidden border border-slate-300 shadow-2xl bg-slate-900 text-slate-100">
-                    <!-- Window Top Bar -->
-                    <div class="px-5 py-3.5 bg-slate-950 border-b border-slate-800 flex flex-wrap justify-between items-center gap-2 text-xs">
-                        <div class="flex items-center gap-2.5">
-                            <span class="flex gap-1.5">
-                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
-                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-                            </span>
-                            <strong class="text-white font-semibold ml-1">Hệ Thống Giám Sát Trực Tuyến VPK GPS</strong>
-                            <span class="text-slate-400 hidden sm:inline">• Khu vực Khánh Hòa</span>
-                        </div>
-                        <div class="text-emerald-400 font-semibold flex items-center gap-2">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                            Đang kết nối 13 phương tiện (Truyền dữ liệu BCA: Tốt)
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[540px]">
-                        <!-- Sidebar Vehicle List -->
-                        <div class="lg:col-span-4 border-b lg:border-b-0 lg:border-r border-slate-800 bg-slate-900/90 flex flex-col max-h-[560px]">
-                            <!-- Quick Search Input -->
-                            <div class="p-3 border-b border-slate-800">
-                                <div class="relative">
-                                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                                    <input id="vehicleSearch" type="text" placeholder="Tìm biển số hoặc tuyến đường..." class="w-full pl-8 pr-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-sky-400">
-                                </div>
-                            </div>
-                            <div id="vehicleList" class="fleet-scroll p-3 overflow-y-auto space-y-2 flex-1"></div>
-                        </div>
-
-                        <!-- Live Map Stage -->
-                        <div class="lg:col-span-8 relative bg-[#0B1528] min-h-[440px] lg:min-h-[560px] p-4 flex flex-col justify-between overflow-hidden">
-                            <!-- Subtle Map Grid & Coastline Feel -->
-                            <svg viewBox="0 0 1000 600" class="absolute inset-0 w-full h-full pointer-events-none opacity-80">
-                                <defs>
-                                    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
-                                        <path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(148, 163, 184, 0.07)" stroke-width="1"/>
-                                    </pattern>
-                                </defs>
-                                <rect width="1000" height="600" fill="url(#grid)" />
-                                <!-- Simulated Highway Routes (QL1A & Nguyễn Tất Thành) -->
-                                <path d="M 80 140 Q 240 280, 420 120 T 740 280 T 880 180" fill="none" stroke="rgba(56, 189, 248, 0.35)" stroke-width="3" class="map-road"/>
-                                <path d="M 130 470 C 250 380, 340 470, 470 370 S 700 280, 880 440" fill="none" stroke="rgba(59, 130, 246, 0.25)" stroke-width="2.5" class="map-road"/>
-                                <!-- Place Labels on Map -->
-                                <text x="760" y="150" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">VÂN PHONG - NINH HÒA</text>
-                                <text x="450" y="300" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">TP. NHA TRANG</text>
-                                <text x="200" y="510" fill="rgba(148, 163, 184, 0.35)" font-size="12" font-family="sans-serif" font-weight="600">CAM LÂM - CAM RANH</text>
-                            </svg>
-
-                            <!-- Node Markers Layer -->
-                            <div id="mapMarkers" class="absolute inset-0"></div>
-
-                            <!-- Map Legend Bar -->
-                            <div class="relative z-10 flex flex-wrap justify-between items-center gap-2 text-[11px] pointer-events-none">
-                                <span class="bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-200 font-medium">
-                                    <i class="fa-solid fa-map-location-dot text-sky-400 mr-1"></i> Bản đồ tuyến Quốc lộ 1A – Khánh Hòa
-                                </span>
-                                <div class="flex items-center gap-3 bg-slate-900/90 border border-slate-700 px-3 py-1.5 rounded-lg text-slate-300">
-                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span> Xe đang chạy</span>
-                                    <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span> Xe dừng đỗ</span>
-                                </div>
-                            </div>
-
-                            <!-- Selected Vehicle Detail Card -->
-                            <div id="vehicleDetail" class="relative z-10 self-end w-full sm:w-[310px] bg-slate-900/95 backdrop-blur-md border border-slate-700 rounded-2xl p-4 shadow-2xl mt-auto"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Practical Driver & Cabin Camera Section -->
-        <section id="camera" class="py-20 px-4 bg-slate-50 border-y border-slate-200/80">
+        <section id="camera" class="py-20 px-4 bg-slate-50 border-b border-slate-200/80">
             <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 <!-- Left Column: Realistic Cabin Camera Preview Screen -->
                 <div class="lg:col-span-6">
@@ -581,7 +650,7 @@
                                 <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                 <span>CAM 01 - CABIN TÀI XẾ</span>
                             </div>
-                            <span class="text-sky-400">79A-123.45 • 1080P FHD</span>
+                            <span id="cameraVehicleTag" class="text-sky-400">79A-123.45 • 1080P FHD</span>
                         </div>
 
                         <!-- Cabin View Illustration -->
@@ -1000,190 +1069,24 @@
             });
         }
 
-        // 2. GNSS Satellite Ticker
+        // 2. GNSS Satellite Ticker & Live Clock
         const gnssElement = document.getElementById('gnssCount');
         if (gnssElement) {
-            function updateGNSS() {
-                const count = Math.floor(Math.random() * (22 - 15 + 1)) + 15;
-                gnssElement.innerText = count;
-                setTimeout(updateGNSS, 3500);
-            }
-            updateGNSS();
+            setInterval(() => {
+                gnssElement.innerText = Math.floor(Math.random() * (22 - 16 + 1)) + 16;
+            }, 3500);
         }
 
-        // 3. Interactive Fleet Control Center (13 Vehicles)
+        const liveClockEl = document.getElementById('liveClock');
+        function updateClock() {
+            if (liveClockEl) {
+                const now = new Date();
+                liveClockEl.innerText = now.toTimeString().split(' ')[0];
+            }
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // 3. Interactive Fleet Control Center with Real-Time Moving Vehicles along SVG Highway Paths
         const vehicles = [
-            { plate: '79A-123.45', type: 'Container', speed: 68, status: 'running', statusText: 'Đang chạy', place: 'Bắc Nha Trang ➔ Cam Ranh', acc: 'BẬT', lat: '12.2388', lng: '109.1967', x: 22, y: 28 },
-            { plate: '79B-678.90', type: 'Xe khách 45 chỗ', speed: 54, status: 'running', statusText: 'Đang chạy', place: 'QL1A Khánh Hòa', acc: 'BẬT', lat: '12.2512', lng: '109.1843', x: 45, y: 52 },
-            { plate: '79C-246.80', type: 'Xe tải 15 tấn', speed: 0, status: 'parked', statusText: 'Đang dừng đỗ', place: 'KĐT Phước Long, Nha Trang', acc: 'TẮT', lat: '12.2104', lng: '109.2155', x: 66, y: 22 },
-            { plate: '79D-135.79', type: 'Đầu kéo', speed: 62, status: 'running', statusText: 'Đang chạy', place: 'Đại lộ Nguyễn Tất Thành', acc: 'BẬT', lat: '12.2890', lng: '109.1450', x: 74, y: 64 },
-            { plate: '79B-012.34', type: 'Xe buýt liên tỉnh', speed: 48, status: 'running', statusText: 'Đang chạy', place: 'Bến xe Phía Bắc ➔ Vạn Giã', acc: 'BẬT', lat: '12.2700', lng: '109.1800', x: 34, y: 78 },
-            { plate: '79H-567.89', type: 'Xe tải đông lạnh', speed: 71, status: 'running', statusText: 'Đang chạy', place: 'Cảng Cam Ranh ➔ QL1A', acc: 'BẬT', lat: '11.9980', lng: '109.1230', x: 84, y: 38 },
-            { plate: '79C-998.81', type: 'Tải ben 4 chân', speed: 38, status: 'running', statusText: 'Đang chạy', place: 'Mỏ đá Hòn Ngang ➔ Diên Khánh', acc: 'BẬT', lat: '12.2600', lng: '109.1000', x: 56, y: 72 },
-            { plate: '79E-112.23', type: 'Xe hợp đồng', speed: 52, status: 'running', statusText: 'Đang chạy', place: 'Sân bay Cam Ranh ➔ Trần Phú', acc: 'BẬT', lat: '12.0100', lng: '109.2000', x: 28, y: 42 },
-            { plate: '79B-334.45', type: 'Xe du lịch 29 chỗ', speed: 0, status: 'parked', statusText: 'Đang đón khách', place: 'Cảng Du Lịch Nha Trang', acc: 'TẮT', lat: '12.2150', lng: '109.2200', x: 62, y: 35 },
-            { plate: '79C-445.56', type: 'Xe bồn xăng dầu', speed: 45, status: 'running', statusText: 'Đang chạy', place: 'Kho Xăng Dầu Vĩnh Nguyên', acc: 'BẬT', lat: '12.2050', lng: '109.2100', x: 50, y: 65 },
-            { plate: '79A-889.90', type: 'Container lạnh', speed: 65, status: 'running', statusText: 'Đang chạy', place: 'Khu Kinh Tế Vân Phong', acc: 'BẬT', lat: '12.5800', lng: '109.2300', x: 80, y: 55 },
-            { plate: '79C-778.89', type: 'Xe chuyển phát', speed: 58, status: 'running', statusText: 'Đang chạy', place: 'Bưu cục Nha Trang ➔ Ninh Hòa', acc: 'BẬT', lat: '12.3500', lng: '109.1700', x: 38, y: 20 },
-            { plate: '79D-667.12', type: 'Xe cẩu tự hành', speed: 0, status: 'parked', statusText: 'Đang bốc dỡ hàng', place: 'KCN Suối Dầu, Cam Lâm', acc: 'BẬT', lat: '12.1800', lng: '109.1100', x: 18, y: 68 }
-        ];
-
-        let activeFilter = 'all';
-        let searchQuery = '';
-        let selectedIndex = 0;
-
-        function renderFleet() {
-            const listContainer = document.getElementById('vehicleList');
-            const markersContainer = document.getElementById('mapMarkers');
-
-            document.getElementById('count-all').innerText = vehicles.length;
-            document.getElementById('count-running').innerText = vehicles.filter(v => v.status === 'running').length;
-            document.getElementById('count-parked').innerText = vehicles.filter(v => v.status === 'parked').length;
-
-            const filtered = vehicles.filter(v => {
-                const matchesTab = activeFilter === 'all' || v.status === activeFilter;
-                const q = searchQuery.trim().toLowerCase();
-                const matchesSearch = !q || v.plate.toLowerCase().includes(q) || v.place.toLowerCase().includes(q) || v.type.toLowerCase().includes(q);
-                return matchesTab && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                listContainer.innerHTML = `
-                    <div class="p-6 text-center text-xs text-slate-400">
-                        Không tìm thấy phương tiện phù hợp.
-                    </div>`;
-            } else {
-                listContainer.innerHTML = filtered.map(v => {
-                    const originalIndex = vehicles.indexOf(v);
-                    const isRunning = v.status === 'running';
-                    return `
-                        <div class="p-3 rounded-xl bg-slate-800/50 border border-slate-800 hover:border-sky-400/50 transition cursor-pointer ${originalIndex === selectedIndex ? 'vehicle-active' : ''}" onclick="selectVehicle(${originalIndex})">
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-xs text-white">${v.plate}</span>
-                                <span class="text-xs font-mono font-bold ${isRunning ? 'text-emerald-400' : 'text-amber-400'}">${v.speed} km/h</span>
-                            </div>
-                            <div class="flex justify-between text-[11px] text-slate-400 mt-1">
-                                <span>${v.type}</span>
-                                <span class="${isRunning ? 'text-emerald-300' : 'text-amber-300'}">● ${v.statusText}</span>
-                            </div>
-                            <div class="text-[11px] text-slate-400 mt-1 truncate flex items-center gap-1.5">
-                                <i class="fa-solid fa-location-dot text-sky-400 text-[10px]"></i>
-                                <span class="truncate">${v.place}</span>
-                            </div>
-                        </div>`;
-                }).join('');
-            }
-
-            markersContainer.innerHTML = vehicles.map((v, i) => {
-                const isRunning = v.status === 'running';
-                const matchesTab = activeFilter === 'all' || v.status === activeFilter;
-                const q = searchQuery.trim().toLowerCase();
-                const matchesSearch = !q || v.plate.toLowerCase().includes(q) || v.place.toLowerCase().includes(q) || v.type.toLowerCase().includes(q);
-                const isHidden = !(matchesTab && matchesSearch);
-
-                return `
-                    <button type="button" class="marker absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer ${i === selectedIndex ? 'active' : ''} ${isHidden ? 'opacity-15 pointer-events-none' : 'opacity-100'}" style="left:${v.x}%;top:${v.y}%" onclick="selectVehicle(${i})" aria-label="Xe ${v.plate}">
-                        <span class="relative flex h-3.5 w-3.5 items-center justify-center mx-auto">
-                            ${isRunning ? '<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>' : ''}
-                            <span class="relative inline-flex rounded-full h-3 w-3 ${isRunning ? 'bg-sky-400' : 'bg-amber-400'} border-2 border-slate-950"></span>
-                        </span>
-                        <span class="mt-1 block font-mono text-[10px] font-bold px-1.5 py-0.5 rounded bg-slate-950/90 border border-slate-700 text-slate-100 whitespace-nowrap shadow">${v.plate}</span>
-                    </button>`;
-            }).join('');
-
-            updateDetail(selectedIndex);
-        }
-
-        function selectVehicle(index) {
-            selectedIndex = index;
-            renderFleet();
-        }
-
-        function updateDetail(index) {
-            const v = vehicles[index];
-            const isRunning = v.status === 'running';
-            document.getElementById('vehicleDetail').innerHTML = `
-                <div class="flex justify-between items-center text-[11px] font-bold border-b border-slate-800 pb-2">
-                    <span class="text-slate-400">THÔNG TIN PHƯƠNG TIỆN</span>
-                    <span class="${isRunning ? 'text-emerald-400' : 'text-amber-400'}">● ${v.statusText}</span>
-                </div>
-                <div class="mt-2.5 flex justify-between items-baseline">
-                    <div class="text-base font-extrabold text-white font-mono">${v.plate}</div>
-                    <div class="text-xs text-slate-300 font-medium">${v.type}</div>
-                </div>
-                <div class="grid grid-cols-2 gap-2 mt-3 text-xs">
-                    <div class="rounded-xl bg-slate-800/80 p-2.5 border border-slate-700/80">
-                        <div class="text-[10px] text-slate-400">Vận tốc hiện tại</div>
-                        <div class="font-bold text-white mt-0.5 font-mono text-sm">${v.speed} km/h</div>
-                    </div>
-                    <div class="rounded-xl bg-slate-800/80 p-2.5 border border-slate-700/80">
-                        <div class="text-[10px] text-slate-400">Khóa điện (ACC)</div>
-                        <div class="font-bold mt-0.5 font-mono text-sm ${v.acc === 'BẬT' ? 'text-emerald-400' : 'text-slate-400'}">${v.acc}</div>
-                    </div>
-                </div>
-                <div class="mt-2.5 text-xs text-slate-300 truncate flex items-center gap-1.5">
-                    <i class="fa-solid fa-route text-sky-400"></i>
-                    <span class="truncate">${v.place}</span>
-                </div>
-                <div class="text-[11px] font-mono text-slate-400 truncate mt-1">
-                    Tọa độ GPS: ${v.lat}, ${v.lng}
-                </div>`;
-        }
-
-        // Filter Buttons Event
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelectorAll('.filter-btn').forEach(b => {
-                    b.classList.remove('bg-blue-600', 'text-white', 'shadow-sm');
-                    b.classList.add('text-slate-600');
-                });
-                const target = e.currentTarget;
-                target.classList.remove('text-slate-600');
-                target.classList.add('bg-blue-600', 'text-white', 'shadow-sm');
-                activeFilter = target.dataset.filter;
-                renderFleet();
-            });
-        });
-
-        // Search Input Event
-        const searchInput = document.getElementById('vehicleSearch');
-        if (searchInput) {
-            searchInput.addEventListener('input', (e) => {
-                searchQuery = e.target.value;
-                renderFleet();
-            });
-        }
-
-        renderFleet();
-
-        // 4. Number Counters Observer
-        const counters = document.querySelectorAll('.counter');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const counter = entry.target;
-                const target = Number(counter.dataset.target);
-                let current = 0;
-                const step = Math.max(1, Math.floor(target / 45));
-                const timer = setInterval(() => {
-                    current += step;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    if (target === 99) {
-                        counter.innerText = current + '%';
-                    } else if (target === 24) {
-                        counter.innerText = current + '/7';
-                    } else {
-                        counter.innerText = current.toLocaleString('vi-VN') + '+';
-                    }
-                }, 25);
-                observer.unobserve(counter);
-            });
-        }, { threshold: 0.5 });
-
-        counters.forEach(counter => observer.observe(counter));
-    </script>
-</body>
-</html>
+            { plate: '79A-123.45', driver: 'Nguyễn Văn Hùng', type: 'Container', baseSpeed: 68, speed: 68, kmToday: 214.5, driveTime: '02g 15p', status: '
