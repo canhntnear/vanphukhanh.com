@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/css" href="https://www.xml-sitemaps.com/css/sitemap.css"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-       <loc>https://vanphukhanh.com/</loc>
-       <lastmod>2026-08-18T08:14:04+00:00</lastmod>
-       <changefreq>daily</changefreq>
-       <priority>1.0000</priority>
+    <loc>https://www.vanphukhanh.com/</loc>
+    <lastmod>2026-11-06T15:55:00+07:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/canhntnear/photo/main/logoVPK.png</image:loc>
+      <image:title>Vạn Phú Khánh GPS - Lắp đặt định vị 4G &amp; Camera hợp chuẩn QCVN06:2024/BCA tại Khánh Hòa</image:title>
+    </image:image>
   </url>
 </urlset>
