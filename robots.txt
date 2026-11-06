@@ -33,4 +33,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://www.vanphukhanh.com/sitemap.xml
+Sitemap: https://vanphukhanh.com/sitemap.xml
