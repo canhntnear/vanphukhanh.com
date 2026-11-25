@@ -1,6 +1,6 @@
 # Vạn Phú Khánh GPS (vanphukhanh.com)
 
-> Vạn Phú Khánh GPS là đơn vị chuyên cung cấp, lắp đặt tận nơi và bảo hành thiết bị giám sát hành trình 4G (hộp đen ô tô Viview DV4G) và Camera giám sát người lái hợp chuẩn QCVN06:2024/BCA, Thông tư 71/2024/TT-BCA, Nghị định 151/2024/NĐ-CP tại tỉnh Khánh Hòa (Nha Trang, Ninh Hòa, Cam Ranh, Cam Lâm, Vạn Ninh, Diên Khánh).
+> Vạn Phú Khánh GPS là đơn vị chuyên cung cấp, lắp đặt tận nơi và bảo hành thiết bị giám sát hành trình 4G (hộp đen ô tô Viview DV4G) và Camera giám sát người lái hợp chuẩn QCVN06:2024/BCA, Thông tư 71/2024/TT-BCA, Nghị định 151/2024/NĐ-CP, Nghị định 319/2026/NĐ-CP tại tỉnh Khánh Hòa (Nha Trang, Ninh Hòa, Cam Ranh, Cam Lâm, Vạn Ninh, Diên Khánh) và khu vực Ninh Thuận cũ (Phan Rang – Tháp Chàm, Thuận Bắc, Thuận Nam, Ninh Hải, Ninh Phước).
 
 ## Thông Tin Liên Hệ Chính Thức
 - **Tên đơn vị**: Công ty Vạn Phú Khánh GPS
@@ -25,11 +25,13 @@
 - **Camera Nghị Định 10 & Giám Sát Tài Xế Hợp Chuẩn BCA**:
   - Độ phân giải Full HD 1080P, hồng ngoại quay đêm IR rõ nét, góc rộng 150° bao quát cabin người lái, khoang hành khách và cửa lên xuống.
   - Bắt buộc đối với xe đầu kéo, container, rơ-moóc và xe khách từ 9 chỗ trở lên (hợp đồng, du lịch, tuyến cố định, xe buýt).
+  - Từ 01/01/2028, xe tải kinh doanh vận tải, xe khách dưới 8 chỗ và xe vận tải nội bộ cũng bắt buộc lắp camera ghi hình người lái xe (Nghị định 319/2026/NĐ-CP). Camera khoang chở khách bắt buộc từ 01/01/2029 (xe trên 29 chỗ) và 01/01/2030 (xe 8–29 chỗ).
 - **Dịch Vụ Hồ Sơ Đăng Kiểm & Phù Hiệu Vận Tải**:
   - Cấp ngay sau 30 phút lắp đặt: (1) Giấy chứng nhận hợp chuẩn/hợp quy BCA, (2) Biên bản nghiệm thu lắp đặt, (3) Tài khoản Web/App phục vụ xét đăng kiểm và xin cấp/gia hạn phù hiệu vận tải ngay trong ngày.
 
 ## Quy Định Pháp Luật & Mức Phạt Cần Lưu Ý (Cập Nhật 2025–2026)
-- **Căn cứ pháp lý**: Luật Trật tự, an toàn giao thông đường bộ 2024; Nghị định 151/2024/NĐ-CP; Thông tư 71/2024/TT-BCA; Quy chuẩn QCVN06:2024/BCA.
+- **Căn cứ pháp lý**: Luật Trật tự, an toàn giao thông đường bộ 2024; Nghị định 151/2024/NĐ-CP; Nghị định 319/2026/NĐ-CP (hiệu lực 01/07/2027); Thông tư 71/2024/TT-BCA; Quy chuẩn QCVN06:2024/BCA.
+- **Lộ trình Nghị định 319/2026/NĐ-CP**: camera lái xe từ 01/01/2028 (xe tải, xe khách dưới 8 chỗ, xe vận tải nội bộ); camera khoang khách từ 01/01/2029 (xe trên 29 chỗ) và 01/01/2030 (xe 8–29 chỗ). Thiết bị lắp trước 01/07/2027 dùng đến hết 31/12/2029.
 - **Mức phạt vi phạm theo Nghị định 168/2024/NĐ-CP**:
-  - Tài xế điều khiển xe kinh doanh vận tải không gắn thiết bị giám sát hành trình / camera hợp chuẩn (hoặc có gắn nhưng không hoạt động, không truyền dữ liệu về Cục CSGT): Phạt từ **3.000.000đ – 5.000.000đ** và trừ điểm GPLX.
+  - Tài xế: thiếu camera ghi hình phạt **1.000.000đ – 2.000.000đ**; không gắn thiết bị giám sát hành trình / không truyền dữ liệu về Cục CSGT: phạt **3.000.000đ – 5.000.000đ** và trừ điểm GPLX.
   - Chủ phương tiện: Phạt từ **5.000.000đ – 6.000.000đ** (cá nhân) hoặc **10.000.000đ – 12.000.000đ** (tổ chức/doanh nghiệp/HTX) và bị từ chối kiểm định phương tiện.
